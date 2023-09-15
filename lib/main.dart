@@ -20,7 +20,7 @@ Future <void> main() async{
           DeviceOrientation.portraitDown,
         ]);
         return GetMaterialApp(
-          title: 'AR RAHMAN',
+          title: 'ABDUR RAHMAN',
           debugShowCheckedModeBanner: false,
           initialRoute: '/homepage',
           initialBinding: HomepageBinding(),
