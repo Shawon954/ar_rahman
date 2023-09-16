@@ -66,7 +66,7 @@ Widget _BodyOne() {
                     style: googlefonts().textStyle16black,
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: 25.h,
                   ),
                   Text(
                     AppString.shortdescription,
