@@ -78,7 +78,7 @@ SizedBox(height: 10,),
 
                       Container(
                         height: 30.h,
-                        width: 30,
+                        width: 30.w,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
 
