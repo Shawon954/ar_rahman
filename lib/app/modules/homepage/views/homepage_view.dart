@@ -5,6 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:getwidget/components/button/gf_button.dart';
+import 'package:getwidget/components/button/gf_icon_button.dart';
+import 'package:getwidget/getwidget.dart';
+import 'package:getwidget/shape/gf_icon_button_shape.dart';
+import 'package:getwidget/types/gf_button_type.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../coustom_widget/backround_screen/backround_screen.dart';
@@ -67,6 +72,25 @@ Widget _BodyOne() {
                     AppString.shortdescription,
                     style: googlefonts().textStyle16blacknormal,
                   ),
+SizedBox(height: 10,),
+                  Row(
+                    children: [
+
+                      Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+
+                        ),
+                        child: Icon(Icons.facebook,size: 30,color: Colors.blueAccent,),
+                      )
+
+
+
+
+                    ],
+                  )
                 ],
               ),
             )),
