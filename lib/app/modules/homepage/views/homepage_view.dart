@@ -1,6 +1,11 @@
+import 'package:ar_rahman/app/core/app_image/app_images.dart';
+import 'package:ar_rahman/app/core/app_string/app_string.dart';
+import 'package:ar_rahman/app/utility/text_style/textstyle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../coustom_widget/backround_screen/backround_screen.dart';
 import '../../../coustom_widget/coustom_appbar/coustom_app_bar.dart';
@@ -14,8 +19,65 @@ class HomepageView extends GetView<HomepageController> {
       body: Column(
         children: [
           CustomAppBar(),
+          _BodyOne(),
         ],
       ),
     );
   }
+}
+
+Widget _BodyOne() {
+  return Container(
+    height: 500.h,
+    width: double.infinity,
+    child: Row(
+      children: [
+        Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20, left: 30, right: 10),
+              child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 30.h,
+                  ),
+                  Text(
+                    AppString.hey,
+                   style: googlefonts().textStyle14black,
+                  ),
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Text(
+                    AppString.myname,
+                    style: googlefonts().textStyle20black,
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Text(
+                    AppString.developerpart,
+                    style: googlefonts().textStyle16black,
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Text(
+                    AppString.shortdescription,
+                    style: googlefonts().textStyle16blacknormal,
+                  ),
+                ],
+              ),
+            )),
+        Expanded(
+            flex: 1,
+            child: Column(
+              children: [
+                Lottie.asset(AppImage.laptopimage),
+              ],
+            ))
+      ],
+    ),
+  );
 }
