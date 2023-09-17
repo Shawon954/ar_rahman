@@ -42,14 +42,14 @@ Widget _BodyOne() {
             child: Padding(
               padding: const EdgeInsets.only(top: 20, left: 30, right: 10),
               child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     height: 30.h,
                   ),
                   Text(
                     AppString.hey,
-                   style: googlefonts().textStyle14black,
+                    style: googlefonts().textStyle14black,
                   ),
                   SizedBox(
                     height: 50.h,
@@ -72,24 +72,44 @@ Widget _BodyOne() {
                     AppString.shortdescription,
                     style: googlefonts().textStyle16blacknormal,
                   ),
-SizedBox(height: 10,),
-                  Row(
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Stack(
                     children: [
+                      Row(
 
-                      Container(
-                        height: 30.h,
-                        width: 30.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
+                        children: [
+                          Container(
+                            height: 30.h,
+                            width: 30.w,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.facebook,
+                              size: 30,
+                              color: Colors.blueAccent,
+                            ),
+                          ),
 
-                        ),
-                        child: Icon(Icons.facebook,size: 30,color: Colors.blueAccent,),
-                      )
-
-
-
-
+                          Container(
+                            height: 30.h,
+                            width: 30.w,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.facebook,
+                              size: 30,
+                              color: Colors.blueAccent,
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
+
+
                   )
                 ],
               ),
