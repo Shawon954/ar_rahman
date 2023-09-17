@@ -75,42 +75,57 @@ Widget _BodyOne() {
                   SizedBox(
                     height: 10,
                   ),
-                  Stack(
-                    children: [
-                      Row(
-
+                  Container(
+                    height: 40,
+                    width: 100.w,
+                    color: Colors.red,
+                    child: Center(
+                      child: Stack(
                         children: [
-                          Container(
-                            height: 30.h,
-                            width: 30.w,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.facebook,
-                              size: 30,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-
-                          Container(
-                            height: 30.h,
-                            width: 30.w,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.facebook,
-                              size: 30,
-                              color: Colors.blueAccent,
-                            ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 30.h,
+                                width: 30.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.facebook,
+                                  size: 30,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                              Container(
+                                height: 30.h,
+                                width: 30.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.facebook,
+                                  size: 30,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                              Container(
+                                height: 30.h,
+                                width: 30.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.facebook,
+                                  size: 30,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
-
-
-                  )
+                    ),
+                  ),
                 ],
               ),
             )),
