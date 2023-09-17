@@ -73,7 +73,7 @@ Widget _BodyOne() {
                     style: googlefonts().textStyle16blacknormal,
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 10.h,
                   ),
                   Container(
                     height: 10.h,
