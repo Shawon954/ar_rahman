@@ -13,6 +13,7 @@ import 'package:getwidget/types/gf_button_type.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../coustom_widget/backround_screen/backround_screen.dart';
+import '../../../coustom_widget/button/button.dart';
 import '../../../coustom_widget/coustom_appbar/coustom_app_bar.dart';
 import '../controllers/homepage_controller.dart';
 
@@ -25,6 +26,7 @@ class HomepageView extends GetView<HomepageController> {
         children: [
           CustomAppBar(),
           _BodyOne(),
+          CoustomeButton(),
         ],
       ),
     );
@@ -84,18 +86,7 @@ Widget _BodyOne() {
                         children: [
                           Row(
                             children: [
-                              Container(
-                                height: 30.h,
-                                width: 30.w,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  Icons.facebook,
-                                  size: 30,
-                                  color: Colors.blueAccent,
-                                ),
-                              ),
+
                               Container(
                                 height: 30.h,
                                 width: 30.w,
