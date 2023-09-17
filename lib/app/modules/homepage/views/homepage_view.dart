@@ -26,7 +26,7 @@ class HomepageView extends GetView<HomepageController> {
         children: [
           CustomAppBar(),
           _BodyOne(),
-          CoustomeButton(),
+
         ],
       ),
     );
@@ -128,6 +128,11 @@ Widget _BodyOne() {
                         ],
                       ),
                     ),
+                  ),
+                  SizedBox(height: 50.h,),
+                  CoustomeButton(
+                    child: Text('Contact Me'),
+                    onPressed: (){},
                   ),
                 ],
               ),
