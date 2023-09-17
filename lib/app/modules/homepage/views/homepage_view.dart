@@ -76,7 +76,7 @@ Widget _BodyOne() {
                     height: 10,
                   ),
                   Container(
-                    height: 40,
+                    height: 10.h,
                     width: 100.w,
                     color: Colors.red,
                     child: Center(
