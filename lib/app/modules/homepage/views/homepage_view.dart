@@ -22,12 +22,17 @@ class HomepageView extends GetView<HomepageController> {
   @override
   Widget build(BuildContext context) {
     return BackroundScreen(
-      body: Column(
-        children: [
-          CustomAppBar(),
-          _BodyOne(),
-
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            CustomAppBar(),
+            _BodyOne(),
+            SizedBox(height: 5.h,),
+            _BodyTwo(),
+            SizedBox(height: 10.h,),
+          ],
+        ),
       ),
     );
   }
@@ -130,10 +135,19 @@ Widget _BodyOne() {
                     ),
                   ),
                   SizedBox(height: 50.h,),
-                  CoustomeButton(
-                    child: Text('Contact Me'),
-                    onPressed: (){},
-                  ),
+                  Row(
+                    children: [
+                      CoustomeButton(
+                        child: Text('Contact Me >'),
+                        onPressed: (){},
+                      ),
+                      SizedBox(width: 10.w,),
+                      CoustomeButton(
+                        child: Text('My Resume'),
+                        onPressed: (){},
+                      ),
+                    ],
+                  )
                 ],
               ),
             )),
@@ -144,6 +158,131 @@ Widget _BodyOne() {
                 Lottie.asset(AppImage.laptopimage),
               ],
             ))
+      ],
+    ),
+  );
+}
+Widget _BodyTwo() {
+  return Container(
+    height: 500.h,
+    width: double.infinity,
+    child: Row(
+      children: [
+        Expanded(
+            flex: 1,
+            child: Column(
+              children: [
+                Lottie.asset(AppImage.developimage,height: 500.h),
+              ],
+            )),
+        Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20, left: 30, right: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 30.h,
+                  ),
+                  Text(
+                    AppString.hey,
+                    style: googlefonts().textStyle14black,
+                  ),
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Text(
+                    AppString.myname,
+                    style: googlefonts().textStyle20black,
+                  ),
+                  SizedBox(
+                    height: 25.h,
+                  ),
+                  Text(
+                    AppString.developerpart,
+                    style: googlefonts().textStyle16black,
+                  ),
+                  SizedBox(
+                    height: 25.h,
+                  ),
+                  Text(
+                    AppString.shortdescription,
+                    style: googlefonts().textStyle16blacknormal,
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Container(
+                    height: 10.h,
+                    width: 100.w,
+                    color: Colors.red,
+                    child: Center(
+                      child: Stack(
+                        children: [
+                          Row(
+                            children: [
+
+                              Container(
+                                height: 30.h,
+                                width: 30.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.facebook,
+                                  size: 30,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                              Container(
+                                height: 30.h,
+                                width: 30.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.facebook,
+                                  size: 30,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                              Container(
+                                height: 30.h,
+                                width: 30.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.facebook,
+                                  size: 30,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50.h,),
+                  Row(
+                    children: [
+                      CoustomeButton(
+                        child: Text('Contact Me >'),
+                        onPressed: (){},
+                      ),
+                      SizedBox(width: 10.w,),
+                      CoustomeButton(
+                        child: Text('My Resume'),
+                        onPressed: (){},
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )),
+
       ],
     ),
   );
