@@ -18,7 +18,7 @@ class CoustomeButton extends StatelessWidget {
         child: child,
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            primary: Colors.purple.shade400,
+            primary: Colors.purple,
             textStyle: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold)
