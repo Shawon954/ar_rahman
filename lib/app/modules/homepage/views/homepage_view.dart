@@ -88,7 +88,8 @@ class HomepageView extends GetView<HomepageController> {
 
 
         ],
-      ), desktop:  Stack(
+      ),
+        desktop:  Stack(
         children: [
           Container(
             color: Colors.white,
