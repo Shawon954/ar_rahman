@@ -5,40 +5,175 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:getwidget/components/button/gf_button.dart';
-import 'package:getwidget/components/button/gf_icon_button.dart';
-import 'package:getwidget/getwidget.dart';
-import 'package:getwidget/shape/gf_icon_button_shape.dart';
-import 'package:getwidget/types/gf_button_type.dart';
+
 import 'package:lottie/lottie.dart';
 
 import '../../../coustom_widget/backround_screen/backround_screen.dart';
 import '../../../coustom_widget/button/button.dart';
-import '../../../coustom_widget/coustom_appbar/coustom_app_bar.dart';
+import '../../../coustom_widget/coustom_appbar/button_navbar.dart';
+import '../../../coustom_widget/responsive/responsive_screen.dart';
 import '../controllers/homepage_controller.dart';
 
 class HomepageView extends GetView<HomepageController> {
   const HomepageView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
+
     return BackroundScreen(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            CustomAppBar(),
-            _BodyOne(),
-            SizedBox(height: 5.h,),
-            _BodyTwo(),
-            SizedBox(height: 10.h,),
-          ],
-        ),
-      ),
+      body: Responsive(mobile:  Stack(
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("Hello Sona",style: TextStyle(color: Colors.red),),
+                  bodyOne(),
+                  bodyTwo(),
+                ],
+              ),
+            ),
+          ),
+          AnimatedContainer(
+            margin: EdgeInsets.only(top: 79.0),
+            duration: Duration(milliseconds: 375),
+            curve: Curves.ease,
+            height:
+            (width < 800.0) ? controller.collapsableHeight.value : 0.0,
+            width: double.infinity,
+            color: Color(0xff121212),
+            child: SingleChildScrollView(
+              child: Column(
+                children: controller.navBarItems,
+              ),
+            ),
+          ),
+          Container(
+            color: Color(0xff121212),
+            height: 80.0,
+            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'NavBar',
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    color: Color(0xffffffff),
+                  ),
+                ),
+                LayoutBuilder(builder: (context, constraints) {
+                  if (width < 800.0) {
+                    return NavBarButton(
+                      onPressed: () => controller.screensize(),
+                    );
+                  } else {
+                    return Row(
+                      children: controller.navBarItems,
+                    );
+                  }
+                }),
+
+              ],
+            ),
+          ),
+
+
+        ],
+      ), desktop:  Stack(
+        children: [
+          Container(
+            color: Colors.white,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("Hello Sona",style: TextStyle(color: Colors.red),),
+                  bodyOne(),
+                  bodyTwo(),
+
+                ],
+              ),
+            ),
+          ),
+          AnimatedContainer(
+            margin: EdgeInsets.only(top: 79.0),
+            duration: Duration(milliseconds: 375),
+            curve: Curves.ease,
+            height:
+            (width < 800.0) ? controller.collapsableHeight.value : 0.0,
+            width: double.infinity,
+            color: Color(0xff121212),
+            child: SingleChildScrollView(
+              child: Column(
+                children: controller.navBarItems,
+              ),
+            ),
+          ),
+          Container(
+            color: Color(0xff121212),
+            height: 80.0,
+            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'NavBar',
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    color: Color(0xffffffff),
+                  ),
+                ),
+                LayoutBuilder(builder: (context, constraints) {
+                  if (width < 800.0) {
+                    return NavBarButton(
+                      onPressed: () => controller.screensize(),
+                    );
+                  } else {
+                    return Row(
+                      children: controller.navBarItems,
+                    );
+                  }
+                }),
+
+              ],
+            ),
+          ),
+
+
+        ],
+      ),)
+
+
+
+
+      // SingleChildScrollView(
+      //   scrollDirection: Axis.vertical,
+      //   child: Column(
+      //     children: [
+      //       CustomAppBar(),
+      //       _BodyOne(),
+      //       SizedBox(height: 5.h,),
+      //       _BodyTwo(),
+      //       SizedBox(height: 10.h,),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
 
-Widget _BodyOne() {
+Widget bodyOne() {
   return Container(
     height: 500.h,
     width: double.infinity,
@@ -91,7 +226,6 @@ Widget _BodyOne() {
                         children: [
                           Row(
                             children: [
-
                               Container(
                                 height: 30.h,
                                 width: 30.w,
@@ -134,17 +268,21 @@ Widget _BodyOne() {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50.h,),
+                  SizedBox(
+                    height: 50.h,
+                  ),
                   Row(
                     children: [
                       CoustomeButton(
                         child: Text('Contact Me >'),
-                        onPressed: (){},
+                        onPressed: () {},
                       ),
-                      SizedBox(width: 10.w,),
+                      SizedBox(
+                        width: 10.w,
+                      ),
                       CoustomeButton(
                         child: Text('My Resume'),
-                        onPressed: (){},
+                        onPressed: () {},
                       ),
                     ],
                   )
@@ -162,7 +300,8 @@ Widget _BodyOne() {
     ),
   );
 }
-Widget _BodyTwo() {
+
+Widget bodyTwo() {
   return Container(
     height: 500.h,
     width: double.infinity,
@@ -172,7 +311,7 @@ Widget _BodyTwo() {
             flex: 1,
             child: Column(
               children: [
-                Lottie.asset(AppImage.developimage,height: 500.h),
+                Lottie.asset(AppImage.developimage, height: 500.h),
               ],
             )),
         Expanded(
@@ -222,7 +361,6 @@ Widget _BodyTwo() {
                         children: [
                           Row(
                             children: [
-
                               Container(
                                 height: 30.h,
                                 width: 30.w,
@@ -265,24 +403,27 @@ Widget _BodyTwo() {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50.h,),
+                  SizedBox(
+                    height: 50.h,
+                  ),
                   Row(
                     children: [
                       CoustomeButton(
                         child: Text('Contact Me >'),
-                        onPressed: (){},
+                        onPressed: () {},
                       ),
-                      SizedBox(width: 10.w,),
+                      SizedBox(
+                        width: 10.w,
+                      ),
                       CoustomeButton(
                         child: Text('My Resume'),
-                        onPressed: (){},
+                        onPressed: () {},
                       ),
                     ],
                   )
                 ],
               ),
             )),
-
       ],
     ),
   );
