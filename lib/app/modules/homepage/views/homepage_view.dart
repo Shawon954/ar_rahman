@@ -35,7 +35,7 @@ class HomepageView extends GetView<HomepageController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Hello Sona",style: TextStyle(color: Colors.red),),
+
                   bodyOne(),
                   bodyTwo(),
                 ],
