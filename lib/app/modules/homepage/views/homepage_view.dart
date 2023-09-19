@@ -169,7 +169,7 @@ class HomepageView extends GetView<HomepageController> {
                 Text(
                   'NavBar',
                   style: TextStyle(
-                    fontSize: Responsive.isMobile(context)?width/10:width/70,
+                    fontSize: Responsive.isMobile(context)?width/10:width/60,
                     color: Color(0xffffffff),
                   ),
                 ),
