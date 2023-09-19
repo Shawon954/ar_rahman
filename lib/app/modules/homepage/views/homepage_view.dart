@@ -59,7 +59,7 @@ class HomepageView extends GetView<HomepageController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'NavBar',
+                  'NavBar Icon',
                   style: TextStyle(
                     fontSize: Responsive.isMobile(context)?width/25:width/40,
                     color: Color(0xffffffff),
