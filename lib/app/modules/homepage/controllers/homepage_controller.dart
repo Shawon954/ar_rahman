@@ -36,8 +36,10 @@ class HomepageController extends GetxController {
    screensize(){
        if (collapsableHeight.value == 0.0) {
            collapsableHeight.value = 240;
+           navBarItems;
        } else if (collapsableHeight.value == 240.0) {
          collapsableHeight.value = 0;
+         navBarItems;
 
      };
   }
