@@ -116,7 +116,7 @@ class HomepageView extends GetView<HomepageController> {
                      Text(
                        'NavBar',
                        style: TextStyle(
-                         fontSize: 22.0,
+                         fontSize: Responsive.isDesktop(context)?width/25:width/40,
                          color: Color(0xffffffff),
                        ),
                      ),
