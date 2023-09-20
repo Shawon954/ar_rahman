@@ -12,6 +12,7 @@ import 'package:lottie/lottie.dart';
 import '../../../coustom_widget/backround_screen/backround_screen.dart';
 import '../../../coustom_widget/button/button.dart';
 import '../../../coustom_widget/coustom_appbar/button_navbar.dart';
+import '../../../utility/app_colors/appcolors.dart';
 import '../controllers/homepage_controller.dart';
 
 class HomepageView extends GetView<HomepageController> {
@@ -24,7 +25,8 @@ class HomepageView extends GetView<HomepageController> {
 
     return BackroundScreen(
         body: Responsive(
-            mobile: Stack(
+            mobile:
+            Stack(
               children: [
                    Container(
                    color: Colors.white,
@@ -33,7 +35,7 @@ class HomepageView extends GetView<HomepageController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
 
-                       mobileandtabbodyOne(),
+                       mobileandtabbodyOne(context),
 
               ],
              ),
@@ -51,7 +53,7 @@ class HomepageView extends GetView<HomepageController> {
               ),
             ),
           ),
-          Container(
+             Container(
             color: Color(0xff121212),
             height: 80.0,
             padding: EdgeInsets.symmetric(horizontal: 24.0),
@@ -59,9 +61,9 @@ class HomepageView extends GetView<HomepageController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'NavBar Icon',
+                  'NavBar Icon Mobile',
                   style: TextStyle(
-                    fontSize: Responsive.isMobile(context)?width/25:width/40,
+                    fontSize: Responsive.isMobile(context)?width/30:width/30,
                     color: Color(0xffffffff),
                   ),
                 ),
@@ -89,7 +91,7 @@ class HomepageView extends GetView<HomepageController> {
                    mainAxisAlignment: MainAxisAlignment.center,
                    crossAxisAlignment: CrossAxisAlignment.center,
                    children: [
-                    mobileandtabbodyOne(),
+                    mobileandtabbodyOne(context),
                    ],
                  ),
                ),
@@ -97,7 +99,7 @@ class HomepageView extends GetView<HomepageController> {
                  margin: EdgeInsets.only(top: 79.0),
                  duration: Duration(milliseconds: 375),
                  curve: Curves.ease,
-                 height: (width < 800.0) ? controller.collapsableHeight.value : 0.0,
+                 height: (width < 750.0) ? controller.collapsableHeight.value : 0.0,
                  width: double.infinity,
                  color: Color(0xff121212),
                  child: SingleChildScrollView(
@@ -114,11 +116,11 @@ class HomepageView extends GetView<HomepageController> {
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
                      Text(
-                       'NavBar',
-                       style: TextStyle(
-                         fontSize: Responsive.isDesktop(context)?width/25:width/40,
-                         color: Color(0xffffffff),
-                       ),
+                       'NavBar Tablet',
+                       style:googlefonts().textRegularStyle(
+                         fontSize: Responsive.isTablet(context)?width/40:width/40,
+
+                       )
                      ),
                      LayoutBuilder(builder: (context, constraints) {
                        if (width < 800.0) {
@@ -150,7 +152,7 @@ class HomepageView extends GetView<HomepageController> {
             margin: EdgeInsets.only(top: 79.0),
             duration: Duration(milliseconds: 375),
             curve: Curves.ease,
-            height: (width < 800.0) ? controller.collapsableHeight.value : 0.0,
+            height: (width <= 800.0) ? controller.collapsableHeight.value : 0.0,
             width: double.infinity,
             color: Color(0xff121212),
             child: SingleChildScrollView(
@@ -167,9 +169,9 @@ class HomepageView extends GetView<HomepageController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'NavBar',
+                  'NavBar Desktop',
                   style: TextStyle(
-                    fontSize: Responsive.isMobile(context)?width/10:width/60,
+                    fontSize: Responsive.isMobile(context)?width/70:width/70,
                     color: Color(0xffffffff),
                   ),
                 ),
@@ -206,7 +208,8 @@ class HomepageView extends GetView<HomepageController> {
         );
   }
 }
-Widget mobileandtabbodyOne() {
+Widget mobileandtabbodyOne(BuildContext context) {
+  double width = MediaQuery.sizeOf(context).width;
   return Container(
     height: 500.h,
     width: double.infinity,
@@ -218,32 +221,51 @@ Widget mobileandtabbodyOne() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 30.h,
+                height: 8.h,
               ),
               Text(
                 AppString.hey,
-                style: googlefonts().textStyle14black,
+                style: TextStyle(
+                    fontSize: Responsive.isMobile(context)?width/40:width/40,
+                    fontWeight: FontWeight.w500,fontFamily: 'Poppins',
+                    fontStyle: FontStyle.italic,
+                    color: AppColors.textDark80,
+
+                ),
               ),
               SizedBox(
-                height: 50.h,
+                height: 10.h,
               ),
               Text(
                 AppString.myname,
-                style: googlefonts().textStyle20black,
+                style: TextStyle(
+                  fontSize: Responsive.isMobile(context)?width/30:width/30,
+                  fontWeight: FontWeight.w700,fontFamily: 'Poppins',
+                  color: AppColors.textDark80,
+                  letterSpacing: 0.9
+                ),
               ),
               SizedBox(
-                height: 25.h,
+                height: 5.h,
               ),
               Text(
                 AppString.developerpart,
-                style: googlefonts().textStyle16black,
+                style: TextStyle(
+                  fontSize: Responsive.isMobile(context)?width/40:width/40,
+    fontWeight: FontWeight.w500,fontFamily: 'Poppins',
+    color: AppColors.textDark80,
+  ),
               ),
               SizedBox(
-                height: 25.h,
+                height: 20.h,
               ),
               Text(
                 AppString.shortdescription,
-                style: googlefonts().textStyle16blacknormal,
+                style: TextStyle(
+                  fontSize: Responsive.isMobile(context)?width/40:width/40,
+                  fontWeight: FontWeight.w400,fontFamily: 'Poppins',
+                  color: AppColors.textDark80,
+                ),
               ),
               SizedBox(
                 height: 10.h,
