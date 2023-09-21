@@ -2,6 +2,7 @@ import 'package:ar_rahman/app/core/app_image/app_images.dart';
 import 'package:ar_rahman/app/core/app_string/app_string.dart';
 import 'package:ar_rahman/app/responsive/responsive_screen.dart';
 import 'package:ar_rahman/app/utility/text_style/textstyle.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,346 +13,257 @@ import 'package:lottie/lottie.dart';
 import '../../../coustom_widget/backround_screen/backround_screen.dart';
 import '../../../coustom_widget/button/button.dart';
 import '../../../coustom_widget/coustom_appbar/button_navbar.dart';
+import '../../../coustom_widget/coustom_appbar/coustom_app_bar.dart';
+import '../../../coustom_widget/coustom_appbar/navbar.dart';
 import '../../../utility/app_colors/appcolors.dart';
 import '../controllers/homepage_controller.dart';
 
 class HomepageView extends GetView<HomepageController> {
-  const HomepageView({Key? key}) : super(key: key);
+
+  final HomepageController _homepageController = Get.find<HomepageController>();
+
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery
+        .of(context)
+        .size
+        .height;
+    final width = MediaQuery
+        .of(context)
+        .size
+        .width;
 
     return BackroundScreen(
-        body: Responsive(
-            mobile:
-            Stack(
-              children: [
-                   Container(
-                   color: Colors.white,
-                   child: Column(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                     children: [
 
-                       mobileandtabbodyOne(context),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                flex: 15,
+                child: AdaptiveNavBar(
+                  backgroundColor: Colors.transparent,
+                  screenWidth: width,
+                  title: const Text("Adaptive NavBar"),
+                  navBarItems: [
+                    NavBarItem(
+                      text: "Home",
+                      onTap: () {
+                        Navigator.pushNamed(context, "routeName");
+                      },
+                    ),
+                    NavBarItem(
 
-              ],
-             ),
-            ),
-              AnimatedContainer(
-            margin: EdgeInsets.only(top: 79.0),
-            duration: Duration(milliseconds: 375),
-            curve: Curves.ease,
-            height: (width < 800.0) ? controller.collapsableHeight.value : 0.0,
-            width: double.infinity,
-            color: Color(0xff121212),
-            child: SingleChildScrollView(
-              child: Column(
-                children: controller.navBarItems,
-              ),
-            ),
-          ),
-             Container(
-            color: Color(0xff121212),
-            height: 80.0,
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'NavBar Icon Mobile',
-                  style: TextStyle(
-                    fontSize: Responsive.isMobile(context)?width/30:width/30,
-                    color: Color(0xffffffff),
-                  ),
+                      focusColor: Colors.purple,
+                      splashColor: Colors.red,
+                      hoverColor: Colors.black,
+                      text: "About Us",
+                      onTap: () {
+                        Navigator.pushNamed(context, "routeName");
+                      },
+                    ),
+                    NavBarItem(
+                      text: "About Us",
+                      onTap: () {
+                        Navigator.pushNamed(context, "routeName");
+                      },
+                    ),
+                    NavBarItem(
+                      text: "About Us",
+                      onTap: () {
+                        Navigator.pushNamed(context, "routeName");
+                      },
+                    ),
+                  ],
                 ),
-                LayoutBuilder(builder: (context, constraints) {
-                  if (width < 800.0) {
-                    return NavBarButton(
-                      onPressed: () => controller.screensize(),
-                    );
-                  } else {
-                    return Row(
-                      children: controller.navBarItems,
-                    );
-                  }
-                }),
-              ],
-            ),
+              ),
+              Expanded(
+                  flex: 1,
+                  child:
+                   DayNightSwitcher(
+                        isDarkModeEnabled: false,
+                        onStateChanged: (val){
+
+
+                  }))
+            ],
           ),
         ],
       ),
-           tablet:Stack(
-             children: [
-               Container(
-                 color: Colors.white,
-                 child: Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                   children: [
-                    mobileandtabbodyOne(context),
-                   ],
-                 ),
-               ),
-               AnimatedContainer(
-                 margin: EdgeInsets.only(top: 79.0),
-                 duration: Duration(milliseconds: 375),
-                 curve: Curves.ease,
-                 height: (width < 750.0) ? controller.collapsableHeight.value : 0.0,
-                 width: double.infinity,
-                 color: Color(0xff121212),
-                 child: SingleChildScrollView(
-                   child: Column(
-                     children: controller.navBarItems,
-                   ),
-                 ),
-               ),
-               Container(
-                 color: Color(0xff121212),
-                 height: 80.0,
-                 padding: EdgeInsets.symmetric(horizontal: 24.0),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                     Text(
-                       'NavBar Tablet',
-                       style:googlefonts().textRegularStyle(
-                         fontSize: Responsive.isTablet(context)?width/40:width/40,
 
-                       )
-                     ),
-                     LayoutBuilder(builder: (context, constraints) {
-                       if (width < 800.0) {
-                         return NavBarButton(
-                           onPressed: () => controller.screensize(),
-                         );
-                       } else {
-                         return Row(
-                           children: controller.navBarItems,
-                         );
-                       }
-                     }),
-                   ],
-                 ),
-               ),
-             ],
-           ),
-           desktop: Stack(
-             children: [
-               Container(
-            color: Colors.white,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [bodyOne()],
-            ),
-          ),
-          AnimatedContainer(
-            margin: EdgeInsets.only(top: 79.0),
-            duration: Duration(milliseconds: 375),
-            curve: Curves.ease,
-            height: (width <= 800.0) ? controller.collapsableHeight.value : 0.0,
-            width: double.infinity,
-            color: Color(0xff121212),
-            child: SingleChildScrollView(
-              child: Column(
-                children: controller.navBarItems,
-              ),
-            ),
-          ),
-          Container(
-            color: Color(0xff121212),
-            height: 80.0,
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'NavBar Desktop',
-                  style: TextStyle(
-                    fontSize: Responsive.isMobile(context)?width/70:width/70,
-                    color: Color(0xffffffff),
-                  ),
-                ),
-                LayoutBuilder(builder: (context, constraints) {
-                  if (width < 800.0) {
-                    return NavBarButton(
-                      onPressed: () => controller.screensize(),
-                    );
-                  } else {
-                    return Row(
-                      children: controller.navBarItems,
-                    );
-                  }
-                }),
-              ],
-            ),
-          ),
-        ],
-      ),
-    )
 
-        // SingleChildScrollView(
-        //   scrollDirection: Axis.vertical,
-        //   child: Column(
-        //     children: [
-        //       CustomAppBar(),
-        //       _BodyOne(),
-        //       SizedBox(height: 5.h,),
-        //       _BodyTwo(),
-        //       SizedBox(height: 10.h,),
-        //     ],
-        //   ),
-        // ),
-        );
+    );
   }
 }
+
 Widget mobileandtabbodyOne(BuildContext context) {
-  double width = MediaQuery.sizeOf(context).width;
+  double width = MediaQuery
+      .sizeOf(context)
+      .width;
+
   return Container(
     height: 500.h,
     width: double.infinity,
-    child: Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 20, left: 30, right: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 8.h,
-              ),
-              Text(
-                AppString.hey,
-                style: TextStyle(
-                    fontSize: Responsive.isMobile(context)?width/40:width/40,
-                    fontWeight: FontWeight.w500,fontFamily: 'Poppins',
+    child: Padding(
+      padding: const EdgeInsets.only(
+        left: 25,
+        right: 20,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 8.h,
+                ),
+                Text(
+                  AppString.hey,
+                  style: TextStyle(
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 40 : width / 75,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins',
                     fontStyle: FontStyle.italic,
                     color: AppColors.textDark80,
-
-                ),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                AppString.myname,
-                style: TextStyle(
-                  fontSize: Responsive.isMobile(context)?width/30:width/30,
-                  fontWeight: FontWeight.w700,fontFamily: 'Poppins',
-                  color: AppColors.textDark80,
-                  letterSpacing: 0.9
-                ),
-              ),
-              SizedBox(
-                height: 5.h,
-              ),
-              Text(
-                AppString.developerpart,
-                style: TextStyle(
-                  fontSize: Responsive.isMobile(context)?width/40:width/40,
-    fontWeight: FontWeight.w500,fontFamily: 'Poppins',
-    color: AppColors.textDark80,
-  ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Text(
-                AppString.shortdescription,
-                style: TextStyle(
-                  fontSize: Responsive.isMobile(context)?width/40:width/40,
-                  fontWeight: FontWeight.w400,fontFamily: 'Poppins',
-                  color: AppColors.textDark80,
-                ),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Container(
-                height: 10.h,
-                width: 100.w,
-                color: Colors.red,
-                child: Center(
-                  child: Stack(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: 30.h,
-                            width: 30.w,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.facebook,
-                              size: 30,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-                          Container(
-                            height: 30.h,
-                            width: 30.w,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.facebook,
-                              size: 30,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-                          Container(
-                            height: 30.h,
-                            width: 30.w,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.facebook,
-                              size: 30,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 50.h,
-              ),
-              Row(
-                children: [
-                  CoustomeButton(
-                    child: Text('Contact Me >'),
-                    onPressed: () {},
+                SizedBox(
+                  height: 10.h,
+                ),
+                Text(
+                  AppString.myname,
+                  style: TextStyle(
+                      fontSize: Responsive.isMobile(context)
+                          ? width / 30
+                          : width / 50,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Poppins',
+                      color: AppColors.textDark80,
+                      letterSpacing: 0.9),
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(
+                  AppString.developerpart,
+                  style: TextStyle(
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 40 : width / 70,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins',
+                    color: AppColors.textDark80,
                   ),
-                  SizedBox(
-                    width: 10.w,
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Text(
+                  AppString.shortdescription,
+                  style: TextStyle(
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 40 : width / 70,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Poppins',
+                    color: AppColors.textDark80,
                   ),
-                  CoustomeButton(
-                    child: Text('My Resume'),
-                    onPressed: () {},
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Container(
+                  height: 50,
+                  width: Responsive.isMobile(context) ? width / 4 : width / 4,
+                  child: Center(
+                    child: Stack(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              height: 30.h,
+                              width: 30.w,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.facebook,
+                                size: 30,
+                                color: Colors.blueAccent,
+                              ),
+                            ),
+                            Container(
+                              height: 30.h,
+                              width: 30.w,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.facebook,
+                                size: 30,
+                                color: Colors.blueAccent,
+                              ),
+                            ),
+                            Container(
+                              height: 30.h,
+                              width: 30.w,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.facebook,
+                                size: 30,
+                                color: Colors.blueAccent,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              )
-            ],
+                ),
+                SizedBox(
+                  height: 25.h,
+                ),
+                Row(
+                  children: [
+                    CoustomeButton(
+                      child: Text('Contact Me'),
+                      onPressed: () {},
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    CoustomeButton(
+                      child: Text('My Resume'),
+                      onPressed: () {},
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
-        ),
-        SizedBox(height: 5.h,),
-        Column(
-          children: [
-            Lottie.asset(AppImage.laptopimage,width: 200.w),
-          ],
-        )
-      ],
+          Expanded(
+            flex: 1,
+            child: Lottie.asset(
+              AppImage.laptopimage,
+              width: Responsive.isMobile(context) ? width / 1.5 : width / 30,
+            ),
+          ),
+          SizedBox(
+            height: 5.h,
+          ),
+          Column(
+            children: [],
+          )
+        ],
+      ),
     ),
   );
 }
+
 Widget bodyOne() {
   return Container(
     height: 500.h,
@@ -479,7 +391,6 @@ Widget bodyOne() {
     ),
   );
 }
-
 
 Widget _BodyTwo() {
   return Container(
