@@ -45,6 +45,10 @@ dependencies:
   lottie: ^2.6.0
   getwidget: ^4.0.0
 
+
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
