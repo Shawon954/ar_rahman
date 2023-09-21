@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class NavBarItem extends InkWell {
 
   final String text;
+  final TextStyle textStyle;
+  
 
-
-
-  NavBarItem({
+  NavBarItem( {
     required this.text,
-
+    required this.textStyle,
 
 
     Key? key,
@@ -38,7 +38,7 @@ class NavBarItem extends InkWell {
     bool autofocus = false,
   }) : super(
     key: key,
-    child: _NavBarItemChild(text: text),
+    child: _NavBarItemChild(text: text, textStyle: textStyle,),
     onTap: onTap,
     onDoubleTap: onDoubleTap,
     onLongPress: onLongPress,
@@ -70,11 +70,13 @@ class NavBarItem extends InkWell {
 class _NavBarItemChild extends StatelessWidget {
   /// [text] is displayed as a popupmenuitem or navbaritem in wide screen.
   final String text;
+  final TextStyle textStyle;
+  
 
   /// `_NavBarItemChild`'s named constructor
   const _NavBarItemChild({
     Key? key,
-    required this.text,
+    required this.text, required this.textStyle,
   }) : super(key: key);
 
   @override
@@ -85,7 +87,7 @@ class _NavBarItemChild extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-
+           style: textStyle,
           ),
         ),
       );
