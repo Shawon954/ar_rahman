@@ -26,6 +26,7 @@ Future <void> main() async{
           initialBinding: HomepageBinding(),
           getPages: AppPages.routes,
 
+
         );
       },
     ),
