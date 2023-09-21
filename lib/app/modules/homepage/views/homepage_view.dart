@@ -47,82 +47,95 @@ class HomepageView extends GetView<HomepageController> {
                 children: [
                   Expanded(
                     flex: 15,
-                    child: AdaptiveNavBar(
-                      backgroundColor: Colors.transparent,
-                      elevation: 0.0,
-                      screenWidth: width,
+                    child: Obx(() {
+                      return AdaptiveNavBar(
+                        backgroundColor: Colors.transparent,
+                        elevation: 0.0,
+                        screenWidth: width,
 
-                      title: Text("Adaptive NavBar",
-                        style: TextStyle(color: Colors.purple),),
-                      navBarItems: [
-                        NavBarItem(
+                        title: Text("Adaptive NavBar",
+                          style: TextStyle(color: controller.isDarkMode.value ? Colors
+                              .white : Colors.black87,),),
+                        navBarItems: [
+                          NavBarItem(
 
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
 
-                          textStyle: TextStyle(fontSize: 14,
-                              color: controller.isDarkMode.value?Colors.white:Colors.black87,
-                              fontWeight: FontWeight.w500),
-                          text: "Home",
-                          onTap: () {
-                            Navigator.pushNamed(context, "routeName");
-                          },
-                        ),
-                        NavBarItem(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                            textStyle: TextStyle(fontSize: 14,
+                                color: controller.isDarkMode.value ? Colors
+                                    .white : Colors.black87,
+                                fontWeight: FontWeight.w500),
+                            text: "Home",
+                            onTap: () {
+                              Navigator.pushNamed(context, "routeName");
+                            },
+                          ),
+                          NavBarItem(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
 
-                          textStyle: TextStyle(fontSize: 14,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500),
-                          text: "Skills",
-                          onTap: () {
-                            Navigator.pushNamed(context, "routeName");
-                          },
-                        ),
-                        NavBarItem(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                            textStyle: TextStyle(fontSize: 14,
+                                color: controller.isDarkMode.value ? Colors
+                                    .white : Colors.black87,
+                                fontWeight: FontWeight.w500),
+                            text: "Skills",
+                            onTap: () {
+                              Navigator.pushNamed(context, "routeName");
+                            },
+                          ),
+                          NavBarItem(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
 
-                          textStyle: TextStyle(fontSize: 14,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500),
-                          text: "My Works",
-                          onTap: () {
-                            Navigator.pushNamed(context, "routeName");
-                          },
-                        ),
-                        NavBarItem(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                            textStyle: TextStyle(fontSize: 14,
+                                color:controller.isDarkMode.value ? Colors
+                                    .white : Colors.black87,
+                                fontWeight: FontWeight.w500),
+                            text: "My Works",
+                            onTap: () {
+                              Navigator.pushNamed(context, "routeName");
+                            },
+                          ),
+                          NavBarItem(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
 
-                          textStyle: TextStyle(fontSize: 14,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500),
-                          text: "About Us",
-                          onTap: () {
-                            Navigator.pushNamed(context, "routeName");
-                          },
-                        ),
-                        NavBarItem(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                            textStyle: TextStyle(fontSize: 14,
+                                color:controller.isDarkMode.value ? Colors
+                                    .white : Colors.black87,
+                                fontWeight: FontWeight.w500),
+                            text: "About Us",
+                            onTap: () {
+                              Navigator.pushNamed(context, "routeName");
+                            },
+                          ),
+                          NavBarItem(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
 
-                          textStyle: TextStyle(fontSize: 14,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500),
-                          text: "Contact",
-                          onTap: () {
-                            Navigator.pushNamed(context, "routeName");
-                          },
-                        ),
-                      ],
-                    ),
+                            textStyle: TextStyle(fontSize: 14,
+                                color: controller.isDarkMode.value ? Colors
+                                    .white : Colors.black87,
+                                fontWeight: FontWeight.w500),
+                            text: "Contact",
+                            onTap: () {
+                              Navigator.pushNamed(context, "routeName");
+                            },
+                          ),
+                        ],
+                      );
+                    }),
                   ),
                   Expanded(
                       flex: 1,
                       child:
                       Obx(() {
                         return DayNightSwitcherIcon(
+                          cloudsColor: Colors.white,
+                           cratersColor: Colors.red,
                             isDarkModeEnabled: controller.isDarkMode.value,
                             onStateChanged: (val) {
                               controller.toggleDarkMode();
-                            });
+                            }
+
+
+                        );
                       })
                   )
                 ],

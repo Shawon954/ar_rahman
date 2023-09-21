@@ -25,8 +25,8 @@ Future <void> main() async{
           initialRoute: '/homepage',
           initialBinding: HomepageBinding(),
           getPages: AppPages.routes,
-
-
+          theme: ThemeData.light(),
+          darkTheme: ThemeData.dark(),
         );
       },
     ),
