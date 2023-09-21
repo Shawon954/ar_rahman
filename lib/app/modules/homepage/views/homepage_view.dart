@@ -12,7 +12,6 @@ import 'package:lottie/lottie.dart';
 
 import '../../../coustom_widget/backround_screen/backround_screen.dart';
 import '../../../coustom_widget/button/button.dart';
-import '../../../coustom_widget/coustom_appbar/button_navbar.dart';
 import '../../../coustom_widget/coustom_appbar/coustom_app_bar.dart';
 import '../../../coustom_widget/coustom_appbar/navbar.dart';
 import '../../../utility/app_colors/appcolors.dart';
@@ -20,7 +19,10 @@ import '../controllers/homepage_controller.dart';
 
 class HomepageView extends GetView<HomepageController> {
 
-  final HomepageController _homepageController = Get.find<HomepageController>();
+  final HomepageController _homepageController = Get.put(HomepageController());
+
+  final isselected = Color(0xfffffff);
+  final unselected = Color(0xaffffff);
 
 
   @override
@@ -34,66 +36,103 @@ class HomepageView extends GetView<HomepageController> {
         .size
         .width;
 
-    return BackroundScreen(
-
-      body: Column(
-        children: [
-          Row(
+    return Obx(() {
+      return BackroundScreen(
+          BackroundColor: controller.isDarkMode.value ? Colors.black87 : Colors
+              .white,
+          body:
+          Column(
             children: [
-              Expanded(
-                flex: 15,
-                child: AdaptiveNavBar(
-                  backgroundColor: Colors.transparent,
-                  screenWidth: width,
-                  title: const Text("Adaptive NavBar"),
-                  navBarItems: [
-                    NavBarItem(
-                      text: "Home",
-                      onTap: () {
-                        Navigator.pushNamed(context, "routeName");
-                      },
-                    ),
-                    NavBarItem(
+              Row(
+                children: [
+                  Expanded(
+                    flex: 15,
+                    child: AdaptiveNavBar(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0.0,
+                      screenWidth: width,
 
-                      focusColor: Colors.purple,
-                      splashColor: Colors.red,
-                      hoverColor: Colors.black,
-                      text: "About Us",
-                      onTap: () {
-                        Navigator.pushNamed(context, "routeName");
-                      },
+                      title: Text("Adaptive NavBar",
+                        style: TextStyle(color: Colors.purple),),
+                      navBarItems: [
+                        NavBarItem(
+
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+
+                          textStyle: TextStyle(fontSize: 14,
+                              color: controller.isDarkMode.value?Colors.white:Colors.black87,
+                              fontWeight: FontWeight.w500),
+                          text: "Home",
+                          onTap: () {
+                            Navigator.pushNamed(context, "routeName");
+                          },
+                        ),
+                        NavBarItem(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+
+                          textStyle: TextStyle(fontSize: 14,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                          text: "Skills",
+                          onTap: () {
+                            Navigator.pushNamed(context, "routeName");
+                          },
+                        ),
+                        NavBarItem(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+
+                          textStyle: TextStyle(fontSize: 14,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                          text: "My Works",
+                          onTap: () {
+                            Navigator.pushNamed(context, "routeName");
+                          },
+                        ),
+                        NavBarItem(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+
+                          textStyle: TextStyle(fontSize: 14,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                          text: "About Us",
+                          onTap: () {
+                            Navigator.pushNamed(context, "routeName");
+                          },
+                        ),
+                        NavBarItem(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+
+                          textStyle: TextStyle(fontSize: 14,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                          text: "Contact",
+                          onTap: () {
+                            Navigator.pushNamed(context, "routeName");
+                          },
+                        ),
+                      ],
                     ),
-                    NavBarItem(
-                      text: "About Us",
-                      onTap: () {
-                        Navigator.pushNamed(context, "routeName");
-                      },
-                    ),
-                    NavBarItem(
-                      text: "About Us",
-                      onTap: () {
-                        Navigator.pushNamed(context, "routeName");
-                      },
-                    ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                      flex: 1,
+                      child:
+                      Obx(() {
+                        return DayNightSwitcherIcon(
+                            isDarkModeEnabled: controller.isDarkMode.value,
+                            onStateChanged: (val) {
+                              controller.toggleDarkMode();
+                            });
+                      })
+                  )
+                ],
               ),
-              Expanded(
-                  flex: 1,
-                  child:
-                   DayNightSwitcher(
-                        isDarkModeEnabled: false,
-                        onStateChanged: (val){
-
-
-                  }))
             ],
-          ),
-        ],
-      ),
+          )
 
 
-    );
+      );
+    });
   }
 }
 
