@@ -1,55 +1,93 @@
 import 'package:flutter/material.dart';
 
-class NavBarItem extends StatefulWidget {
+class NavBarItem extends InkWell {
+
   final String text;
+
+
 
   NavBarItem({
     required this.text,
-  });
 
-  @override
-  _NavBarItemState createState() => _NavBarItemState();
+
+
+    Key? key,
+
+    GestureTapCallback? onTap,
+    GestureTapCallback? onDoubleTap,
+    GestureLongPressCallback? onLongPress,
+    GestureTapDownCallback? onTapDown,
+    GestureTapCancelCallback? onTapCancel,
+    ValueChanged<bool>? onHighlightChanged,
+    ValueChanged<bool>? onHover,
+    MouseCursor? mouseCursor,
+    Color? focusColor,
+    Color? hoverColor,
+    Color? highlightColor,
+    MaterialStateProperty<Color?>? overlayColor,
+    Color? splashColor,
+    InteractiveInkFeatureFactory? splashFactory,
+    double? radius,
+    BorderRadius? borderRadius,
+    ShapeBorder? customBorder,
+    bool? enableFeedback = true,
+    bool excludeFromSemantics = false,
+    FocusNode? focusNode,
+    bool canRequestFocus = true,
+    ValueChanged<bool>? onFocusChange,
+    bool autofocus = false,
+  }) : super(
+    key: key,
+    child: _NavBarItemChild(text: text),
+    onTap: onTap,
+    onDoubleTap: onDoubleTap,
+    onLongPress: onLongPress,
+    onTapDown: onTapDown,
+    onTapCancel: onTapCancel,
+    onHighlightChanged: onHighlightChanged,
+    onHover: onHover,
+    mouseCursor: mouseCursor,
+    focusColor: focusColor,
+    hoverColor: hoverColor,
+    highlightColor: highlightColor,
+    overlayColor: overlayColor,
+    splashColor: splashColor,
+    splashFactory: splashFactory,
+    radius: radius,
+    borderRadius: borderRadius,
+    customBorder: customBorder,
+    enableFeedback: enableFeedback ?? true,
+    excludeFromSemantics: excludeFromSemantics,
+    focusNode: focusNode,
+    canRequestFocus: canRequestFocus,
+    onFocusChange: onFocusChange,
+    autofocus: autofocus,
+
+  );
 }
-double collapsableHeight = 0.0;
-Color selected = Color(0xffffffff);
-Color notSelected = Color(0xafffffff);
 
-class _NavBarItemState extends State<NavBarItem> {
+/// [_NavBarItemChild] is the child of [NavBarItem]
+class _NavBarItemChild extends StatelessWidget {
+  /// [text] is displayed as a popupmenuitem or navbaritem in wide screen.
+  final String text;
 
+  /// `_NavBarItemChild`'s named constructor
+  const _NavBarItemChild({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
 
-  Color color = notSelected;
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (value) {
-        setState(() {
-          color = selected;
-        });
-      },
-      onExit: (value) {
-        setState(() {
-          color = notSelected;
-        });
-      },
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          splashColor: Colors.white60,
-          onTap: () {},
-          child: Container(
-            height: 60.0,
-            alignment: Alignment.centerLeft,
-            margin: EdgeInsets.symmetric(horizontal: 24.0),
-            child: Text(
-              widget.text,
-              style: TextStyle(
-                fontSize: 16.0,
-                color: color,
-              ),
-            ),
+    return
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Text(
+            text,
+
           ),
         ),
-      ),
-    );
+      );
   }
 }
