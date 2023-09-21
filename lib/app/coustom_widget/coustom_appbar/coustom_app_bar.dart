@@ -1,30 +1,19 @@
 import 'package:ar_rahman/app/coustom_widget/coustom_appbar/button_navbar.dart';
 import 'package:ar_rahman/app/coustom_widget/coustom_appbar/navbar.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AdaptiveNavBar extends AppBar {
-  /// [canTitleGetTapped]
+
   final bool canTitleGetTapped;
-
-
-
-  /// [onTitleTapped]
   final void Function()? onTitleTapped;
 
-  /// Based on [screenWidth], the 'AdaptiveNavBar' decides
-  /// which widget it should be displayed
-  ///
-  /// If `screenWidth < 700` it displays [NavBarSmall]
-  /// else it displays [NavBarWide]
+
   final double? screenWidth;
 
-  /// [navBarItems] instead of [actions] in `AppBar`
-  ///
-  /// The list of navBarItems of type `List<NavBarItem>`
   final List<NavBarItem> navBarItems;
 
-  /// `AdaptiveNavBar`'s named constructor
   AdaptiveNavBar({
     this.canTitleGetTapped = false,
     this.onTitleTapped,
@@ -39,6 +28,7 @@ class AdaptiveNavBar extends AppBar {
     double? elevation,
     Color? shadowColor,
     ShapeBorder? shape,
+
     Color? backgroundColor,
     Color? foregroundColor,
     IconThemeData? iconTheme,
@@ -62,8 +52,8 @@ class AdaptiveNavBar extends AppBar {
           ? InkWell(
         onTap: onTitleTapped,
         child: title ??
-            const Text(
-              "MB NavBar",
+             Text(
+              "MB",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -72,8 +62,8 @@ class AdaptiveNavBar extends AppBar {
             ),
       )
           : title ??
-          const Text(
-            "MB NavBar",
+           Text(
+            "MB",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
@@ -94,6 +84,8 @@ class AdaptiveNavBar extends AppBar {
           : NavBarWide(
         navBarItems: navBarItems,
       ),
+
+
 
     ],
     leading: leading,
