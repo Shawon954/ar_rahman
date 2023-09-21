@@ -15,8 +15,9 @@ class NavBarSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding:  EdgeInsets.symmetric(horizontal: 25,vertical: 15),
       child: PopupMenuButton(
+
         itemBuilder: (BuildContext context) {
           return List.generate(
             navBarItems.length,
@@ -25,8 +26,17 @@ class NavBarSmall extends StatelessWidget {
             ),
           );
         },
-        child: const Icon(
-          Icons.menu,
+        child:  Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black45),
+            borderRadius: BorderRadius.all(Radius.circular(5))
+          
+          ),
+          child: Icon(
+            Icons.menu,
+            color: Colors.black,
+
+          ),
         ),
       ),
     );
