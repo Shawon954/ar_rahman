@@ -1,45 +1,66 @@
+import 'package:ar_rahman/app/coustom_widget/coustom_appbar/navbar.dart';
 import 'package:flutter/material.dart';
 
-class NavBarButton extends StatefulWidget {
-  final Function onPressed;
+class NavBarSmall extends StatelessWidget {
+  /// [navBarItems] is converted to a
+  /// popupmenubutton in phone view
+  final List<NavBarItem> navBarItems;
 
-  NavBarButton({
-    required this.onPressed,
-  });
+  /// `NavBarSmall`'s named constructor
+  const NavBarSmall({
+    Key? key,
+    required this.navBarItems,
+  }) : super(key: key);
 
   @override
-  _NavBarButtonState createState() => _NavBarButtonState();
-}
-
-class _NavBarButtonState extends State<NavBarButton> {
   Widget build(BuildContext context) {
-    return Container(
-      height: 55.0,
-      width: 60.0,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Color(0xcfffffff),
-          width: 2.0,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: PopupMenuButton(
+        itemBuilder: (BuildContext context) {
+          return List.generate(
+            navBarItems.length,
+                (index) => PopupMenuItem(
+              child: navBarItems[index],
+            ),
+          );
+        },
+        child: const Icon(
+          Icons.menu,
         ),
-        borderRadius: BorderRadius.circular(15.0),
       ),
-      child: Material(
-        color: Colors.transparent,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-        child: InkWell(
-          splashColor: Colors.white60,
-          onTap: () {
-            setState(() {
-              widget.onPressed();
-            });
-          },
-          child: Icon(
-            Icons.menu,
-            size: 30.0,
-            color: Color(0xcfffffff),
+    );
+  }
+}
+class NavBarWide extends StatelessWidget {
+  /// [navBarItems] are converted to wide navbar
+  final List<NavBarItem> navBarItems;
+
+  /// `NavBarWide`'s named constructor
+  const NavBarWide({
+    Key? key,
+    required this.navBarItems,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final sw = MediaQuery.of(context).size.width;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 15,),
+      color: Colors.transparent,
+      width: sw /2,
+      child: Align(
+        alignment: Alignment.center,
+        child: Row(
+          children: List.generate(
+            navBarItems.length,
+                (index) {
+              return Expanded(
+                child: navBarItems[index],
+              );
+            },
           ),
+
         ),
       ),
     );
