@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../device_name/mobile/mobile_screen.dart';
-import '../device_name/web/web_screen.dart';
+
 
 class Responsive extends StatelessWidget {
   final Widget mobile;
@@ -30,11 +29,11 @@ class Responsive extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     if (size.width > 992) {
-      return Web();
+      return desktop;
     } else if (size.width >= 576 && tablet != null) {
-      return Tab();
+      return tablet!;
     } else {
-      return Mobile();
+      return mobile;
     }
   }
 }

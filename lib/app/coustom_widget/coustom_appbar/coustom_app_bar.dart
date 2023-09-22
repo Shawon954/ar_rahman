@@ -15,6 +15,7 @@ class AdaptiveNavBar extends AppBar {
   final List<NavBarItem> navBarItems;
 
   AdaptiveNavBar({
+
     this.canTitleGetTapped = false,
     this.onTitleTapped,
     required this.screenWidth,

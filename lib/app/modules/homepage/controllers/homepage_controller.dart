@@ -1,4 +1,6 @@
 
+import 'dart:ui';
+
 import 'package:get/get.dart';
 
 
@@ -6,7 +8,11 @@ import 'package:get/get.dart';
 class HomepageController extends GetxController {
 
 
-  var isDarkMode = false.obs;
+  var isDarkMode = true.obs;
+
+  var selectItem = false.obs;
+
+
 
    toggleDarkMode() {
     isDarkMode.value = !isDarkMode.value;
