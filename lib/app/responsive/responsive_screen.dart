@@ -12,7 +12,7 @@ class Responsive extends StatelessWidget with WidgetsBindingObserver {
   const Responsive({
     Key? key,
     required this.mobile,
-    required this.tablet,
+     this.tablet,
     required this.desktop,
   }) : super(key: key);
 

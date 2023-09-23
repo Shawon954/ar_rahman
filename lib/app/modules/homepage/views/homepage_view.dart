@@ -23,8 +23,7 @@ class HomepageView extends GetView<HomepageController>
     final width = MediaQuery.sizeOf(context).width;
    return Scaffold(
 
-    body:  Responsive(
-          mobile:  BackroundScreen(
+    body:    BackroundScreen(
             BackroundColor: controller.isDarkMode.value?Colors.black87 : Colors.white,
             body: OrientationBuilder(
               builder: (context, orientation) =>
@@ -32,23 +31,21 @@ class HomepageView extends GetView<HomepageController>
                   ? buildPortrait(context,controller)
                   : buildLandscape(context,controller),
             ),
-          ), tablet:  OrientationBuilder(
-          builder: (context, orientation) =>
-          orientation == Orientation.portrait
-              ? buildPortrait(context,controller)
-              : buildLandscape(context,controller),
-        ), desktop:  OrientationBuilder(
-          builder: (context, orientation) =>
-          orientation == Orientation.portrait
-              ? buildPortrait(context,controller)
-              : buildLandscape(context,controller),
-        ),
+          ),
+
+
+      // desktop:  OrientationBuilder(
+      //     builder: (context, orientation) =>
+      //     orientation == Orientation.portrait
+      //         ? buildPortrait(context,controller)
+      //         : buildLandscape(context,controller),
+      //   ),
 
 
 
-        ),
+        );
 
-    );
+
 
     // Future setPortrait() async => await SystemChrome.setPreferredOrientations([
     //   DeviceOrientation.portraitUp,
@@ -66,36 +63,69 @@ class HomepageView extends GetView<HomepageController>
   }
 
 }
+
+
+
+
+
 Widget buildPortrait(context,controller) => ListView(
   children: [
+    CoustomAppbar(context,controller),
     BodyOne(context,controller),
-    const SizedBox(height: 16),
-   Container(),
+    SizedBox(height: 2.h,),
+    BodyOneImage(context),
+    SizedBox(height: 2.h,),
+
   ],
 );
+
+
+
+
 Widget buildLandscape(context,controller) => Row(
 
   children: [
-    Expanded(
-        flex: 1,
-        child: BodyOne(context,controller)),
-    SizedBox(width: 16),
-    Expanded(
-      flex: 1,
-     child: Container(),
 
+    Expanded(
+
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            BodyOne(context,controller),
+            SizedBox(height: 10.h,),
+
+            BodyTwoImage(context),
+          ],
+        ),
+      )
     ),
+     Expanded(
+
+         child: SingleChildScrollView(
+           scrollDirection: Axis.vertical,
+           child: Column(
+             children: [
+               BodyOneImage(context),
+               SizedBox(height: 10.h,),
+               BodyTwoText(context,controller),
+             ],
+           ),
+         ),
+     ),
   ],
 );
 
 
 Widget BodyOne(context,controller) {
   final width = MediaQuery.sizeOf(context).width;
+
+
   return  Padding(
     padding: const EdgeInsets.only(top: 15,left: 12,right: 12),
     child: Column(
       children: [
-        // CoustomAppbar(context,controller),
+
         SizedBox(height: 20.h,),
         Text(
           AppString.hey,
@@ -136,7 +166,127 @@ Widget BodyOne(context,controller) {
             color: Colors.black
           ),
         ),
+        SizedBox(height: 20.h,),
+        Row(
+          children: [
+            CircleAvatar(
+              radius: 16,
+            ),
+            SizedBox(width: 6.w,),
+            CircleAvatar(
+              radius: 16,
+            ),
+            SizedBox(width: 6.w,),
+            CircleAvatar(
+              radius: 16,
+            ),
 
+          ],
+        )  ,
+
+        SizedBox(height: 20.h,),
+        Row(
+      children: [
+        CoustomeButton(
+          child: Text('Contact me'),
+          onPressed: (){},
+        ),
+        SizedBox(width: 10.w,),
+        CoustomeButton(
+          child: Text('My Resume'),
+          onPressed: (){},
+        ),
+
+      ],
+    ),
+
+      ],
+    ),
+  );
+  }
+
+  Widget BodyTwoText(context,controller) {
+  final width = MediaQuery.sizeOf(context).width;
+
+
+  return  Padding(
+    padding: const EdgeInsets.only(top: 15,left: 12,right: 12),
+    child: Column(
+      children: [
+
+        SizedBox(height: 20.h,),
+        Text(
+          AppString.hey,
+          style: googlefonts().textRegular16_W6_Style(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.w500,
+            fontSize: Responsive.isMobile(context)?width/30:width/70,
+            color: Colors.black
+          ),
+        ),
+        SizedBox(height: 10.h,),
+        Text(
+          AppString.myname,
+          style: googlefonts().textRegular18_B_Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.bold,
+            fontSize: Responsive.isMobile(context)?width/20:width/70,
+            color: Colors.black
+          ),
+        ),
+        SizedBox(height: 10.h,),
+        Text(
+          AppString.developerpart,
+          style: googlefonts().textRegular16_W6_Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w600,
+            fontSize: Responsive.isMobile(context)?width/25:width/70,
+            color: Colors.black
+          ),
+        ),
+        SizedBox(height: 10.h,),
+        Text(
+          AppString.shortdescription,
+          style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context)?width/35:width/70,
+            color: Colors.black
+          ),
+        ),
+        SizedBox(height: 20.h,),
+        Row(
+          children: [
+            CircleAvatar(
+              radius: 16,
+            ),
+            SizedBox(width: 6.w,),
+            CircleAvatar(
+              radius: 16,
+            ),
+            SizedBox(width: 6.w,),
+            CircleAvatar(
+              radius: 16,
+            ),
+
+          ],
+        )  ,
+
+        SizedBox(height: 20.h,),
+        Row(
+      children: [
+        CoustomeButton(
+          child: Text('Contact me'),
+          onPressed: (){},
+        ),
+        SizedBox(width: 10.w,),
+        CoustomeButton(
+          child: Text('My Resume'),
+          onPressed: (){},
+        ),
+
+      ],
+    ),
 
       ],
     ),
@@ -145,47 +295,44 @@ Widget BodyOne(context,controller) {
 
 
 
-// Widget buildText(context,controller) => Column(
-//   children: [
-//     // CoustomAppbar(context,controller),
-//     Text(
-//       'John Doe',
-//       style: TextStyle(
-//         fontWeight: FontWeight.bold,
-//         fontSize: 32,
-//         color: Colors.black,
-//       ),
-//     ),
-//     const SizedBox(height: 16),
-//     Text(
-//       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-//       style: TextStyle(fontSize: 18, color: Colors.black),
-//     ),
-//     SizedBox(height: 16),
-//     Container(
-//       height: 400,
-//       width: double.infinity,
-//       child: Stack(
-//         children: [
-//           GridView.builder(
-//             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                 crossAxisCount: 3,
-//                 crossAxisSpacing: 5,
-//                 mainAxisSpacing: 5),
-//             itemCount: 10,
-//             itemBuilder: (context, index) {
-//               return Container(
-//                 height: 300,
-//                 width: double.infinity,
-//                 child: Image.asset('assets/apple.jpg'),
-//               );
-//             },
-//           ),
-//         ],
-//       ),
-//     ),
-//   ],
-// );
+Widget BodyOneImage(context){
+  final hieght = MediaQuery.sizeOf(context).height;
+  final width = MediaQuery.sizeOf(context).width;
+  return  Lottie.asset(AppImage.laptopimage,
+      height: Responsive.isMobile(context)?hieght/3:hieght/2,
+      width: Responsive.isMobile(context)?width/2:width/2);
+}
+
+Widget BodyTwoImage(context){
+  final hieght = MediaQuery.sizeOf(context).height;
+  final width = MediaQuery.sizeOf(context).width;
+  return  Lottie.asset(AppImage.developimage,
+      height: Responsive.isMobile(context)?hieght/3:hieght/2,
+      width: Responsive.isMobile(context)?width/2:width/2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Widget CoustomAppbar(context,controller){
 
