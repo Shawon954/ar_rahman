@@ -70,11 +70,15 @@ class HomepageView extends GetView<HomepageController>
 
 Widget buildPortrait(context,controller) => ListView(
   children: [
-    CoustomAppbar(context,controller),
-    BodyOne(context,controller),
-    SizedBox(height: 2.h,),
-    BodyOneImage(context),
-    SizedBox(height: 2.h,),
+   Column(
+     children: [
+       CoustomAppbar(context,controller),
+       BodyOne(context,controller),
+       SizedBox(height: 2.h,),
+       BodyOneImage(context),
+       SizedBox(height: 2.h,),
+     ],
+   )
 
   ],
 );
@@ -82,38 +86,52 @@ Widget buildPortrait(context,controller) => ListView(
 
 
 
-Widget buildLandscape(context,controller) => Row(
+Widget buildLandscape(context,controller) => Container(
+  height: 750,
+width: double.infinity,
+child: SingleChildScrollView(
+  scrollDirection: Axis.vertical,
+  child:   Column(
+    children: [
+      CoustomAppbar(context,controller),
+      Row(
+        children: [
 
-  children: [
+          Expanded(
 
-    Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: SizedBox(
+                width: MediaQuery.sizeOf(context).width/1.2,
+                child: Column(
+                  children: [
+                    BodyOne(context,controller),
+                    SizedBox(height: 10.h,),
 
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            BodyOne(context,controller),
-            SizedBox(height: 10.h,),
+                    BodyTwoImage(context),
+                  ],
+                ),
+              ),
+            )
+          ),
+           Expanded(
 
-            BodyTwoImage(context),
-          ],
-        ),
-      )
-    ),
-     Expanded(
-
-         child: SingleChildScrollView(
-           scrollDirection: Axis.vertical,
-           child: Column(
-             children: [
-               BodyOneImage(context),
-               SizedBox(height: 10.h,),
-               BodyTwoText(context,controller),
-             ],
+               child: SingleChildScrollView(
+                 scrollDirection: Axis.vertical,
+                 child: Column(
+                   children: [
+                     BodyOneImage(context),
+                     SizedBox(height: 10.h,),
+                     BodyTwoText(context,controller),
+                   ],
+                 ),
+               ),
            ),
-         ),
-     ),
-  ],
+        ],
+      ),
+    ],
+  ),
+),
 );
 
 
@@ -200,6 +218,8 @@ Widget BodyOne(context,controller) {
       ],
     ),
 
+
+
       ],
     ),
   );
@@ -211,84 +231,87 @@ Widget BodyOne(context,controller) {
 
   return  Padding(
     padding: const EdgeInsets.only(top: 15,left: 12,right: 12),
-    child: Column(
-      children: [
+    child: SizedBox(
+      width: width/1.2,
+      child: Column(
+        children: [
 
-        SizedBox(height: 20.h,),
-        Text(
-          AppString.hey,
-          style: googlefonts().textRegular16_W6_Style(
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.w500,
-            fontSize: Responsive.isMobile(context)?width/30:width/70,
-            color: Colors.black
-          ),
-        ),
-        SizedBox(height: 10.h,),
-        Text(
-          AppString.myname,
-          style: googlefonts().textRegular18_B_Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.bold,
-            fontSize: Responsive.isMobile(context)?width/20:width/70,
-            color: Colors.black
-          ),
-        ),
-        SizedBox(height: 10.h,),
-        Text(
-          AppString.developerpart,
-          style: googlefonts().textRegular16_W6_Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w600,
-            fontSize: Responsive.isMobile(context)?width/25:width/70,
-            color: Colors.black
-          ),
-        ),
-        SizedBox(height: 10.h,),
-        Text(
-          AppString.shortdescription,
-          style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context)?width/35:width/70,
-            color: Colors.black
-          ),
-        ),
-        SizedBox(height: 20.h,),
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 16,
+          SizedBox(height: 20.h,),
+          Text(
+            AppString.hey,
+            style: googlefonts().textRegular16_W6_Style(
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
+              fontSize: Responsive.isMobile(context)?width/30:width/70,
+              color: Colors.black
             ),
-            SizedBox(width: 6.w,),
-            CircleAvatar(
-              radius: 16,
+          ),
+          SizedBox(height: 10.h,),
+          Text(
+            AppString.myname,
+            style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.bold,
+              fontSize: Responsive.isMobile(context)?width/20:width/70,
+              color: Colors.black
             ),
-            SizedBox(width: 6.w,),
-            CircleAvatar(
-              radius: 16,
+          ),
+          SizedBox(height: 10.h,),
+          Text(
+            AppString.developerpart,
+            style: googlefonts().textRegular16_W6_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+              fontSize: Responsive.isMobile(context)?width/25:width/70,
+              color: Colors.black
             ),
+          ),
+          SizedBox(height: 10.h,),
+          Text(
+            AppString.shortdescription,
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context)?width/35:width/70,
+              color: Colors.black
+            ),
+          ),
+          SizedBox(height: 20.h,),
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 16,
+              ),
+              SizedBox(width: 6.w,),
+              CircleAvatar(
+                radius: 16,
+              ),
+              SizedBox(width: 6.w,),
+              CircleAvatar(
+                radius: 16,
+              ),
 
-          ],
-        )  ,
+            ],
+          )  ,
 
-        SizedBox(height: 20.h,),
-        Row(
-      children: [
-        CoustomeButton(
-          child: Text('Contact me'),
-          onPressed: (){},
-        ),
-        SizedBox(width: 10.w,),
-        CoustomeButton(
-          child: Text('My Resume'),
-          onPressed: (){},
-        ),
+          SizedBox(height: 20.h,),
+          Row(
+        children: [
+          CoustomeButton(
+            child: Text('Contact me'),
+            onPressed: (){},
+          ),
+          SizedBox(width: 10.w,),
+          CoustomeButton(
+            child: Text('My Resume'),
+            onPressed: (){},
+          ),
 
-      ],
-    ),
+        ],
+      ),
 
-      ],
+        ],
+      ),
     ),
   );
   }
