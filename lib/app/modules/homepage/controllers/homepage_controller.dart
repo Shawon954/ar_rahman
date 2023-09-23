@@ -1,17 +1,16 @@
 
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
 
 class HomepageController extends GetxController {
 
+  final isPortrait = true.obs;
 
   var isDarkMode = true.obs;
-
-  var selectItem = false.obs;
-
 
 
    toggleDarkMode() {
@@ -25,6 +24,8 @@ class HomepageController extends GetxController {
   void onInit() {
 
     toggleDarkMode();
+    _updateOrientation();
+
 
     super.onInit();
   }
@@ -38,6 +39,11 @@ class HomepageController extends GetxController {
   void onClose() {
 
     super.onClose();
+  }
+
+
+  void _updateOrientation() {
+    isPortrait.value = Get.mediaQuery.orientation == Orientation.portrait;
   }
 
 
