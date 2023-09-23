@@ -9,6 +9,11 @@ import 'app/modules/homepage/bindings/homepage_binding.dart';
 Future <void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+
+  ]);
   runApp(
     ScreenUtilInit(
       designSize: const Size(360, 690),
