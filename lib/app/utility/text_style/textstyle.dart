@@ -9,47 +9,74 @@ import '../app_colors/appcolors.dart';
 class googlefonts {
   double width = Get.width;
 
-  TextStyle textRegularStyle(
+  TextStyle textRegular18_B_Style(
       {color = AppColors.whiteColor,
-      double fontSize = 14,
-      fontWeight = FontWeight.normal,
-        fontFamily= "Poppins"
+      double fontSize = 18,
+        fontWeight= FontWeight,
+        fontStyle = FontStyle,
+
       }) {
     return TextStyle(
       fontSize: fontSize,
       color: color,
       fontWeight: fontWeight,
-      fontFamily: fontFamily,
+        fontFamily:  "Poppins",
+      fontStyle: fontStyle,
+    );
+  }
+
+  TextStyle textRegular16_W6_Style(
+      {color = AppColors.whiteColor,
+      double fontSize = 16,
+        fontWeight= FontWeight,
+        fontStyle = FontStyle,
+
+
+
+      }) {
+    return TextStyle(
+      fontSize: fontSize,
+      color: color,
+      fontWeight: fontWeight,
+        fontFamily:  "Poppins",
+        fontStyle: fontStyle
+    );
+  }
+  TextStyle textRegular14_W5Style(
+      {color = AppColors.whiteColor,
+      double fontSize = 14,
+        fontWeight= FontWeight,
+        fontStyle = FontStyle,
+
+
+
+      }) {
+    return TextStyle(
+      fontSize: fontSize,
+      color: color,
+      fontWeight: fontWeight,
+        fontFamily:  "Poppins",
+        fontStyle: fontStyle
+    );
+  }
+  TextStyle textRegular12_W4Style(
+      {color = AppColors.whiteColor,
+      double fontSize = 12,
+        fontWeight= FontWeight,
+        fontStyle = FontStyle,
+
+
+
+      }) {
+    return TextStyle(
+      fontSize: fontSize,
+      color: color,
+      fontWeight: fontWeight,
+        fontFamily:  "Poppins",
+        fontStyle: fontStyle
     );
   }
 
 
-  TextStyle textStyle20black = TextStyle(
-      fontSize: 10.sp,
-      color: Color(0xd2111010),
-      fontWeight: FontWeight.bold,
-      fontFamily: "Poppins",
-      fontStyle: FontStyle.normal);
 
-  TextStyle textStyle16blacknavbar = GoogleFonts.inter(
-      fontSize: 4.sp,
-      color: Color(0xd2111010),
-      fontWeight: FontWeight.w500,
-      letterSpacing: 1.1);
-  TextStyle textStyle16black = GoogleFonts.inter(
-      fontSize: 5.sp,
-      color: Color(0xd2111010),
-      fontWeight: FontWeight.w700,
-      letterSpacing: 1.1);
-  TextStyle textStyle16blacknormal = GoogleFonts.inter(
-      fontSize: 5.sp,
-      color: Color(0xd2111010),
-      fontWeight: FontWeight.normal,
-      letterSpacing: 1.0);
-  TextStyle textStyle14black = GoogleFonts.inter(
-      fontSize: 5.sp,
-      color: Color(0xd2111010),
-      fontWeight: FontWeight.w400,
-      letterSpacing: 1.1,
-      fontStyle: FontStyle.italic);
 }
