@@ -522,24 +522,7 @@ Widget LinearPercentIndecator(context) {
           ],
         ),
       ),
-      SizedBox(
-        height: 15.h,
-      ),
-      new LinearPercentIndicator(
-        width: 160.w,
-        lineHeight: 8.0,
-        percent: 0.5,
-        progressColor: Colors.orange,
-      ),
-      SizedBox(
-        height: 15.h,
-      ),
-      new LinearPercentIndicator(
-        width: 160.w,
-        lineHeight: 8.0,
-        percent: 0.9,
-        progressColor: Colors.blue,
-      )
+
     ],
   );
 }
