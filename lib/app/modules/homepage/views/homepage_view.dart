@@ -20,18 +20,23 @@ class HomepageView extends GetView<HomepageController>
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width;
-   return Scaffold(
+    final width = MediaQuery
+        .sizeOf(context)
+        .width;
+    return Scaffold(
 
-    body:    BackroundScreen(
-            BackroundColor: controller.isDarkMode.value?Colors.black87 : Colors.white,
-            body: OrientationBuilder(
-              builder: (context, orientation) =>
-              orientation == Orientation.portrait
-                  ? buildPortrait(context,controller)
-                  : buildLandscape(context,controller),
-            ),
+      body: Obx(() {
+        return BackroundScreen(
+          BackroundColor: controller.isDarkMode.value ? Colors.black87 : Colors
+              .white,
+          body: OrientationBuilder(
+            builder: (context, orientation) =>
+            orientation == Orientation.portrait
+                ? buildPortrait(context, controller)
+                : buildLandscape(context, controller),
           ),
+        );
+      }),
 
 
       // desktop:  OrientationBuilder(
@@ -42,9 +47,7 @@ class HomepageView extends GetView<HomepageController>
       //   ),
 
 
-
-        );
-
+    );
 
 
     // Future setPortrait() async => await SystemChrome.setPreferredOrientations([
@@ -59,88 +62,90 @@ class HomepageView extends GetView<HomepageController>
     //     SystemChrome.setPreferredOrientations(DeviceOrientation.values);
 
 
-
   }
 
 }
 
 
+Widget buildPortrait(context, controller) =>
+    Container(
+      height: 900,
+      width: double.infinity,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
 
-
-
-Widget buildPortrait(context,controller) => ListView(
-  children: [
-   Column(
-     children: [
-       CoustomAppbar(context,controller),
-       BodyOne(context,controller),
-       SizedBox(height: 2.h,),
-       BodyOneImage(context),
-       SizedBox(height: 2.h,),
-     ],
-   )
-
-  ],
-);
-
-
-
-
-Widget buildLandscape(context,controller) => Container(
-  height: 750,
-width: double.infinity,
-child: SingleChildScrollView(
-  scrollDirection: Axis.vertical,
-  child:   Column(
-    children: [
-      CoustomAppbar(context,controller),
-      Row(
-        children: [
-
-          Expanded(
-
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: SizedBox(
-                width: MediaQuery.sizeOf(context).width/1.2,
-                child: Column(
-                  children: [
-                    BodyOne(context,controller),
-                    SizedBox(height: 10.h,),
-
-                    BodyTwoImage(context),
-                  ],
-                ),
-              ),
-            )
-          ),
-           Expanded(
-
-               child: SingleChildScrollView(
-                 scrollDirection: Axis.vertical,
-                 child: Column(
-                   children: [
-                     BodyOneImage(context),
-                     SizedBox(height: 10.h,),
-                     BodyTwoText(context,controller),
-                   ],
-                 ),
-               ),
-           ),
-        ],
+          children: [
+            CoustomAppbar(context, controller),
+            BodyOne(context, controller),
+            SizedBox(height: 2.h,),
+            BodyOneImage(context),
+            SizedBox(height: 2.h,),
+          ],
+        ),
       ),
-    ],
-  ),
-),
-);
+    );
 
 
-Widget BodyOne(context,controller) {
-  final width = MediaQuery.sizeOf(context).width;
+Widget buildLandscape(context, controller) =>
+    Container(
+      height: 750,
+      width: double.infinity,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            CoustomAppbar(context, controller),
+            Row(
+              children: [
+
+                Expanded(
+
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: SizedBox(
+                        width: MediaQuery
+                            .sizeOf(context)
+                            .width / 1.2,
+                        child: Column(
+                          children: [
+                            BodyOne(context, controller),
+                            SizedBox(height: 10.h,),
+                            BodyTwoImage(context),
+                          ],
+                        ),
+                      ),
+                    )
+                ),
+                Expanded(
+
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        BodyOneImage(context),
+                        SizedBox(height: 10.h,),
+                        BodyTwoText(context, controller),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
 
 
-  return  Padding(
-    padding: const EdgeInsets.only(top: 15,left: 12,right: 12),
+Widget BodyOne(context, controller) {
+  final width = MediaQuery
+      .sizeOf(context)
+      .width;
+
+
+  return Padding(
+    padding: const EdgeInsets.only(top: 15, left: 12, right: 12),
     child: Column(
       children: [
 
@@ -148,40 +153,40 @@ Widget BodyOne(context,controller) {
         Text(
           AppString.hey,
           style: googlefonts().textRegular16_W6_Style(
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.w500,
-            fontSize: Responsive.isMobile(context)?width/30:width/70,
-            color: Colors.black
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color: Colors.black
           ),
         ),
         SizedBox(height: 10.h,),
         Text(
           AppString.myname,
           style: googlefonts().textRegular18_B_Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.bold,
-            fontSize: Responsive.isMobile(context)?width/20:width/70,
-            color: Colors.black
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.bold,
+              fontSize: Responsive.isMobile(context) ? width / 20 : width / 70,
+              color: Colors.black
           ),
         ),
         SizedBox(height: 10.h,),
         Text(
           AppString.developerpart,
           style: googlefonts().textRegular16_W6_Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w600,
-            fontSize: Responsive.isMobile(context)?width/25:width/70,
-            color: Colors.black
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
+              color: Colors.black
           ),
         ),
         SizedBox(height: 10.h,),
         Text(
           AppString.shortdescription,
           style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context)?width/35:width/70,
-            color: Colors.black
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
+              color: Colors.black
           ),
         ),
         SizedBox(height: 20.h,),
@@ -200,39 +205,40 @@ Widget BodyOne(context,controller) {
             ),
 
           ],
-        )  ,
+        ),
 
         SizedBox(height: 20.h,),
         Row(
-      children: [
-        CoustomeButton(
-          child: Text('Contact me'),
-          onPressed: (){},
-        ),
-        SizedBox(width: 10.w,),
-        CoustomeButton(
-          child: Text('My Resume'),
-          onPressed: (){},
-        ),
+          children: [
+            CoustomeButton(
+              child: Text('Contact me'),
+              onPressed: () {},
+            ),
+            SizedBox(width: 10.w,),
+            CoustomeButton(
+              child: Text('My Resume'),
+              onPressed: () {},
+            ),
 
-      ],
-    ),
-
+          ],
+        ),
 
 
       ],
     ),
   );
-  }
+}
 
-  Widget BodyTwoText(context,controller) {
-  final width = MediaQuery.sizeOf(context).width;
+Widget BodyTwoText(context, controller) {
+  final width = MediaQuery
+      .sizeOf(context)
+      .width;
 
 
-  return  Padding(
-    padding: const EdgeInsets.only(top: 15,left: 12,right: 12),
+  return Padding(
+    padding: const EdgeInsets.only(top: 15, left: 12, right: 12),
     child: SizedBox(
-      width: width/1.2,
+      width: width / 1.2,
       child: Column(
         children: [
 
@@ -240,40 +246,44 @@ Widget BodyOne(context,controller) {
           Text(
             AppString.hey,
             style: googlefonts().textRegular16_W6_Style(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w500,
-              fontSize: Responsive.isMobile(context)?width/30:width/70,
-              color: Colors.black
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+                fontSize: Responsive.isMobile(context) ? width / 30 : width /
+                    70,
+                color: Colors.black
             ),
           ),
           SizedBox(height: 10.h,),
           Text(
             AppString.myname,
             style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.bold,
-              fontSize: Responsive.isMobile(context)?width/20:width/70,
-              color: Colors.black
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.bold,
+                fontSize: Responsive.isMobile(context) ? width / 20 : width /
+                    70,
+                color: Colors.black
             ),
           ),
           SizedBox(height: 10.h,),
           Text(
             AppString.developerpart,
             style: googlefonts().textRegular16_W6_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-              fontSize: Responsive.isMobile(context)?width/25:width/70,
-              color: Colors.black
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize: Responsive.isMobile(context) ? width / 25 : width /
+                    70,
+                color: Colors.black
             ),
           ),
           SizedBox(height: 10.h,),
           Text(
             AppString.shortdescription,
             style: googlefonts().textRegular14_W5Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-              fontSize: Responsive.isMobile(context)?width/35:width/70,
-              color: Colors.black
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize: Responsive.isMobile(context) ? width / 35 : width /
+                    70,
+                color: Colors.black
             ),
           ),
           SizedBox(height: 20.h,),
@@ -292,74 +302,60 @@ Widget BodyOne(context,controller) {
               ),
 
             ],
-          )  ,
+          ),
 
           SizedBox(height: 20.h,),
           Row(
-        children: [
-          CoustomeButton(
-            child: Text('Contact me'),
-            onPressed: (){},
-          ),
-          SizedBox(width: 10.w,),
-          CoustomeButton(
-            child: Text('My Resume'),
-            onPressed: (){},
-          ),
+            children: [
+              CoustomeButton(
+                child: Text('Contact me'),
+                onPressed: () {},
+              ),
+              SizedBox(width: 10.w,),
+              CoustomeButton(
+                child: Text('My Resume'),
+                onPressed: () {},
+              ),
 
-        ],
-      ),
+            ],
+          ),
 
         ],
       ),
     ),
   );
-  }
-
-
-
-Widget BodyOneImage(context){
-  final hieght = MediaQuery.sizeOf(context).height;
-  final width = MediaQuery.sizeOf(context).width;
-  return  Lottie.asset(AppImage.laptopimage,
-      height: Responsive.isMobile(context)?hieght/3:hieght/2,
-      width: Responsive.isMobile(context)?width/2:width/2);
-}
-
-Widget BodyTwoImage(context){
-  final hieght = MediaQuery.sizeOf(context).height;
-  final width = MediaQuery.sizeOf(context).width;
-  return  Lottie.asset(AppImage.developimage,
-      height: Responsive.isMobile(context)?hieght/3:hieght/2,
-      width: Responsive.isMobile(context)?width/2:width/2);
 }
 
 
+Widget BodyOneImage(context) {
+  final hieght = MediaQuery
+      .sizeOf(context)
+      .height;
+  final width = MediaQuery
+      .sizeOf(context)
+      .width;
+  return Lottie.asset(AppImage.laptopimage,
+      height: Responsive.isMobile(context) ? hieght / 3 : hieght / 2,
+      width: Responsive.isMobile(context) ? width / 2 : width / 2);
+}
+
+Widget BodyTwoImage(context) {
+  final hieght = MediaQuery
+      .sizeOf(context)
+      .height;
+  final width = MediaQuery
+      .sizeOf(context)
+      .width;
+  return Lottie.asset(AppImage.developimage,
+      height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
+      width: Responsive.isMobile(context) ? width / 1 : width / 1);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Widget CoustomAppbar(context,controller){
-
-  final width = MediaQuery.sizeOf(context).width;
+Widget CoustomAppbar(context, controller) {
+  final width = MediaQuery
+      .sizeOf(context)
+      .width;
   return Row(
     children: [
       Expanded(
