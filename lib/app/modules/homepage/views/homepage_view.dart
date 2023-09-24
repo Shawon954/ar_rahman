@@ -36,24 +36,9 @@ class HomepageView extends GetView<HomepageController>
         );
       }),
 
-      // desktop:  OrientationBuilder(
-      //     builder: (context, orientation) =>
-      //     orientation == Orientation.portrait
-      //         ? buildPortrait(context,controller)
-      //         : buildLandscape(context,controller),
-      //   ),
+
     );
 
-    // Future setPortrait() async => await SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitUp,
-    //   DeviceOrientation.portraitDown,
-    // ]);
-    // Future setLandscape() async => await SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.landscapeLeft,
-    //   DeviceOrientation.landscapeRight,
-    // ]);
-    // Future setPortraitAndLandscape() =>
-    //     SystemChrome.setPreferredOrientations(DeviceOrientation.values);
   }
 }
 
@@ -102,11 +87,34 @@ Widget buildPortrait(context, controller) => Container(
               height: 2.h,
             ),
             Container(
-              height: 300.h,
+              height: 400.h,
               width: double.infinity,
-              child: LinearPercentIndecator(context),
-              color: Colors.green,
+                color: Colors.green,
+              child: Column(
+                children: [
+                  Text('Skills'),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  SkillsSection(context),
+                ],
+              )
             ),
+            Container(
+              height: 390.h,
+              width: double.infinity,
+
+              color: Colors.pink,
+            ),
+
+
+            Container(
+              height: 390.h,
+              width: double.infinity,
+
+              color: Colors.lightGreenAccent,
+            ),
+
           ],
         ),
       ),
@@ -148,11 +156,27 @@ Widget buildLandscape(context, controller) => Container(
                           height: 10.h,
                         ),
                         Container(
-                          height: 358.h,
+                          height: 390.h,
                           width: double.infinity,
-                          child: LinearPercentIndecator(context),
-                          color: Colors.red,
+                          child: Column(
+                            children: [
+                              Text('Skills'),
+                              SizedBox(
+                                height: 20.h,
+                              ),
+                              SkillsSection(context),
+                            ],
+                          ),
+                          color: Colors.cyanAccent,
                         ),
+
+                        Container(
+                          height: 390.h,
+                          width: double.infinity,
+
+                          color: Colors.pink,
+                        ),
+
                       ],
                     ),
                   ),
@@ -184,10 +208,17 @@ Widget buildLandscape(context, controller) => Container(
                           height: 10.h,
                         ),
                         Container(
-                          height: 360.h,
+                          height: 390.h,
                           width: double.infinity,
-                          child: BodyTwoImage(context),
+                          child: BodyThreeImage(context),
                           color: Colors.teal,
+                        ),
+
+                        Container(
+                          height: 390.h,
+                          width: double.infinity,
+
+                          color: Colors.lightGreenAccent,
                         ),
                       ],
                     ),
@@ -199,6 +230,11 @@ Widget buildLandscape(context, controller) => Container(
         ),
       ),
     );
+
+
+
+
+
 
 Widget CoustomAppbar(context, controller) {
   final width = MediaQuery.sizeOf(context).width;
@@ -547,10 +583,48 @@ Widget BodyTwoImage(context) {
       height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
       width: Responsive.isMobile(context) ? width / 1 : width / 1);
 }
+Widget BodyThreeImage(context) {
+  final hieght = MediaQuery.sizeOf(context).height;
+  final width = MediaQuery.sizeOf(context).width;
+  return Lottie.asset(AppImage.code,
+      height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
+      width: Responsive.isMobile(context) ? width / 1 : width / 1);
+}
 
-Widget LinearPercentIndecator(context) {
+Widget SkillsSection(context) {
   return Column(
     children: <Widget>[
+      Container(
+        height: 50.h,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text("Project Management"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 90),
+                  child: Text("75 %"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            LinearPercentIndicator(
+              width: 160.w,
+              lineHeight: 8.0,
+              percent: 0.7,
+              progressColor: Colors.red,
+            ),
+          ],
+        ),
+      ),
+
       Container(
         height: 50.h,
         width: double.infinity,
@@ -696,6 +770,36 @@ Widget LinearPercentIndecator(context) {
               width: 160.w,
               lineHeight: 8.0,
               percent: 0.9,
+              progressColor: Colors.red,
+            ),
+          ],
+        ),
+      ),
+      Container(
+        height: 50.h,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text("Figma UI/UX Design"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 90),
+                  child: Text("85 %"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            LinearPercentIndicator(
+              width: 160.w,
+              lineHeight: 8.0,
+              percent: 0.8,
               progressColor: Colors.red,
             ),
           ],
