@@ -130,6 +130,7 @@ Widget buildLandscape(context, controller) => Container(
                         SizedBox(
                           height: 10.h,
                         ),
+                        BodyThreeImage(context)
                       ],
                     ),
                   ),
@@ -489,6 +490,16 @@ Widget BodyTwoImage(context) {
       width: Responsive.isMobile(context) ? width / 1 : width / 1);
 }
 
+Widget BodyThreeImage(context) {
+  final hieght = MediaQuery.sizeOf(context).height;
+  final width = MediaQuery.sizeOf(context).width;
+  return Lottie.asset(AppImage.developimage,
+      height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
+      width: Responsive.isMobile(context) ? width / 1 : width / 1);
+}
+
+
+
 Widget LinearPercentIndecator(context) {
   return Column(
     children: <Widget>[
@@ -517,6 +528,126 @@ Widget LinearPercentIndecator(context) {
               width: 160.w,
               lineHeight: 8.0,
               percent: 0.8,
+              progressColor: Colors.red,
+            ),
+          ],
+        ),
+      ),
+      Container(
+        height: 50.h,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text("Flutter "),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 90),
+                  child: Text("90 %"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            LinearPercentIndicator(
+              width: 160.w,
+              lineHeight: 8.0,
+              percent: 0.9,
+              progressColor: Colors.red,
+            ),
+          ],
+        ),
+      ),
+      Container(
+        height: 50.h,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text("FireBase"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 90),
+                  child: Text("80 %"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            LinearPercentIndicator(
+              width: 160.w,
+              lineHeight: 8.0,
+              percent: 0.8,
+              progressColor: Colors.red,
+            ),
+          ],
+        ),
+      ),
+      Container(
+        height: 50.h,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text("OOP"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 90),
+                  child: Text("70 %"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            LinearPercentIndicator(
+              width: 160.w,
+              lineHeight: 8.0,
+              percent: 0.7,
+              progressColor: Colors.red,
+            ),
+          ],
+        ),
+      ),
+      Container(
+        height: 50.h,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text("Rest API"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 90),
+                  child: Text("90 %"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            LinearPercentIndicator(
+              width: 160.w,
+              lineHeight: 8.0,
+              percent: 0.9,
               progressColor: Colors.red,
             ),
           ],
