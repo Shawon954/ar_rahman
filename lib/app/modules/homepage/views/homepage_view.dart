@@ -65,30 +65,55 @@ Widget buildPortrait(context, controller) => Container(
         child: Column(
           children: [
             CoustomAppbar(context, controller),
-            BodyOne(context, controller),
+            Container(
+              height: 310.h,
+              width: double.infinity,
+              child: BodyOne(context, controller),
+              color: Colors.red,
+            ),
             SizedBox(
               height: 2.h,
             ),
-            BodyOneImage(context),
+            Container(
+              height: 300.h,
+              width: double.infinity,
+              child: BodyOneImage(context),
+              color: Colors.yellow,
+            ),
             SizedBox(
               height: 2.h,
             ),
-            BodyTwoText(context, controller),
+            Container(
+              height: 310.h,
+              width: double.infinity,
+              child: BodyTwoText(context, controller),
+              color: Colors.purple,
+            ),
             SizedBox(
               height: 2.h,
             ),
-            BodyTwoImage(context),
+            Container(
+              height: 300.h,
+              width: double.infinity,
+              child: BodyTwoImage(context),
+              color: Colors.deepPurple,
+            ),
             SizedBox(
               height: 2.h,
             ),
-            LinearPercentIndecator(context),
+            Container(
+              height: 300.h,
+              width: double.infinity,
+              child: LinearPercentIndecator(context),
+              color: Colors.green,
+            ),
           ],
         ),
       ),
     );
 
 Widget buildLandscape(context, controller) => Container(
-      height: 750,
+      height: 900,
       width: double.infinity,
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -101,18 +126,33 @@ Widget buildLandscape(context, controller) => Container(
                     child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: SizedBox(
-                    width: MediaQuery.sizeOf(context).width / 1.2,
+                    width: MediaQuery.sizeOf(context).width,
                     child: Column(
                       children: [
-                        BodyOne(context, controller),
+                        Container(
+                          height: 357.h,
+                          width: double.infinity,
+                          child: BodyOne(context, controller),
+                          color: Colors.cyan,
+                        ),
                         SizedBox(
                           height: 10.h,
                         ),
-                        BodyTwoImage(context),
+                        Container(
+                          height: 353.h,
+                          width: double.infinity,
+                          child: BodyTwoImage(context),
+                          color: Colors.lime,
+                        ),
                         SizedBox(
                           height: 10.h,
                         ),
-                        LinearPercentIndecator(context),
+                        Container(
+                          height: 358.h,
+                          width: double.infinity,
+                          child: LinearPercentIndecator(context),
+                          color: Colors.red,
+                        ),
                       ],
                     ),
                   ),
@@ -122,15 +162,33 @@ Widget buildLandscape(context, controller) => Container(
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
-                        BodyOneImage(context),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            height: 355.h,
+                            width: double.infinity,
+                            child: BodyOneImage(context),
+                            color: Colors.grey,
+                          ),
+                        ),
                         SizedBox(
                           height: 10.h,
                         ),
-                        BodyTwoText(context, controller),
+                        Container(
+                          height: 352.h,
+                          width: double.infinity,
+                          child: BodyTwoText(context, controller),
+                          color: Colors.deepOrange,
+                        ),
                         SizedBox(
                           height: 10.h,
                         ),
-                        BodyThreeImage(context)
+                        Container(
+                          height: 360.h,
+                          width: double.infinity,
+                          child: BodyTwoImage(context),
+                          color: Colors.teal,
+                        ),
                       ],
                     ),
                   ),
@@ -490,16 +548,6 @@ Widget BodyTwoImage(context) {
       width: Responsive.isMobile(context) ? width / 1 : width / 1);
 }
 
-Widget BodyThreeImage(context) {
-  final hieght = MediaQuery.sizeOf(context).height;
-  final width = MediaQuery.sizeOf(context).width;
-  return Lottie.asset(AppImage.developimage,
-      height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
-      width: Responsive.isMobile(context) ? width / 1 : width / 1);
-}
-
-
-
 Widget LinearPercentIndecator(context) {
   return Column(
     children: <Widget>[
@@ -653,7 +701,6 @@ Widget LinearPercentIndecator(context) {
           ],
         ),
       ),
-
     ],
   );
 }
