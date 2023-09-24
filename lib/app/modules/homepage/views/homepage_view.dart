@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../../coustom_widget/button/button.dart';
 import '../../../coustom_widget/coustom_appbar/coustom_app_bar.dart';
 import '../../../coustom_widget/coustom_appbar/navbar.dart';
@@ -20,24 +21,20 @@ class HomepageView extends GetView<HomepageController>
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery
-        .sizeOf(context)
-        .width;
+    final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
-
       body: Obx(() {
         return BackroundScreen(
-          BackroundColor: controller.isDarkMode.value ? Colors.black87 : Colors
-              .white,
+          BackroundColor:
+              controller.isDarkMode.value ? Colors.black87 : Colors.white,
           body: OrientationBuilder(
             builder: (context, orientation) =>
-            orientation == Orientation.portrait
-                ? buildPortrait(context, controller)
-                : buildLandscape(context, controller),
+                orientation == Orientation.portrait
+                    ? buildPortrait(context, controller)
+                    : buildLandscape(context, controller),
           ),
         );
       }),
-
 
       // desktop:  OrientationBuilder(
       //     builder: (context, orientation) =>
@@ -45,10 +42,7 @@ class HomepageView extends GetView<HomepageController>
       //         ? buildPortrait(context,controller)
       //         : buildLandscape(context,controller),
       //   ),
-
-
     );
-
 
     // Future setPortrait() async => await SystemChrome.setPreferredOrientations([
     //   DeviceOrientation.portraitUp,
@@ -60,35 +54,40 @@ class HomepageView extends GetView<HomepageController>
     // ]);
     // Future setPortraitAndLandscape() =>
     //     SystemChrome.setPreferredOrientations(DeviceOrientation.values);
-
-
   }
-
 }
 
-
-Widget buildPortrait(context, controller) =>
-    Container(
+Widget buildPortrait(context, controller) => Container(
       height: 900,
       width: double.infinity,
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
-
           children: [
             CoustomAppbar(context, controller),
             BodyOne(context, controller),
-            SizedBox(height: 2.h,),
+            SizedBox(
+              height: 2.h,
+            ),
             BodyOneImage(context),
-            SizedBox(height: 2.h,),
+            SizedBox(
+              height: 2.h,
+            ),
+            BodyTwoText(context, controller),
+            SizedBox(
+              height: 2.h,
+            ),
+            BodyTwoImage(context),
+            SizedBox(
+              height: 2.h,
+            ),
+            LinearPercentIndecator(context),
           ],
         ),
       ),
     );
 
-
-Widget buildLandscape(context, controller) =>
-    Container(
+Widget buildLandscape(context, controller) => Container(
       height: 750,
       width: double.infinity,
       child: SingleChildScrollView(
@@ -98,34 +97,39 @@ Widget buildLandscape(context, controller) =>
             CoustomAppbar(context, controller),
             Row(
               children: [
-
                 Expanded(
-
                     child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: SizedBox(
-                        width: MediaQuery
-                            .sizeOf(context)
-                            .width / 1.2,
-                        child: Column(
-                          children: [
-                            BodyOne(context, controller),
-                            SizedBox(height: 10.h,),
-                            BodyTwoImage(context),
-                          ],
+                  scrollDirection: Axis.vertical,
+                  child: SizedBox(
+                    width: MediaQuery.sizeOf(context).width / 1.2,
+                    child: Column(
+                      children: [
+                        BodyOne(context, controller),
+                        SizedBox(
+                          height: 10.h,
                         ),
-                      ),
-                    )
-                ),
+                        BodyTwoImage(context),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        LinearPercentIndecator(context),
+                      ],
+                    ),
+                  ),
+                )),
                 Expanded(
-
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
                         BodyOneImage(context),
-                        SizedBox(height: 10.h,),
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         BodyTwoText(context, controller),
+                        SizedBox(
+                          height: 10.h,
+                        ),
                       ],
                     ),
                   ),
@@ -137,225 +141,8 @@ Widget buildLandscape(context, controller) =>
       ),
     );
 
-
-Widget BodyOne(context, controller) {
-  final width = MediaQuery
-      .sizeOf(context)
-      .width;
-
-
-  return Padding(
-    padding: const EdgeInsets.only(top: 15, left: 12, right: 12),
-    child: Column(
-      children: [
-
-        SizedBox(height: 20.h,),
-        Text(
-          AppString.hey,
-          style: googlefonts().textRegular16_W6_Style(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w500,
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-              color: Colors.black
-          ),
-        ),
-        SizedBox(height: 10.h,),
-        Text(
-          AppString.myname,
-          style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.bold,
-              fontSize: Responsive.isMobile(context) ? width / 20 : width / 70,
-              color: Colors.black
-          ),
-        ),
-        SizedBox(height: 10.h,),
-        Text(
-          AppString.developerpart,
-          style: googlefonts().textRegular16_W6_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
-              color: Colors.black
-          ),
-        ),
-        SizedBox(height: 10.h,),
-        Text(
-          AppString.shortdescription,
-          style: googlefonts().textRegular14_W5Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
-              color: Colors.black
-          ),
-        ),
-        SizedBox(height: 20.h,),
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 16,
-            ),
-            SizedBox(width: 6.w,),
-            CircleAvatar(
-              radius: 16,
-            ),
-            SizedBox(width: 6.w,),
-            CircleAvatar(
-              radius: 16,
-            ),
-
-          ],
-        ),
-
-        SizedBox(height: 20.h,),
-        Row(
-          children: [
-            CoustomeButton(
-              child: Text('Contact me'),
-              onPressed: () {},
-            ),
-            SizedBox(width: 10.w,),
-            CoustomeButton(
-              child: Text('My Resume'),
-              onPressed: () {},
-            ),
-
-          ],
-        ),
-
-
-      ],
-    ),
-  );
-}
-
-Widget BodyTwoText(context, controller) {
-  final width = MediaQuery
-      .sizeOf(context)
-      .width;
-
-
-  return Padding(
-    padding: const EdgeInsets.only(top: 15, left: 12, right: 12),
-    child: SizedBox(
-      width: width / 1.2,
-      child: Column(
-        children: [
-
-          SizedBox(height: 20.h,),
-          Text(
-            AppString.hey,
-            style: googlefonts().textRegular16_W6_Style(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w500,
-                fontSize: Responsive.isMobile(context) ? width / 30 : width /
-                    70,
-                color: Colors.black
-            ),
-          ),
-          SizedBox(height: 10.h,),
-          Text(
-            AppString.myname,
-            style: googlefonts().textRegular18_B_Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.bold,
-                fontSize: Responsive.isMobile(context) ? width / 20 : width /
-                    70,
-                color: Colors.black
-            ),
-          ),
-          SizedBox(height: 10.h,),
-          Text(
-            AppString.developerpart,
-            style: googlefonts().textRegular16_W6_Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w600,
-                fontSize: Responsive.isMobile(context) ? width / 25 : width /
-                    70,
-                color: Colors.black
-            ),
-          ),
-          SizedBox(height: 10.h,),
-          Text(
-            AppString.shortdescription,
-            style: googlefonts().textRegular14_W5Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
-                fontSize: Responsive.isMobile(context) ? width / 35 : width /
-                    70,
-                color: Colors.black
-            ),
-          ),
-          SizedBox(height: 20.h,),
-          Row(
-            children: [
-              CircleAvatar(
-                radius: 16,
-              ),
-              SizedBox(width: 6.w,),
-              CircleAvatar(
-                radius: 16,
-              ),
-              SizedBox(width: 6.w,),
-              CircleAvatar(
-                radius: 16,
-              ),
-
-            ],
-          ),
-
-          SizedBox(height: 20.h,),
-          Row(
-            children: [
-              CoustomeButton(
-                child: Text('Contact me'),
-                onPressed: () {},
-              ),
-              SizedBox(width: 10.w,),
-              CoustomeButton(
-                child: Text('My Resume'),
-                onPressed: () {},
-              ),
-
-            ],
-          ),
-
-        ],
-      ),
-    ),
-  );
-}
-
-
-Widget BodyOneImage(context) {
-  final hieght = MediaQuery
-      .sizeOf(context)
-      .height;
-  final width = MediaQuery
-      .sizeOf(context)
-      .width;
-  return Lottie.asset(AppImage.laptopimage,
-      height: Responsive.isMobile(context) ? hieght / 3 : hieght / 2,
-      width: Responsive.isMobile(context) ? width / 2 : width / 2);
-}
-
-Widget BodyTwoImage(context) {
-  final hieght = MediaQuery
-      .sizeOf(context)
-      .height;
-  final width = MediaQuery
-      .sizeOf(context)
-      .width;
-  return Lottie.asset(AppImage.developimage,
-      height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
-      width: Responsive.isMobile(context) ? width / 1 : width / 1);
-}
-
-
 Widget CoustomAppbar(context, controller) {
-  final width = MediaQuery
-      .sizeOf(context)
-      .width;
+  final width = MediaQuery.sizeOf(context).width;
   return Row(
     children: [
       Expanded(
@@ -368,15 +155,15 @@ Widget CoustomAppbar(context, controller) {
             title: Text(
               "Adaptive NavBar",
               style: TextStyle(
-                color: controller.isDarkMode.value
-                    ? Colors.white
-                    : Colors.black87,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
               ),
             ),
             navBarItems: [
               NavBarItem(
-                hoverColor: controller.isDarkMode.value ? Colors
-                    .white54 : Colors.black12,
+                hoverColor: controller.isDarkMode.value
+                    ? Colors.white54
+                    : Colors.black12,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 textStyle: TextStyle(
                     fontSize: 14,
@@ -390,10 +177,9 @@ Widget CoustomAppbar(context, controller) {
                 },
               ),
               NavBarItem(
-
-                hoverColor: controller.isDarkMode.value ? Colors
-                    .white54 : Colors.black12,
-
+                hoverColor: controller.isDarkMode.value
+                    ? Colors.white54
+                    : Colors.black12,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 textStyle: TextStyle(
                     fontSize: 14,
@@ -408,8 +194,9 @@ Widget CoustomAppbar(context, controller) {
                 },
               ),
               NavBarItem(
-                hoverColor: controller.isDarkMode.value ? Colors
-                    .white54 : Colors.black12,
+                hoverColor: controller.isDarkMode.value
+                    ? Colors.white54
+                    : Colors.black12,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 textStyle: TextStyle(
                     fontSize: 14,
@@ -423,8 +210,9 @@ Widget CoustomAppbar(context, controller) {
                 },
               ),
               NavBarItem(
-                hoverColor: controller.isDarkMode.value ? Colors
-                    .white54 : Colors.black12,
+                hoverColor: controller.isDarkMode.value
+                    ? Colors.white54
+                    : Colors.black12,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 textStyle: TextStyle(
                     fontSize: 14,
@@ -438,8 +226,9 @@ Widget CoustomAppbar(context, controller) {
                 },
               ),
               NavBarItem(
-                hoverColor: controller.isDarkMode.value ? Colors
-                    .white54 : Colors.black12,
+                hoverColor: controller.isDarkMode.value
+                    ? Colors.white54
+                    : Colors.black12,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 textStyle: TextStyle(
                     fontSize: 14,
@@ -468,7 +257,289 @@ Widget CoustomAppbar(context, controller) {
                 });
           }))
     ],
+  );
+}
 
+Widget BodyOne(context, controller) {
+  final width = MediaQuery.sizeOf(context).width;
 
+  return Padding(
+    padding: const EdgeInsets.only(top: 15, left: 12, right: 12),
+    child: Column(
+      children: [
+        SizedBox(
+          height: 20.h,
+        ),
+        Text(
+          AppString.hey,
+          style: googlefonts().textRegular16_W6_Style(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.w500,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+            color: controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Text(
+          AppString.myname,
+          style: googlefonts().textRegular18_B_Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.bold,
+            fontSize: Responsive.isMobile(context) ? width / 20 : width / 70,
+            color: controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Text(
+          AppString.developerpart,
+          style: googlefonts().textRegular16_W6_Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w600,
+            fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
+            color: controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Text(
+          AppString.shortdescription,
+          style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
+            color: controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 16,
+              ),
+              SizedBox(
+                width: 6.w,
+              ),
+              CircleAvatar(
+                radius: 16,
+              ),
+              SizedBox(
+                width: 6.w,
+              ),
+              CircleAvatar(
+                radius: 16,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: Row(
+            children: [
+              CoustomeButton(
+                child: Text('Contact me'),
+                onPressed: () {},
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              CoustomeButton(
+                child: Text('My Resume'),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget BodyTwoText(context, controller) {
+  final width = MediaQuery.sizeOf(context).width;
+
+  return Padding(
+    padding: const EdgeInsets.only(top: 15, left: 12, right: 12),
+    child: SizedBox(
+      width: width / 1.2,
+      child: Column(
+        children: [
+          SizedBox(
+            height: 20.h,
+          ),
+          Text(
+            AppString.hey,
+            style: googlefonts().textRegular16_W6_Style(
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Text(
+            AppString.myname,
+            style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.bold,
+              fontSize: Responsive.isMobile(context) ? width / 20 : width / 70,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Text(
+            AppString.developerpart,
+            style: googlefonts().textRegular16_W6_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Text(
+            AppString.shortdescription,
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 16,
+              ),
+              SizedBox(
+                width: 6.w,
+              ),
+              CircleAvatar(
+                radius: 16,
+              ),
+              SizedBox(
+                width: 6.w,
+              ),
+              CircleAvatar(
+                radius: 16,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Row(
+            children: [
+              CoustomeButton(
+                child: Text('Contact me'),
+                onPressed: () {},
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              CoustomeButton(
+                child: Text('My Resume'),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget BodyOneImage(context) {
+  final hieght = MediaQuery.sizeOf(context).height;
+  final width = MediaQuery.sizeOf(context).width;
+  return Lottie.asset(AppImage.laptopimage,
+      height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
+      width: Responsive.isMobile(context) ? width / 1 : width / 2.5);
+}
+
+Widget BodyTwoImage(context) {
+  final hieght = MediaQuery.sizeOf(context).height;
+  final width = MediaQuery.sizeOf(context).width;
+  return Lottie.asset(AppImage.developimage,
+      height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
+      width: Responsive.isMobile(context) ? width / 1 : width / 1);
+}
+
+Widget LinearPercentIndecator(context) {
+  return Column(
+    children: <Widget>[
+      Container(
+        height: 50.h,
+        width: double.infinity,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text("Dart'"),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 90),
+                  child: Text("80 %"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            LinearPercentIndicator(
+              width: 160.w,
+              lineHeight: 8.0,
+              percent: 0.8,
+              progressColor: Colors.red,
+            ),
+          ],
+        ),
+      ),
+      SizedBox(
+        height: 15.h,
+      ),
+      new LinearPercentIndicator(
+        width: 160.w,
+        lineHeight: 8.0,
+        percent: 0.5,
+        progressColor: Colors.orange,
+      ),
+      SizedBox(
+        height: 15.h,
+      ),
+      new LinearPercentIndicator(
+        width: 160.w,
+        lineHeight: 8.0,
+        percent: 0.9,
+        progressColor: Colors.blue,
+      )
+    ],
   );
 }
