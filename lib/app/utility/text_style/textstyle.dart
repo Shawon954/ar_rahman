@@ -50,13 +50,15 @@ class googlefonts {
 
 
 
+
       }) {
     return TextStyle(
       fontSize: fontSize,
       color: color,
       fontWeight: fontWeight,
         fontFamily:  "Poppins",
-        fontStyle: fontStyle
+        fontStyle: fontStyle,
+
     );
   }
   TextStyle textRegular12_W4Style(

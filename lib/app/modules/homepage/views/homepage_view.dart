@@ -76,7 +76,7 @@ Widget buildPortrait(context, controller) => Container(
               height: 2.h,
             ),
             Container(
-              height: 300.h,
+              height: 302.h,
               width: double.infinity,
               child: BodyTwoImage(context),
               color: Colors.deepPurple,
@@ -120,8 +120,21 @@ Widget buildPortrait(context, controller) => Container(
             Container(
               height: 390.h,
               width: double.infinity,
-              child: ContactMe(),
+              child: ContactMe(context,controller),
               color: Colors.deepPurple,
+            ),
+
+            Container(
+              height: 390.h,
+              width: double.infinity,
+              child: DevelopBy(context,controller),
+              color: Colors.blueAccent,
+            ),
+            Container(
+              height: 910.h,
+              width: double.infinity,
+              child: MYEducation(context,controller),
+              color: Colors.blueAccent,
             ),
           ],
         ),
@@ -180,7 +193,7 @@ Widget buildLandscape(context, controller) => Container(
                         Container(
                           height: 390.h,
                           width: double.infinity,
-                          child: ContactMe(),
+                          child: ContactMe(context,controller),
                           color: Colors.pink,
                         ),
                       ],
@@ -231,6 +244,10 @@ Widget buildLandscape(context, controller) => Container(
                 ),
               ],
             ),
+
+            Center(
+              child: DevelopBy(context,controller),
+            )
           ],
         ),
       ),
@@ -821,6 +838,216 @@ Widget SkillsSection(context) {
   );
 }
 
+
+Widget MYEducation(context,controller){
+ final width = MediaQuery.sizeOf(context).width;
+  return Container(
+    height: 700.h,
+    width: double.infinity,
+    child: Column(
+      children: [
+       SizedBox(height: 20.h,),
+
+
+        Column(
+          children: [
+            Container(
+              height: 140.h,
+              width: 115.w,
+
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(90.r),
+                  ),
+
+                  boxShadow: [
+
+
+                    BoxShadow(
+                        spreadRadius: 6,
+                        color: Colors.black26,
+                        blurRadius: 10
+                    ),
+                  ]
+
+              ),
+            ),
+            SizedBox(height: 20.h,),
+            Text('Daffodil Institute of Information Technology', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+
+              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('B.Sc.in Computer Science Engineering', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('CGPA - 2.87', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('2017-2020', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+
+              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+
+          ],
+        ),
+SizedBox(height: 20.h,),
+        Column(
+          children: [
+            Container(
+              height: 140.h,
+              width: 115.w,
+
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(90.r),
+                  ),
+
+                  boxShadow: [
+
+
+                    BoxShadow(
+                        spreadRadius: 6,
+                        color: Colors.black26,
+                        blurRadius: 10
+                    ),
+                  ]
+
+              ),
+            ),
+            SizedBox(height: 20.h,),
+            Text('Kasemabad Siddikia Kamil Madrasha', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+
+              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('Science', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('GPA - 4.89', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('2013-2015', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+
+              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+
+          ],
+        ),
+
+        SizedBox(height: 20.h,),
+
+        Column(
+          children: [
+            Container(
+              height: 140.h,
+              width: 115.w,
+
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(90.r),
+                  ),
+
+                  boxShadow: [
+
+
+                    BoxShadow(
+                        spreadRadius: 6,
+                        color: Colors.black26,
+                        blurRadius: 10
+                    ),
+                  ]
+
+              ),
+            ),
+            SizedBox(height: 20.h,),
+            Text('Paschim Saura Alim Madrasah', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+
+              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('Science', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('GPA - 4.89', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+            SizedBox(height: 10.h,),
+            Text('2012-2013', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+
+              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+
+          ],
+        ),
+
+
+
+      ],
+    ),
+  );
+}
+
+
 Widget MyWorks() {
   return Container(
     height: 250.h,
@@ -832,105 +1059,176 @@ Widget MyWorks() {
   );
 }
 
-Widget ContactMe() {
+Widget ContactMe(context,controller) {
+  final width = MediaQuery.sizeOf(context).width;
+
   return Container(
     height: 250.h,
     width: double.infinity,
     color: Colors.deepOrangeAccent,
-    child: Column(
-      children: [
-        Text('Contact Me'),
-        SizedBox(
-          height: 25.h,
-        ),
-        Text('Wanna talk about a project or just say in HI'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Text('Say Hello'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Row(
-          children: [
-            Text('E-mail'),
-            Text('shawoncse954@gmail.com'),
-          ],
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        Row(
-          children: [
-            Text('Phone :'),
-            Text('+88 01775389319'),
-          ],
-        ),
-        Text('Fine me in'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Text('Dhaka,Bangladesh'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Text('Social Network'),
-        SizedBox(
-          height: 30.h,
-        ),
-      ],
+    child: Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Text('Contact Me', style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),),
+          ),
+          SizedBox(
+            height: 25.h,
+          ),
+          Text('Wanna talk about a project or just say in HI', style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text('Say Hello', style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+          SizedBox(
+            height: 15.h,
+          ),
+          Row(
+            children: [
+              Text('E-mail', style: googlefonts().textRegular14_W5Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),),
+              Text('shawoncse954@gmail.com', style: googlefonts().textRegular14_W5Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),),
+            ],
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
+          Row(
+            children: [
+              Text('Phone :', style: googlefonts().textRegular14_W5Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),),
+              Text('+88 01775389319', style: googlefonts().textRegular14_W5Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize: Responsive.isMobile(context) ? width / 30 : width /90,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),),
+            ],
+          ),
+
+          SizedBox(
+            height: 25.h,
+          ),
+
+          Text('Find me in', style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w500,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 80,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text('Dhaka,Bangladesh', style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text('Social Network', style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+          SizedBox(
+            height: 30.h,
+          ),
+        ],
+      ),
     ),
   );
 }
 
 
-Widget DevelopBy() {
+Widget DevelopBy(context,controller) {
+  final width = MediaQuery.sizeOf(context).width;
   return Container(
     height: 250.h,
     width: double.infinity,
-    color: Colors.deepOrangeAccent,
-    child: Column(
-      children: [
-        Text('Contact Me'),
-        SizedBox(
-          height: 25.h,
-        ),
-        Text('Wanna talk about a project or just say in HI'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Text('Say Hello'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Row(
-          children: [
-            Text('E-mail'),
-            Text('shawoncse954@gmail.com'),
-          ],
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        Row(
-          children: [
-            Text('Phone :'),
-            Text('+88 01775389319'),
-          ],
-        ),
-        Text('Fine me in'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Text('Dhaka,Bangladesh'),
-        SizedBox(
-          height: 15.h,
-        ),
-        Text('Social Network'),
-        SizedBox(
-          height: 30.h,
-        ),
-      ],
+    color: Colors.orange,
+    child: Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: Column(
+        children: [
+          Text('Develop By', style: googlefonts().textRegular18_B_Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w600,
+
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+          SizedBox(
+            height: 25.h,
+          ),
+          Text('MD.ABDUR RAHMAN (SHAWON)', style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text('Flutter App Developer', style: googlefonts().textRegular14_W5Style(
+            fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w400,
+            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+            color:
+            controller.isDarkMode.value ? Colors.white : Colors.black87,
+          ),),
+
+          SizedBox(
+            height: 30.h,
+          ),
+        ],
+      ),
     ),
   );
 }
