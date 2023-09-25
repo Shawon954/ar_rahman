@@ -5,8 +5,9 @@ import 'package:ar_rahman/app/responsive/responsive_screen.dart';
 import 'package:ar_rahman/app/utility/text_style/textstyle.dart';
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -35,10 +36,7 @@ class HomepageView extends GetView<HomepageController>
           ),
         );
       }),
-
-
     );
-
   }
 }
 
@@ -87,34 +85,44 @@ Widget buildPortrait(context, controller) => Container(
               height: 2.h,
             ),
             Container(
-              height: 400.h,
-              width: double.infinity,
+                height: 400.h,
+                width: double.infinity,
                 color: Colors.green,
+                child: Column(
+                  children: [
+                    Text('Skills'),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    SkillsSection(context),
+                  ],
+                )),
+            Container(
+              height: 390.h,
+              width: double.infinity,
+              color: Colors.pink,
               child: Column(
                 children: [
-                  Text('Skills'),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  SkillsSection(context),
+                  Stack(
+                    children: [
+                      MyWorks(),
+                    ],
+                  )
                 ],
-              )
+              ),
             ),
             Container(
               height: 390.h,
               width: double.infinity,
-
-              color: Colors.pink,
-            ),
-
-
-            Container(
-              height: 390.h,
-              width: double.infinity,
-
+              child: ContactMeImage(context),
               color: Colors.lightGreenAccent,
             ),
-
+            Container(
+              height: 390.h,
+              width: double.infinity,
+              child: ContactMe(),
+              color: Colors.deepPurple,
+            ),
           ],
         ),
       ),
@@ -169,14 +177,12 @@ Widget buildLandscape(context, controller) => Container(
                           ),
                           color: Colors.cyanAccent,
                         ),
-
                         Container(
                           height: 390.h,
                           width: double.infinity,
-
+                          child: ContactMe(),
                           color: Colors.pink,
                         ),
-
                       ],
                     ),
                   ),
@@ -213,11 +219,10 @@ Widget buildLandscape(context, controller) => Container(
                           child: BodyThreeImage(context),
                           color: Colors.teal,
                         ),
-
                         Container(
                           height: 390.h,
                           width: double.infinity,
-
+                         child: ContactMeImage(context),
                           color: Colors.lightGreenAccent,
                         ),
                       ],
@@ -230,11 +235,6 @@ Widget buildLandscape(context, controller) => Container(
         ),
       ),
     );
-
-
-
-
-
 
 Widget CoustomAppbar(context, controller) {
   final width = MediaQuery.sizeOf(context).width;
@@ -583,13 +583,26 @@ Widget BodyTwoImage(context) {
       height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
       width: Responsive.isMobile(context) ? width / 1 : width / 1);
 }
+
 Widget BodyThreeImage(context) {
   final hieght = MediaQuery.sizeOf(context).height;
   final width = MediaQuery.sizeOf(context).width;
-  return Lottie.asset(AppImage.code,
+  return Lottie.asset(AppImage.dscs,
       height: Responsive.isMobile(context) ? hieght / 1.5 : hieght / 1.2,
       width: Responsive.isMobile(context) ? width / 1 : width / 1);
 }
+
+Widget ContactMeImage(context) {
+  final hieght = MediaQuery.sizeOf(context).height;
+  final width = MediaQuery.sizeOf(context).width;
+  return SvgPicture.asset(AppImage.contactimagesection,
+      height: Responsive.isMobile(context) ? hieght / 1.7 : hieght / 1.7,
+      width: Responsive.isMobile(context) ? width / 1.2 : width / 1.2);
+}
+
+
+
+
 
 Widget SkillsSection(context) {
   return Column(
@@ -624,7 +637,6 @@ Widget SkillsSection(context) {
           ],
         ),
       ),
-
       Container(
         height: 50.h,
         width: double.infinity,
@@ -806,5 +818,119 @@ Widget SkillsSection(context) {
         ),
       ),
     ],
+  );
+}
+
+Widget MyWorks() {
+  return Container(
+    height: 250.h,
+    width: double.infinity,
+    color: Colors.yellow,
+    child: Column(
+      children: [],
+    ),
+  );
+}
+
+Widget ContactMe() {
+  return Container(
+    height: 250.h,
+    width: double.infinity,
+    color: Colors.deepOrangeAccent,
+    child: Column(
+      children: [
+        Text('Contact Me'),
+        SizedBox(
+          height: 25.h,
+        ),
+        Text('Wanna talk about a project or just say in HI'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Text('Say Hello'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Row(
+          children: [
+            Text('E-mail'),
+            Text('shawoncse954@gmail.com'),
+          ],
+        ),
+        SizedBox(
+          height: 15.h,
+        ),
+        Row(
+          children: [
+            Text('Phone :'),
+            Text('+88 01775389319'),
+          ],
+        ),
+        Text('Fine me in'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Text('Dhaka,Bangladesh'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Text('Social Network'),
+        SizedBox(
+          height: 30.h,
+        ),
+      ],
+    ),
+  );
+}
+
+
+Widget DevelopBy() {
+  return Container(
+    height: 250.h,
+    width: double.infinity,
+    color: Colors.deepOrangeAccent,
+    child: Column(
+      children: [
+        Text('Contact Me'),
+        SizedBox(
+          height: 25.h,
+        ),
+        Text('Wanna talk about a project or just say in HI'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Text('Say Hello'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Row(
+          children: [
+            Text('E-mail'),
+            Text('shawoncse954@gmail.com'),
+          ],
+        ),
+        SizedBox(
+          height: 15.h,
+        ),
+        Row(
+          children: [
+            Text('Phone :'),
+            Text('+88 01775389319'),
+          ],
+        ),
+        Text('Fine me in'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Text('Dhaka,Bangladesh'),
+        SizedBox(
+          height: 15.h,
+        ),
+        Text('Social Network'),
+        SizedBox(
+          height: 30.h,
+        ),
+      ],
+    ),
   );
 }
