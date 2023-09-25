@@ -50,6 +50,7 @@ dependencies:
 
 
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -77,7 +78,8 @@ flutter:
      - assets/my_signature/
      - assets/lottie/
      - assets/fonts/
-     - assets/facebook.png
+     - assets/svgimage/
+
 
   #   - images/a_dot_ham.jpeg
 
