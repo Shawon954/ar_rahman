@@ -120,20 +120,19 @@ Widget buildPortrait(context, controller) => Container(
             Container(
               height: 390.h,
               width: double.infinity,
-              child: ContactMe(context,controller),
+              child: ContactMe(context, controller),
               color: Colors.deepPurple,
             ),
-
             Container(
               height: 390.h,
               width: double.infinity,
-              child: DevelopBy(context,controller),
+              child: DevelopBy(context, controller),
               color: Colors.blueAccent,
             ),
             Container(
               height: 910.h,
               width: double.infinity,
-              child: MYEducation(context,controller),
+              child: MYEducation(context, controller),
               color: Colors.blueAccent,
             ),
           ],
@@ -149,6 +148,139 @@ Widget buildLandscape(context, controller) => Container(
         child: Column(
           children: [
             CoustomAppbar(context, controller),
+            // my intro //
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child:Container(
+                    height: 357.h,
+                    width: double.infinity,
+                    child: BodyOne(context, controller),
+                    color: Colors.cyan,
+                  ),
+                ),
+
+                Expanded(
+                  flex: 1,
+                  child:Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      height: 355.h,
+                      width: double.infinity,
+                      child: BodyOneImage(context),
+                      color: Colors.grey,
+                    ),
+                  ),)
+              ],
+            ),
+
+            // my about //
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 353.h,
+                    width: double.infinity,
+                    child: BodyTwoImage(context),
+                    color: Colors.lime,
+                  ),
+                ),
+
+                Expanded(
+                  flex: 1,
+                  child:Align(
+                    alignment: Alignment.topRight,
+                    child:Container(
+                      height: 352.h,
+                      width: double.infinity,
+                      child: BodyTwoText(context, controller),
+                      color: Colors.deepOrange,
+                    ),
+                  ),)
+              ],
+            ),
+
+            // my skills //
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child:  Container(
+                    height: 390.h,
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        Text('Skills'),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        SkillsSection(context),
+                      ],
+                    ),
+                    color: Colors.cyanAccent,
+                  ),
+                ),
+
+                Expanded(
+                  flex: 1,
+                  child:Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      height: 390.h,
+                      width: double.infinity,
+                      child: BodyThreeImage(context),
+                      color: Colors.teal,
+                    ),
+                  ),)
+              ],
+            ),
+
+            // my edu /
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child:  Container(
+                    height: 570.h,
+                    width: double.infinity,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+
+
+                        MyEducationLOGO(context, controller),
+                      ],
+                    ),
+                    color: Colors.orange,
+                  ),
+                ),
+
+                Expanded(
+                  flex: 1,
+                  child:Align(
+                    alignment: Alignment.topRight,
+                    child:   Container(
+                      height: 570.h,
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+
+
+                          MYEducation(context, controller),
+                        ],
+                      ),
+                      color: Colors.orange,
+                    ),
+                  ),)
+              ],
+            ),
+
+            // my achiev //
+            AchievementsAndCertications(context, controller),
+            // contact me //
             Row(
               children: [
                 Expanded(
@@ -159,83 +291,27 @@ Widget buildLandscape(context, controller) => Container(
                     child: Column(
                       children: [
                         Container(
-                          height: 357.h,
-                          width: double.infinity,
-                          child: BodyOne(context, controller),
-                          color: Colors.cyan,
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Container(
-                          height: 353.h,
-                          width: double.infinity,
-                          child: BodyTwoImage(context),
-                          color: Colors.lime,
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Container(
                           height: 390.h,
                           width: double.infinity,
-                          child: Column(
-                            children: [
-                              Text('Skills'),
-                              SizedBox(
-                                height: 20.h,
-                              ),
-                              SkillsSection(context),
-                            ],
-                          ),
-                          color: Colors.cyanAccent,
-                        ),
-                        Container(
-                          height: 390.h,
-                          width: double.infinity,
-                          child: ContactMe(context,controller),
+                          child: ContactMe(context, controller),
                           color: Colors.pink,
                         ),
                       ],
                     ),
                   ),
-                )),
+                 ),
+                ),
+
+
                 Expanded(
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Container(
-                            height: 355.h,
-                            width: double.infinity,
-                            child: BodyOneImage(context),
-                            color: Colors.grey,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Container(
-                          height: 352.h,
-                          width: double.infinity,
-                          child: BodyTwoText(context, controller),
-                          color: Colors.deepOrange,
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
                         Container(
                           height: 390.h,
                           width: double.infinity,
-                          child: BodyThreeImage(context),
-                          color: Colors.teal,
-                        ),
-                        Container(
-                          height: 390.h,
-                          width: double.infinity,
-                         child: ContactMeImage(context),
+                          child: ContactMeImage(context),
                           color: Colors.lightGreenAccent,
                         ),
                       ],
@@ -245,8 +321,22 @@ Widget buildLandscape(context, controller) => Container(
               ],
             ),
 
+
+
+            //
+            // Container(
+            //   height: 1000.h,
+            //   width: double.infinity,
+            //   child: Center(
+            //     child: MYEducation(context, controller),
+            //   ),
+            // ),
+
+            //  DevelopBy //
+
+            // develop by //
             Center(
-              child: DevelopBy(context,controller),
+              child: DevelopBy(context, controller),
             )
           ],
         ),
@@ -265,8 +355,9 @@ Widget CoustomAppbar(context, controller) {
             elevation: 0.0,
             screenWidth: width,
             title: Text(
-              "Adaptive NavBar",
+              "MD. ABDUR RAHMAN",
               style: TextStyle(
+                fontWeight: FontWeight.bold,
                 color:
                     controller.isDarkMode.value ? Colors.white : Colors.black87,
               ),
@@ -617,10 +708,6 @@ Widget ContactMeImage(context) {
       width: Responsive.isMobile(context) ? width / 1.2 : width / 1.2);
 }
 
-
-
-
-
 Widget SkillsSection(context) {
   return Column(
     children: <Widget>[
@@ -838,215 +925,260 @@ Widget SkillsSection(context) {
   );
 }
 
+Widget MyEducationLOGO(context, controller) {
+  final height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
+  return Column(
+    children: [
+      // Diit //
+      Container(
+        height: Responsive.isMobile(context) ? height / 5 : height / 5,
+        width: Responsive.isMobile(context) ? width / 3.3 : width / 10,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(90.r),
+            ),
+            boxShadow: [
+              BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+            ]),
+      ),
+      SizedBox(height: 40.h,),
 
-Widget MYEducation(context,controller){
- final width = MediaQuery.sizeOf(context).width;
+      // Kasemabad //
+      Container(
+        height: Responsive.isMobile(context) ? height / 5 : height / 5,
+        width: Responsive.isMobile(context) ? width / 3.3 : width / 10,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(90.r),
+            ),
+            boxShadow: [
+              BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+            ]),
+      ),
+      SizedBox(height: 40.h,),
+
+      // Paschimsura //
+      Container(
+        height: Responsive.isMobile(context) ? height / 5 : height / 5,
+        width: Responsive.isMobile(context) ? width / 3.3 : width / 10,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(90.r),
+            ),
+            boxShadow: [
+              BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+            ]),
+      ),
+    ],
+  );
+}
+
+Widget MYEducation(context, controller) {
+  final height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
   return Container(
-    height: 700.h,
+    height: 570.h,
     width: double.infinity,
     child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-       SizedBox(height: 20.h,),
-
-
+        SizedBox(
+          height: 10.h,
+        ),
         Column(
           children: [
-            Container(
-              height: 140.h,
-              width: 115.w,
-
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(90.r),
-                  ),
-
-                  boxShadow: [
-
-
-                    BoxShadow(
-                        spreadRadius: 6,
-                        color: Colors.black26,
-                        blurRadius: 10
-                    ),
-                  ]
-
+            SizedBox(
+              height: 20.h,
+            ),
+            Text(
+              'Daffodil Institute of Information Technology',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 25 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
               ),
             ),
-            SizedBox(height: 20.h,),
-            Text('Daffodil Institute of Information Technology', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-
-              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('B.Sc.in Computer Science Engineering', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('CGPA - 2.87', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('2017-2020', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-
-              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              'B.Sc.in Computer Science Engineering',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              'CGPA - 2.87',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              '2017-2020',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 35 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
           ],
         ),
-SizedBox(height: 20.h,),
+        SizedBox(
+          height: 25.h,
+        ),
         Column(
           children: [
-            Container(
-              height: 140.h,
-              width: 115.w,
-
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(90.r),
-                  ),
-
-                  boxShadow: [
-
-
-                    BoxShadow(
-                        spreadRadius: 6,
-                        color: Colors.black26,
-                        blurRadius: 10
-                    ),
-                  ]
-
+            SizedBox(
+              height: 20.h,
+            ),
+            Text(
+              'Kasemabad Siddikia Kamil Madrasha',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 25 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
               ),
             ),
-            SizedBox(height: 20.h,),
-            Text('Kasemabad Siddikia Kamil Madrasha', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-
-              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('Science', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('GPA - 4.89', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('2013-2015', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-
-              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              'Science',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              'GPA - 4.89',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              '2013-2015',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 35 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
           ],
         ),
-
-        SizedBox(height: 20.h,),
-
+        SizedBox(
+          height: 15.h,
+        ),
         Column(
           children: [
-            Container(
-              height: 140.h,
-              width: 115.w,
-
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(90.r),
-                  ),
-
-                  boxShadow: [
-
-
-                    BoxShadow(
-                        spreadRadius: 6,
-                        color: Colors.black26,
-                        blurRadius: 10
-                    ),
-                  ]
-
+            SizedBox(
+              height: 12.h,
+            ),
+            Text(
+              'Paschim Saura Alim Madrasah',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 25 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
               ),
             ),
-            SizedBox(height: 20.h,),
-            Text('Paschim Saura Alim Madrasah', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-
-              fontSize: Responsive.isMobile(context) ? width / 25 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('Science', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('GPA - 4.89', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-            SizedBox(height: 10.h,),
-            Text('2012-2013', style: googlefonts().textRegular18_B_Style(
-              fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w400,
-
-              fontSize: Responsive.isMobile(context) ? width / 35 : width / 70,
-              color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
-
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              'Science',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              'GPA - 4.89',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            Text(
+              '2012-2013',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 35 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
           ],
         ),
-
-
-
       ],
     ),
   );
 }
-
 
 Widget MyWorks() {
   return Container(
@@ -1059,7 +1191,124 @@ Widget MyWorks() {
   );
 }
 
-Widget ContactMe(context,controller) {
+Widget AchievementsAndCertications(context, controller) {
+  double height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
+  return Container(
+    height: 600.h,
+    width: double.infinity,
+    color: Colors.blueAccent,
+    child: Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: Column(
+
+        children: [
+          Center(
+            child: Text('Achievements And Certifications',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                Responsive.isMobile(context) ? width / 30 : width / 65,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20,top: 60,right: 20),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   Container(
+                     height: Responsive.isMobile(context)?height/20:height/1.5,
+                     width: Responsive.isMobile(context)?width/20:width/3.4,
+
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       color: Colors.white,
+                       boxShadow: [
+                         BoxShadow(
+                           blurRadius: 10,
+                           spreadRadius: 5,
+                           color: Colors.black26,
+                         )
+                       ]
+                     ),
+                   ),
+SizedBox(width: 10.w,),
+                  Container(
+                     height: Responsive.isMobile(context)?height/20:height/1.5,
+                     width: Responsive.isMobile(context)?width/20:width/3.4,
+
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       color: Colors.white,
+                       boxShadow: [
+                         BoxShadow(
+                           blurRadius: 10,
+                           spreadRadius: 5,
+                           color: Colors.black26,
+                         )
+                       ]
+                     ),
+                   ),
+
+                  SizedBox(width: 10.w,),
+                  Container(
+                     height: Responsive.isMobile(context)?height/20:height/1.5,
+                     width: Responsive.isMobile(context)?width/20:width/3.4,
+
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       color: Colors.white,
+                       boxShadow: [
+                         BoxShadow(
+                           blurRadius: 10,
+                           spreadRadius: 5,
+                           color: Colors.black26,
+                         )
+                       ]
+                     ),
+                    child: Stack(
+                      children: [
+                        Column(
+                          children: [
+                    Container(
+                    height: Responsive.isMobile(context)?height/20:height/5,
+                    width: Responsive.isMobile(context)?width/20:width/4.3,
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        color: Colors.blueAccent,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 10,
+                            spreadRadius: 5,
+                            color: Colors.black26,
+                          )
+                        ]
+                    ),
+                    )  ],
+                        )
+                      ],
+                    ),
+                   ),
+                ],
+              ),
+            ),
+          )
+
+        ],
+      ),
+    ),
+  );
+}
+
+Widget ContactMe(context, controller) {
   final width = MediaQuery.sizeOf(context).width;
 
   return Container(
@@ -1072,54 +1321,73 @@ Widget ContactMe(context,controller) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Center(
-            child: Text('Contact Me', style: googlefonts().textRegular18_B_Style(
+            child: Text(
+              'Contact Me',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 25.h,
+          ),
+          Text(
+            'Wanna talk about a project or just say in HI',
+            style: googlefonts().textRegular14_W5Style(
               fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w600,
-
-              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
               color:
-              controller.isDarkMode.value ? Colors.white : Colors.black87,
-            ),),
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
           ),
-          SizedBox(
-            height: 25.h,
-          ),
-          Text('Wanna talk about a project or just say in HI', style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
           SizedBox(
             height: 15.h,
           ),
-          Text('Say Hello', style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
+          Text(
+            'Say Hello',
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
           SizedBox(
             height: 15.h,
           ),
           Row(
             children: [
-              Text('E-mail', style: googlefonts().textRegular14_W5Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
-                fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-                color:
-                controller.isDarkMode.value ? Colors.white : Colors.black87,
-              ),),
-              Text('shawoncse954@gmail.com', style: googlefonts().textRegular14_W5Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
-                fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-                color:
-                controller.isDarkMode.value ? Colors.white : Colors.black87,
-              ),),
+              Text(
+                'E-mail',
+                style: googlefonts().textRegular14_W5Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  fontSize:
+                      Responsive.isMobile(context) ? width / 30 : width / 90,
+                  color: controller.isDarkMode.value
+                      ? Colors.white
+                      : Colors.black87,
+                ),
+              ),
+              Text(
+                'shawoncse954@gmail.com',
+                style: googlefonts().textRegular14_W5Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  fontSize:
+                      Responsive.isMobile(context) ? width / 30 : width / 90,
+                  color: controller.isDarkMode.value
+                      ? Colors.white
+                      : Colors.black87,
+                ),
+              ),
             ],
           ),
           SizedBox(
@@ -1127,54 +1395,71 @@ Widget ContactMe(context,controller) {
           ),
           Row(
             children: [
-              Text('Phone :', style: googlefonts().textRegular14_W5Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
-                fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-                color:
-                controller.isDarkMode.value ? Colors.white : Colors.black87,
-              ),),
-              Text('+88 01775389319', style: googlefonts().textRegular14_W5Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
-                fontSize: Responsive.isMobile(context) ? width / 30 : width /90,
-                color:
-                controller.isDarkMode.value ? Colors.white : Colors.black87,
-              ),),
+              Text(
+                'Phone :',
+                style: googlefonts().textRegular14_W5Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  fontSize:
+                      Responsive.isMobile(context) ? width / 30 : width / 90,
+                  color: controller.isDarkMode.value
+                      ? Colors.white
+                      : Colors.black87,
+                ),
+              ),
+              Text(
+                '+88 01775389319',
+                style: googlefonts().textRegular14_W5Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  fontSize:
+                      Responsive.isMobile(context) ? width / 30 : width / 90,
+                  color: controller.isDarkMode.value
+                      ? Colors.white
+                      : Colors.black87,
+                ),
+              ),
             ],
           ),
-
           SizedBox(
             height: 25.h,
           ),
-
-          Text('Find me in', style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w500,
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 80,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
+          Text(
+            'Find me in',
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w500,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 80,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
           SizedBox(
             height: 15.h,
           ),
-          Text('Dhaka,Bangladesh', style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
+          Text(
+            'Dhaka,Bangladesh',
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
           SizedBox(
             height: 15.h,
           ),
-          Text('Social Network', style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
+          Text(
+            'Social Network',
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
           SizedBox(
             height: 30.h,
           ),
@@ -1184,8 +1469,7 @@ Widget ContactMe(context,controller) {
   );
 }
 
-
-Widget DevelopBy(context,controller) {
+Widget DevelopBy(context, controller) {
   final width = MediaQuery.sizeOf(context).width;
   return Container(
     height: 250.h,
@@ -1195,35 +1479,42 @@ Widget DevelopBy(context,controller) {
       padding: const EdgeInsets.only(top: 20),
       child: Column(
         children: [
-          Text('Develop By', style: googlefonts().textRegular18_B_Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w600,
-
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
+          Text(
+            'Develop By',
+            style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 70,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
           SizedBox(
             height: 25.h,
           ),
-          Text('MD.ABDUR RAHMAN (SHAWON)', style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
+          Text(
+            'MD.ABDUR RAHMAN (SHAWON)',
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
           SizedBox(
             height: 15.h,
           ),
-          Text('Flutter App Developer', style: googlefonts().textRegular14_W5Style(
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w400,
-            fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
-            color:
-            controller.isDarkMode.value ? Colors.white : Colors.black87,
-          ),),
-
+          Text(
+            'Flutter App Developer',
+            style: googlefonts().textRegular14_W5Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              fontSize: Responsive.isMobile(context) ? width / 30 : width / 90,
+              color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
           SizedBox(
             height: 30.h,
           ),
