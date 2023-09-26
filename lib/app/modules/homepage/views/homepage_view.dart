@@ -986,6 +986,20 @@ Widget MYEducation(context, controller) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            'Education',
+            style: googlefonts().textRegular18_B_Style(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+              fontSize:
+              Responsive.isMobile(context) ? width / 25 : width / 65,
+              color:
+              controller.isDarkMode.value ? Colors.white : Colors.black87,
+            ),
+          ),
+        ),
         SizedBox(
           height: 10.h,
         ),
@@ -1238,6 +1252,61 @@ Widget AchievementsAndCertications(context, controller) {
                          )
                        ]
                      ),
+                     child: Stack(
+                       children: [
+                         Column(
+
+                           children: [
+                             Padding(
+                               padding: const EdgeInsets.only(top: 20),
+                               child: Center(
+                                 child: Container(
+                                   height: Responsive.isMobile(context)?height/20:height/2.5,
+                                   width: Responsive.isMobile(context)?width/20:width/4.6,
+
+                                   decoration: BoxDecoration(
+                                       borderRadius: BorderRadius.only(topLeft: Radius.circular(35.r),
+                                           bottomRight: Radius.circular(35.r)),
+
+                                       color: Colors.blueAccent,
+                                       boxShadow: [
+                                         BoxShadow(
+                                           blurRadius: 10,
+                                           spreadRadius: 5,
+                                           color: Colors.black26,
+                                         )
+                                       ]
+                                   ),
+                                 ),
+                               ),
+                             ),
+                            SizedBox(height: 25.h,),
+                             Text('SDMGA',
+                               style: googlefonts().textRegular18_B_Style(
+                                 fontStyle: FontStyle.normal,
+                                 fontWeight: FontWeight.w600,
+                                 fontSize:
+                                 Responsive.isMobile(context) ? width / 35 : width / 65,
+                                 color:
+                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                               ),
+                             ),
+                             SizedBox(height: 20.h,),
+                             Text('Skill Development for Mobile Game & Application',
+                               style: googlefonts().textRegular18_B_Style(
+                                 fontStyle: FontStyle.normal,
+                                 fontWeight: FontWeight.w500,
+                                 fontSize:
+                                 Responsive.isMobile(context) ? width / 35 : width / 90,
+                                 color:
+                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                               ),
+                             )
+
+                           ],
+                         )
+                       ],
+                     ),
                    ),
 SizedBox(width: 10.w,),
                   Container(
@@ -1252,9 +1321,62 @@ SizedBox(width: 10.w,),
                            blurRadius: 10,
                            spreadRadius: 5,
                            color: Colors.black26,
-                         )
+                         ),
+
                        ]
                      ),
+                    child: Stack(
+                      children: [
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: Center(
+                                child: Container(
+                                  height: Responsive.isMobile(context)?height/20:height/2.5,
+                                  width: Responsive.isMobile(context)?width/20:width/4.6,
+
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(topRight: Radius.circular(35.r),bottomLeft: Radius.circular(35.r)),
+                                      color: Colors.blueAccent,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 10,
+                                          spreadRadius: 5,
+                                          color: Colors.black26,
+                                        )
+                                      ]
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 25.h,),
+                            Text('SDMGA',
+                              style: googlefonts().textRegular18_B_Style(
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w600,
+                                fontSize:
+                                Responsive.isMobile(context) ? width / 35 : width / 65,
+                                color:
+                                controller.isDarkMode.value ? Colors.white : Colors.black87,
+                              ),
+                            ),
+                            SizedBox(height: 20.h,),
+                            Text('Skill Development for Mobile Game & Application',
+                              style: googlefonts().textRegular18_B_Style(
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w500,
+                                fontSize:
+                                Responsive.isMobile(context) ? width / 35 : width / 90,
+                                color:
+                                controller.isDarkMode.value ? Colors.white : Colors.black87,
+                              ),
+                            ),
+
+                          ],
+                        )
+                      ],
+                    ),
                    ),
 
                   SizedBox(width: 10.w,),
@@ -1277,22 +1399,52 @@ SizedBox(width: 10.w,),
                       children: [
                         Column(
                           children: [
-                    Container(
-                    height: Responsive.isMobile(context)?height/20:height/5,
-                    width: Responsive.isMobile(context)?width/20:width/4.3,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Center(
+                        child: Container(
+                        height: Responsive.isMobile(context)?height/20:height/2.5,
+                        width: Responsive.isMobile(context)?width/20:width/4.6,
 
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        color: Colors.blueAccent,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 10,
-                            spreadRadius: 5,
-                            color: Colors.black26,
-                          )
-                        ]
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(35.r),
+                                bottomRight: Radius.circular(35.r)),
+                            color: Colors.blueAccent,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 10,
+                                spreadRadius: 5,
+                                color: Colors.black26,
+                              )
+                            ]
+                        ),
+                        ),
+                      ),
                     ),
-                    )  ],
+                            SizedBox(height: 25.h,),
+                            Text('SDMGA',
+                              style: googlefonts().textRegular18_B_Style(
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w600,
+                                fontSize:
+                                Responsive.isMobile(context) ? width / 35 : width / 65,
+                                color:
+                                controller.isDarkMode.value ? Colors.white : Colors.black87,
+                              ),
+                            ),
+                            SizedBox(height: 20.h,),
+                            Text('Skill Development for Mobile Game & Application',
+                              style: googlefonts().textRegular18_B_Style(
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w500,
+                                fontSize:
+                                Responsive.isMobile(context) ? width / 35 : width / 90,
+                                color:
+                                controller.isDarkMode.value ? Colors.white : Colors.black87,
+                              ),
+                            )
+
+                          ],
                         )
                       ],
                     ),
