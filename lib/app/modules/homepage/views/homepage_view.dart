@@ -96,16 +96,25 @@ Widget buildPortrait(context, controller) => Container(
                     ),
                     SkillsSection(context),
                   ],
-                )),
+                ),
+            ),
             Container(
-              height: 390.h,
+              height: 910.h,
+              width: double.infinity,
+              child: MYEducation(context, controller),
+              color: Colors.blueAccent,
+            ),
+
+
+            Container(
+              height: 950.h,
               width: double.infinity,
               color: Colors.pink,
               child: Column(
                 children: [
                   Stack(
                     children: [
-                      MyWorks(),
+                      AchievementsAndCerticationsPortrate(context, controller)
                     ],
                   )
                 ],
@@ -129,12 +138,7 @@ Widget buildPortrait(context, controller) => Container(
               child: DevelopBy(context, controller),
               color: Colors.blueAccent,
             ),
-            Container(
-              height: 910.h,
-              width: double.infinity,
-              child: MYEducation(context, controller),
-              color: Colors.blueAccent,
-            ),
+
           ],
         ),
       ),
@@ -238,47 +242,54 @@ Widget buildLandscape(context, controller) => Container(
             ),
 
             // my edu /
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child:  Container(
-                    height: 570.h,
-                    width: double.infinity,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-
-
-                        MyEducationLOGO(context, controller),
-                      ],
-                    ),
-                    color: Colors.orange,
-                  ),
-                ),
-
-                Expanded(
-                  flex: 1,
-                  child:Align(
-                    alignment: Alignment.topRight,
-                    child:   Container(
-                      height: 570.h,
-                      width: double.infinity,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-
-
-                          MYEducation(context, controller),
-                        ],
-                      ),
-                      color: Colors.orange,
-                    ),
-                  ),)
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     Expanded(
+            //       flex: 1,
+            //       child:  Container(
+            //         height: 570.h,
+            //         width: double.infinity,
+            //         child: Column(
+            //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //           children: [
+            //
+            //
+            //             MyEducationLOGO(context, controller),
+            //           ],
+            //         ),
+            //         color: Colors.orange,
+            //       ),
+            //     ),
+            //
+            //     Expanded(
+            //       flex: 1,
+            //       child:Align(
+            //         alignment: Alignment.topRight,
+            //         child:   Container(
+            //           height: 570.h,
+            //           width: double.infinity,
+            //           child: Column(
+            //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //             children: [
+            //
+            //
+            //               MYEducation(context, controller),
+            //             ],
+            //           ),
+            //           color: Colors.orange,
+            //         ),
+            //       ),)
+            //   ],
+            // ),
 
             // my achiev //
+
+            MyEducation1(context,controller),
+            SizedBox(height: 20.h,),
+            MyEducation2(context,controller),
+            SizedBox(height: 20.h,),
+            MyEducation3(context,controller),
+            SizedBox(height: 20.h,),
             AchievementsAndCertications(context, controller),
             // contact me //
             Row(
@@ -925,8 +936,300 @@ Widget SkillsSection(context) {
   );
 }
 
+
+Widget MyEducation1(context,controller){
+  double height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
+  return Column(
+    children: [
+      SizedBox(height: 15.h,),
+      Text(
+        'Education',
+        style: googlefonts().textRegular18_B_Style(
+          fontStyle: FontStyle.normal,
+          fontWeight: FontWeight.bold,
+          fontSize:
+          Responsive.isMobile(context) ? width / 25 : width / 65,
+          color:
+          controller.isDarkMode.value ? Colors.white : Colors.black87,
+        ),
+      ),
+      SizedBox(height: 25.h,),
+      Padding(
+        padding: const EdgeInsets.only(left: 120,right: 120,top: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+
+              height: 150.h,
+              width: 38.w,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(90.r),
+                ),
+                boxShadow: [
+                  BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+                ]),
+            ),
+            SizedBox(width: 20.w,),
+            Column(
+            children: [
+              SizedBox(
+                height: 20.h,
+              ),
+              Text(
+                'Daffodil Institute of Information Technology',
+                style: googlefonts().textRegular18_B_Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w600,
+                  fontSize:
+                  Responsive.isMobile(context) ? width / 25 : width / 70,
+                  color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+                ),
+              ),
+              SizedBox(
+                height: 2.h,
+              ),
+              Text(
+                'B.Sc.in Computer Science Engineering',
+                style: googlefonts().textRegular18_B_Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w600,
+                  fontSize:
+                  Responsive.isMobile(context) ? width / 30 : width / 70,
+                  color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+                ),
+              ),
+              SizedBox(
+                height: 2.h,
+              ),
+              Text(
+                'CGPA - 2.87',
+                style: googlefonts().textRegular18_B_Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  fontSize:
+                  Responsive.isMobile(context) ? width / 30 : width / 70,
+                  color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+                ),
+              ),
+              SizedBox(
+                height: 2.h,
+              ),
+              Text(
+                '2017-2020',
+                style: googlefonts().textRegular18_B_Style(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  fontSize:
+                  Responsive.isMobile(context) ? width / 35 : width / 70,
+                  color:
+                  controller.isDarkMode.value ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+            )
+          ],
+        ),
+      ),
+    ],
+  );
+
+}
+
+Widget MyEducation2(context,controller){
+  double height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
+  return Column(
+    children: [
+      SizedBox(height: 15.h,),
+
+      Padding(
+        padding: const EdgeInsets.only(left: 120,right: 120,top: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              height: 150.h,
+              width: 38.w,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(90.r),
+                ),
+                boxShadow: [
+                  BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+                ]),
+            ),
+            SizedBox(width: 20.w,),
+            Column(
+              children: [
+                SizedBox(
+                  height: 20.h,
+                ),
+                Text(
+                  'Kasemabad Siddikia Kamil Madrasha',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w600,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 25 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  'Science',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w600,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  'GPA - 4.89',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  '2013-2015',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 35 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+
+}
+
+Widget MyEducation3(context,controller){
+  double height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
+  return Column(
+
+    children: [
+      SizedBox(height: 15.h,),
+
+      Padding(
+        padding: const EdgeInsets.only(left: 120,right:120,top: 20,bottom: 25),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              height: 150.h,
+              width: 38.w,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(90.r),
+                ),
+                boxShadow: [
+                  BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+                ]),
+            ),
+
+            Column(
+              children: [
+                SizedBox(
+                  height: 12.h,
+                ),
+                Text(
+                  'Paschim Saura Alim Madrasah',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w600,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 25 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  'Science',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w600,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  'GPA - 4.89',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 30 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  '2012-2013',
+                  style: googlefonts().textRegular18_B_Style(
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    fontSize:
+                    Responsive.isMobile(context) ? width / 35 : width / 70,
+                    color:
+                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+
+}
 Widget MyEducationLOGO(context, controller) {
-  final height = MediaQuery.sizeOf(context).height;
+  double height = MediaQuery.sizeOf(context).height;
   double width = MediaQuery.sizeOf(context).width;
   return Column(
     children: [
@@ -1000,13 +1303,26 @@ Widget MYEducation(context, controller) {
             ),
           ),
         ),
-        SizedBox(
-          height: 10.h,
-        ),
         Column(
           children: [
             SizedBox(
-              height: 20.h,
+              height: 5.h,
+            ),
+            Container(
+              height: Responsive.isMobile(context) ? height / 5 : height / 5,
+              width: Responsive.isMobile(context) ? width / 3.3 : width / 10,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(90.r),
+                  ),
+                  boxShadow: [
+                    BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+                  ]),
+            ),
+
+            SizedBox(
+              height: 25.h,
             ),
             Text(
               'Daffodil Institute of Information Technology',
@@ -1068,8 +1384,21 @@ Widget MYEducation(context, controller) {
         ),
         Column(
           children: [
+            Container(
+              height: Responsive.isMobile(context) ? height / 5 : height / 5,
+              width: Responsive.isMobile(context) ? width / 3.3 : width / 10,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(90.r),
+                  ),
+                  boxShadow: [
+                    BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+                  ]),
+            ),
+
             SizedBox(
-              height: 20.h,
+              height: 25.h,
             ),
             Text(
               'Kasemabad Siddikia Kamil Madrasha',
@@ -1131,8 +1460,21 @@ Widget MYEducation(context, controller) {
         ),
         Column(
           children: [
+            Container(
+              height: Responsive.isMobile(context) ? height / 5 : height / 5,
+              width: Responsive.isMobile(context) ? width / 3.3 : width / 10,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(90.r),
+                  ),
+                  boxShadow: [
+                    BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+                  ]),
+            ),
+
             SizedBox(
-              height: 12.h,
+              height: 25.h,
             ),
             Text(
               'Paschim Saura Alim Madrasah',
@@ -1453,6 +1795,262 @@ SizedBox(width: 10.w,),
               ),
             ),
           )
+
+        ],
+      ),
+    ),
+  );
+}
+
+
+Widget AchievementsAndCerticationsPortrate(context, controller) {
+  double height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
+  return Container(
+    height: 950.h,
+    width: double.infinity,
+    color: Colors.red,
+    child: Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+
+        children: [
+          Center(
+            child: Text('Achievements And Certifications',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w700,
+                fontSize:
+                Responsive.isMobile(context) ? width / 25 : width / 65,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   Container(
+                     height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                     width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       color: Colors.white,
+                       boxShadow: [
+                         BoxShadow(
+                           blurRadius: 10,
+                           spreadRadius: 5,
+                           color: Colors.black26,
+                         )
+                       ]
+                     ),
+                     child: Stack(
+                       children: [
+                         Column(
+
+                           children: [
+                             Expanded(
+                               flex:1,
+                               child: Center(
+                                 child: Container(
+                                   height: 100,
+                                   width: 250,
+                                   color: Colors.orange,
+                                 )
+                               ),
+                             ),
+
+                           Expanded(
+                               flex: 1,
+                               child: Column(children: [  Text('SDMGA',
+                             style: googlefonts().textRegular18_B_Style(
+                               fontStyle: FontStyle.normal,
+                               fontWeight: FontWeight.w600,
+                               fontSize:
+                               Responsive.isMobile(context) ? width / 35 : width / 65,
+                               color:
+                               controller.isDarkMode.value ? Colors.white : Colors.black87,
+                             ),
+                           ),
+                             SizedBox(height: 20.h,),
+                             Text('Skill Development for Mobile Game & Application',
+                               style: googlefonts().textRegular18_B_Style(
+                                 fontStyle: FontStyle.normal,
+                                 fontWeight: FontWeight.w500,
+                                 fontSize:
+                                 Responsive.isMobile(context) ? width / 35 : width / 90,
+                                 color:
+                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                               ),
+                             )
+                           ],))
+                           ],
+                         )
+                       ],
+                     ),
+                   ),
+
+
+                ],
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   Container(
+                     height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                     width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       color: Colors.white,
+                       boxShadow: [
+                         BoxShadow(
+                           blurRadius: 10,
+                           spreadRadius: 5,
+                           color: Colors.black26,
+                         )
+                       ]
+                     ),
+                     child: Stack(
+                       children: [
+                         Column(
+
+                           children: [
+                             Expanded(
+                               flex:1,
+                               child: Center(
+                                 child: Container(
+                                   height: 100,
+                                   width: 250,
+                                   color: Colors.orange,
+                                 )
+                               ),
+                             ),
+
+                           Expanded(
+                               flex: 1,
+                               child: Column(children: [  Text('SDMGA',
+                             style: googlefonts().textRegular18_B_Style(
+                               fontStyle: FontStyle.normal,
+                               fontWeight: FontWeight.w600,
+                               fontSize:
+                               Responsive.isMobile(context) ? width / 35 : width / 65,
+                               color:
+                               controller.isDarkMode.value ? Colors.white : Colors.black87,
+                             ),
+                           ),
+                             SizedBox(height: 20.h,),
+                             Text('Skill Development for Mobile Game & Application',
+                               style: googlefonts().textRegular18_B_Style(
+                                 fontStyle: FontStyle.normal,
+                                 fontWeight: FontWeight.w500,
+                                 fontSize:
+                                 Responsive.isMobile(context) ? width / 35 : width / 90,
+                                 color:
+                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                               ),
+                             )
+                           ],))
+                           ],
+                         )
+                       ],
+                     ),
+                   ),
+
+
+                ],
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   Container(
+                     height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                     width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       color: Colors.white,
+                       boxShadow: [
+                         BoxShadow(
+                           blurRadius: 10,
+                           spreadRadius: 5,
+                           color: Colors.black26,
+                         )
+                       ]
+                     ),
+                     child: Stack(
+                       children: [
+                         Column(
+
+                           children: [
+                             Expanded(
+                               flex:1,
+                               child: Center(
+                                 child: Container(
+                                   height: 100,
+                                   width: 250,
+                                   color: Colors.orange,
+                                 )
+                               ),
+                             ),
+
+                           Expanded(
+                               flex: 1,
+                               child: Column(children: [  Text('SDMGA',
+                             style: googlefonts().textRegular18_B_Style(
+                               fontStyle: FontStyle.normal,
+                               fontWeight: FontWeight.w600,
+                               fontSize:
+                               Responsive.isMobile(context) ? width / 35 : width / 65,
+                               color:
+                               controller.isDarkMode.value ? Colors.white : Colors.black87,
+                             ),
+                           ),
+                             SizedBox(height: 20.h,),
+                             Text('Skill Development for Mobile Game & Application',
+                               style: googlefonts().textRegular18_B_Style(
+                                 fontStyle: FontStyle.normal,
+                                 fontWeight: FontWeight.w500,
+                                 fontSize:
+                                 Responsive.isMobile(context) ? width / 35 : width / 90,
+                                 color:
+                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                               ),
+                             )
+                           ],))
+                           ],
+                         )
+                       ],
+                     ),
+                   ),
+
+
+                ],
+              ),
+            ),
+          ),
 
         ],
       ),
