@@ -953,7 +953,6 @@ Widget SkillsSection(context) {
   );
 }
 
-
 Widget MyEducation1(context,controller){
   double height = MediaQuery.sizeOf(context).height;
   double width = MediaQuery.sizeOf(context).width;
@@ -1245,6 +1244,7 @@ Widget MyEducation3(context,controller){
   );
 
 }
+
 Widget MyEducationLOGO(context, controller) {
   double height = MediaQuery.sizeOf(context).height;
   double width = MediaQuery.sizeOf(context).width;
@@ -1905,8 +1905,8 @@ Widget MyWorksLandscap(context,controller) {
                                           padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
                                           child:
                                           CoustomeButton(
-                                            height: 30.h,
-                                            width: 60.w,
+                                            height: Responsive.isMobile(context) ? height / 35 : height / 20,
+                                            width: Responsive.isMobile(context) ? width / 35 : width /15,
                                             child: Text('View'),
                                             onPressed: () {},
                                           ),
@@ -1984,8 +1984,8 @@ Widget MyWorksLandscap(context,controller) {
                                           padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
                                           child:
                                           CoustomeButton(
-                                            height: 30.h,
-                                            width: 60.w,
+                                            height: Responsive.isMobile(context) ? height / 35 : height / 20,
+                                            width: Responsive.isMobile(context) ? width / 35 : width /15,
                                             child: Text('View'),
                                             onPressed: () {},
                                           ),
@@ -2061,8 +2061,8 @@ Widget MyWorksLandscap(context,controller) {
                                           padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
                                           child:
                                           CoustomeButton(
-                                            height: 30.h,
-                                            width: 60.w,
+                                            height: Responsive.isMobile(context) ? height / 35 : height / 20,
+                                            width: Responsive.isMobile(context) ? width / 35 : width /15,
                                             child: Text('View'),
                                             onPressed: () {},
                                           ),
@@ -2343,7 +2343,6 @@ SizedBox(width: 10.w,),
     ),
   );
 }
-
 
 Widget AchievementsAndCerticationsPortrate(context, controller) {
   double height = MediaQuery.sizeOf(context).height;
