@@ -1536,13 +1536,266 @@ Widget MYEducation(context, controller) {
   );
 }
 
-Widget MyWorks() {
+Widget MyWorks(context,controller) {
+  double height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
   return Container(
-    height: 250.h,
+    height: 950.h,
     width: double.infinity,
-    color: Colors.yellow,
-    child: Column(
-      children: [],
+    color: Colors.red,
+    child: Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+
+        children: [
+          Center(
+            child: Text('Achievements And Certifications',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w700,
+                fontSize:
+                Responsive.isMobile(context) ? width / 25 : width / 65,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 5,top: 50,right: 5),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                    width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 10,
+                            spreadRadius: 5,
+                            color: Colors.black26,
+                          )
+                        ]
+                    ),
+                    child: Stack(
+                      children: [
+                        Column(
+
+                          children: [
+                            Expanded(
+                              flex:1,
+                              child: Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 250,
+                                    color: Colors.orange,
+                                  )
+                              ),
+                            ),
+
+                            Expanded(
+                                flex: 1,
+                                child: Column(children: [  Text('SDMGA',
+                                  style: googlefonts().textRegular18_B_Style(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize:
+                                    Responsive.isMobile(context) ? width / 35 : width / 65,
+                                    color:
+                                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                  ),
+                                ),
+                                  SizedBox(height: 20.h,),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,right: 10),
+                                    child: Text('Skill Development for Mobile Game & Application',
+                                      style: googlefonts().textRegular18_B_Style(
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize:
+                                        Responsive.isMobile(context) ? width / 35 : width / 90,
+                                        color:
+                                        controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                      ),
+                                    ),
+                                  )
+                                ],))
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+
+
+                ],
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                    width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 10,
+                            spreadRadius: 5,
+                            color: Colors.black26,
+                          )
+                        ]
+                    ),
+                    child: Stack(
+                      children: [
+                        Column(
+
+                          children: [
+                            Expanded(
+                              flex:1,
+                              child: Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 250,
+                                    color: Colors.orange,
+                                  )
+                              ),
+                            ),
+
+                            Expanded(
+                                flex: 1,
+                                child: Column(children: [  Text('SDMGA',
+                                  style: googlefonts().textRegular18_B_Style(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize:
+                                    Responsive.isMobile(context) ? width / 35 : width / 65,
+                                    color:
+                                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                  ),
+                                ),
+                                  SizedBox(height: 20.h,),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,right: 10),
+                                    child: Text('Skill Development for Mobile Game & Application',
+                                      style: googlefonts().textRegular18_B_Style(
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize:
+                                        Responsive.isMobile(context) ? width / 35 : width / 90,
+                                        color:
+                                        controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                      ),
+                                    ),
+                                  )
+                                ],))
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+
+
+                ],
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                    width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 10,
+                            spreadRadius: 5,
+                            color: Colors.black26,
+                          )
+                        ]
+                    ),
+                    child: Stack(
+                      children: [
+                        Column(
+
+                          children: [
+                            Expanded(
+                              flex:1,
+                              child: Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 250,
+                                    color: Colors.orange,
+                                  )
+                              ),
+                            ),
+
+                            Expanded(
+                                flex: 1,
+                                child: Column(children: [  Text('SDMGA',
+                                  style: googlefonts().textRegular18_B_Style(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize:
+                                    Responsive.isMobile(context) ? width / 35 : width / 65,
+                                    color:
+                                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                  ),
+                                ),
+                                  SizedBox(height: 20.h,),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,right: 10),
+                                    child: Text('Skill Development for Mobile Game & Application',
+                                      style: googlefonts().textRegular18_B_Style(
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize:
+                                        Responsive.isMobile(context) ? width / 35 : width / 90,
+                                        color:
+                                        controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                      ),
+                                    ),
+                                  )
+                                ],))
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+
+
+                ],
+              ),
+            ),
+          ),
+
+        ],
+      ),
     ),
   );
 }
@@ -1828,7 +2081,7 @@ Widget AchievementsAndCerticationsPortrate(context, controller) {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+            padding: const EdgeInsets.only(left: 5,top: 50,right: 5),
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
@@ -1840,7 +2093,7 @@ Widget AchievementsAndCerticationsPortrate(context, controller) {
                      width: Responsive.isMobile(context)?width/1.6:width/3.4,
 
                      decoration: BoxDecoration(
-                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       borderRadius: BorderRadius.all(Radius.circular(15)),
                        color: Colors.white,
                        boxShadow: [
                          BoxShadow(
@@ -1879,14 +2132,17 @@ Widget AchievementsAndCerticationsPortrate(context, controller) {
                              ),
                            ),
                              SizedBox(height: 20.h,),
-                             Text('Skill Development for Mobile Game & Application',
-                               style: googlefonts().textRegular18_B_Style(
-                                 fontStyle: FontStyle.normal,
-                                 fontWeight: FontWeight.w500,
-                                 fontSize:
-                                 Responsive.isMobile(context) ? width / 35 : width / 90,
-                                 color:
-                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                             Padding(
+                               padding: const EdgeInsets.only(left: 10,right: 10),
+                               child: Text('Skill Development for Mobile Game & Application',
+                                 style: googlefonts().textRegular18_B_Style(
+                                   fontStyle: FontStyle.normal,
+                                   fontWeight: FontWeight.w500,
+                                   fontSize:
+                                   Responsive.isMobile(context) ? width / 35 : width / 90,
+                                   color:
+                                   controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                 ),
                                ),
                              )
                            ],))
@@ -1915,7 +2171,7 @@ Widget AchievementsAndCerticationsPortrate(context, controller) {
                      width: Responsive.isMobile(context)?width/1.6:width/3.4,
 
                      decoration: BoxDecoration(
-                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       borderRadius: BorderRadius.all(Radius.circular(15)),
                        color: Colors.white,
                        boxShadow: [
                          BoxShadow(
@@ -1954,14 +2210,17 @@ Widget AchievementsAndCerticationsPortrate(context, controller) {
                              ),
                            ),
                              SizedBox(height: 20.h,),
-                             Text('Skill Development for Mobile Game & Application',
-                               style: googlefonts().textRegular18_B_Style(
-                                 fontStyle: FontStyle.normal,
-                                 fontWeight: FontWeight.w500,
-                                 fontSize:
-                                 Responsive.isMobile(context) ? width / 35 : width / 90,
-                                 color:
-                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                             Padding(
+                               padding: const EdgeInsets.only(left: 10,right: 10),
+                               child: Text('Skill Development for Mobile Game & Application',
+                                 style: googlefonts().textRegular18_B_Style(
+                                   fontStyle: FontStyle.normal,
+                                   fontWeight: FontWeight.w500,
+                                   fontSize:
+                                   Responsive.isMobile(context) ? width / 35 : width / 90,
+                                   color:
+                                   controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                 ),
                                ),
                              )
                            ],))
@@ -1990,7 +2249,7 @@ Widget AchievementsAndCerticationsPortrate(context, controller) {
                      width: Responsive.isMobile(context)?width/1.6:width/3.4,
 
                      decoration: BoxDecoration(
-                       borderRadius: BorderRadius.all(Radius.circular(30)),
+                       borderRadius: BorderRadius.all(Radius.circular(15)),
                        color: Colors.white,
                        boxShadow: [
                          BoxShadow(
@@ -2029,14 +2288,17 @@ Widget AchievementsAndCerticationsPortrate(context, controller) {
                              ),
                            ),
                              SizedBox(height: 20.h,),
-                             Text('Skill Development for Mobile Game & Application',
-                               style: googlefonts().textRegular18_B_Style(
-                                 fontStyle: FontStyle.normal,
-                                 fontWeight: FontWeight.w500,
-                                 fontSize:
-                                 Responsive.isMobile(context) ? width / 35 : width / 90,
-                                 color:
-                                 controller.isDarkMode.value ? Colors.white : Colors.black87,
+                             Padding(
+                               padding: const EdgeInsets.only(left: 10,right: 10),
+                               child: Text('Skill Development for Mobile Game & Application',
+                                 style: googlefonts().textRegular18_B_Style(
+                                   fontStyle: FontStyle.normal,
+                                   fontWeight: FontWeight.w500,
+                                   fontSize:
+                                   Responsive.isMobile(context) ? width / 35 : width / 90,
+                                   color:
+                                   controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                 ),
                                ),
                              )
                            ],))
