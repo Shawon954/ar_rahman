@@ -120,6 +120,7 @@ Widget buildPortrait(context, controller) => Container(
                 ],
               ),
             ),
+            SizedBox(height: 20.h,),
             Container(
               height: 950.h,
               width: double.infinity,
@@ -1587,7 +1588,7 @@ Widget MyWorks(context,controller) {
                     width: Responsive.isMobile(context)?width/1.6:width/3.4,
 
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
@@ -1665,7 +1666,7 @@ Widget MyWorks(context,controller) {
                     width: Responsive.isMobile(context)?width/1.6:width/3.4,
 
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
@@ -1742,7 +1743,7 @@ Widget MyWorks(context,controller) {
                     width: Responsive.isMobile(context)?width/1.6:width/3.4,
 
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
