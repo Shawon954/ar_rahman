@@ -1615,7 +1615,9 @@ Widget MyWorks(context,controller) {
 
                             Expanded(
                                 flex: 1,
-                                child: Column(children: [
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
                                   Text('SDMGA',
                                   style: googlefonts().textRegular18_B_Style(
                                     fontStyle: FontStyle.normal,
@@ -1628,11 +1630,11 @@ Widget MyWorks(context,controller) {
                                 ),
                                   SizedBox(height: 20.h,),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 10,right: 10),
+                                    padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
                                     child:
                                     CoustomeButton(
                                       height: 30.h,
-                                      width: 35.w,
+                                      width: 60.w,
                                       child: Text('View'),
                                       onPressed: () {},
                                     ),
@@ -1691,7 +1693,9 @@ Widget MyWorks(context,controller) {
 
                             Expanded(
                                 flex: 1,
-                                child: Column(children: [  Text('SDMGA',
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [  Text('SDMGA',
                                   style: googlefonts().textRegular18_B_Style(
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.w600,
@@ -1703,16 +1707,13 @@ Widget MyWorks(context,controller) {
                                 ),
                                   SizedBox(height: 20.h,),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 10,right: 10),
-                                    child: Text('Skill Development for Mobile Game & Application',
-                                      style: googlefonts().textRegular18_B_Style(
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize:
-                                        Responsive.isMobile(context) ? width / 35 : width / 90,
-                                        color:
-                                        controller.isDarkMode.value ? Colors.white : Colors.black87,
-                                      ),
+                                    padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
+                                    child:
+                                    CoustomeButton(
+                                      height: 30.h,
+                                      width: 60.w,
+                                      child: Text('View'),
+                                      onPressed: () {},
                                     ),
                                   )
                                 ],))
@@ -1769,7 +1770,9 @@ Widget MyWorks(context,controller) {
 
                             Expanded(
                                 flex: 1,
-                                child: Column(children: [  Text('SDMGA',
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [  Text('SDMGA',
                                   style: googlefonts().textRegular18_B_Style(
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.w600,
@@ -1781,16 +1784,13 @@ Widget MyWorks(context,controller) {
                                 ),
                                   SizedBox(height: 20.h,),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 10,right: 10),
-                                    child: Text('Skill Development for Mobile Game & Application',
-                                      style: googlefonts().textRegular18_B_Style(
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize:
-                                        Responsive.isMobile(context) ? width / 35 : width / 90,
-                                        color:
-                                        controller.isDarkMode.value ? Colors.white : Colors.black87,
-                                      ),
+                                    padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
+                                    child:
+                                    CoustomeButton(
+                                      height: 30.h,
+                                      width: 60.w,
+                                      child: Text('View'),
+                                      onPressed: () {},
                                     ),
                                   )
                                 ],))
