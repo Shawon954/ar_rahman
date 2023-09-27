@@ -114,6 +114,20 @@ Widget buildPortrait(context, controller) => Container(
                 children: [
                   Stack(
                     children: [
+                   MyWorks(context, controller),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 950.h,
+              width: double.infinity,
+              color: Colors.pink,
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
                       AchievementsAndCerticationsPortrate(context, controller)
                     ],
                   )
@@ -1549,7 +1563,7 @@ Widget MyWorks(context,controller) {
 
         children: [
           Center(
-            child: Text('Achievements And Certifications',
+            child: Text('My Work',
               style: googlefonts().textRegular18_B_Style(
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.w700,
@@ -1569,7 +1583,7 @@ Widget MyWorks(context,controller) {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                    height: Responsive.isMobile(context)?height/2.2:height/1.5,
                     width: Responsive.isMobile(context)?width/1.6:width/3.4,
 
                     decoration: BoxDecoration(
@@ -1589,10 +1603,10 @@ Widget MyWorks(context,controller) {
 
                           children: [
                             Expanded(
-                              flex:1,
+                              flex:2,
                               child: Center(
                                   child: Container(
-                                    height: 100,
+                                    height: 150,
                                     width: 250,
                                     color: Colors.orange,
                                   )
@@ -1601,7 +1615,8 @@ Widget MyWorks(context,controller) {
 
                             Expanded(
                                 flex: 1,
-                                child: Column(children: [  Text('SDMGA',
+                                child: Column(children: [
+                                  Text('SDMGA',
                                   style: googlefonts().textRegular18_B_Style(
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.w600,
@@ -1614,15 +1629,12 @@ Widget MyWorks(context,controller) {
                                   SizedBox(height: 20.h,),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 10,right: 10),
-                                    child: Text('Skill Development for Mobile Game & Application',
-                                      style: googlefonts().textRegular18_B_Style(
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize:
-                                        Responsive.isMobile(context) ? width / 35 : width / 90,
-                                        color:
-                                        controller.isDarkMode.value ? Colors.white : Colors.black87,
-                                      ),
+                                    child:
+                                    CoustomeButton(
+                                      height: 30.h,
+                                      width: 35.w,
+                                      child: Text('View'),
+                                      onPressed: () {},
                                     ),
                                   )
                                 ],))
