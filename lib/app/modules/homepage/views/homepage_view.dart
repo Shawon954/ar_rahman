@@ -305,6 +305,8 @@ Widget buildLandscape(context, controller) => Container(
             SizedBox(height: 20.h,),
             MyEducation3(context,controller),
             SizedBox(height: 20.h,),
+            MyWorksLandscap(context, controller),
+            SizedBox(height: 20.h,),
             AchievementsAndCertications(context, controller),
             // contact me //
             Row(
@@ -1807,6 +1809,280 @@ Widget MyWorks(context,controller) {
             ),
           ),
 
+        ],
+      ),
+    ),
+  );
+}
+
+Widget MyWorksLandscap(context,controller) {
+  double height = MediaQuery.sizeOf(context).height;
+  double width = MediaQuery.sizeOf(context).width;
+  return Container(
+    height: 950.h,
+    width: double.infinity,
+    color: Colors.red,
+    child: Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+
+        children: [
+
+          Center(
+            child: Text('My Work',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w700,
+                fontSize:
+                Responsive.isMobile(context) ? width / 25 : width / 65,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20,right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 5,right: 5),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: Responsive.isMobile(context)?height/2.2:height/1.5,
+                          width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(5)),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 10,
+                                  spreadRadius: 5,
+                                  color: Colors.black26,
+                                )
+                              ]
+                          ),
+                          child: Stack(
+                            children: [
+                              Column(
+
+                                children: [
+                                  Expanded(
+                                    flex:2,
+                                    child: Center(
+                                        child: Container(
+                                          height: 150,
+                                          width: 250,
+                                          color: Colors.orange,
+                                        )
+                                    ),
+                                  ),
+
+                                  Expanded(
+                                      flex: 1,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                        Text('SDMGA',
+                                        style: googlefonts().textRegular18_B_Style(
+                                          fontStyle: FontStyle.normal,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize:
+                                          Responsive.isMobile(context) ? width / 35 : width / 65,
+                                          color:
+                                          controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                        ),
+                                      ),
+                                        SizedBox(height: 20.h,),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
+                                          child:
+                                          CoustomeButton(
+                                            height: 30.h,
+                                            width: 60.w,
+                                            child: Text('View'),
+                                            onPressed: () {},
+                                          ),
+                                        )
+                                      ],
+                                      ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+
+
+                      ],
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                          width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(5)),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 10,
+                                  spreadRadius: 5,
+                                  color: Colors.black26,
+                                )
+                              ]
+                          ),
+                          child: Stack(
+                            children: [
+                              Column(
+
+                                children: [
+                                  Expanded(
+                                    flex:1,
+                                    child: Center(
+                                        child: Container(
+                                          height: 100,
+                                          width: 250,
+                                          color: Colors.orange,
+                                        )
+                                    ),
+                                  ),
+
+                                  Expanded(
+                                      flex: 1,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [  Text('SDMGA',
+                                        style: googlefonts().textRegular18_B_Style(
+                                          fontStyle: FontStyle.normal,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize:
+                                          Responsive.isMobile(context) ? width / 35 : width / 65,
+                                          color:
+                                          controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                        ),
+                                      ),
+                                        SizedBox(height: 20.h,),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
+                                          child:
+                                          CoustomeButton(
+                                            height: 30.h,
+                                            width: 60.w,
+                                            child: Text('View'),
+                                            onPressed: () {},
+                                          ),
+                                        )
+                                      ],))
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+
+
+                      ],
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 5,top: 30,right: 5),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: Responsive.isMobile(context)?height/2.8:height/1.5,
+                          width: Responsive.isMobile(context)?width/1.6:width/3.4,
+
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(5)),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 10,
+                                  spreadRadius: 5,
+                                  color: Colors.black26,
+                                )
+                              ]
+                          ),
+                          child: Stack(
+                            children: [
+                              Column(
+
+                                children: [
+                                  Expanded(
+                                    flex:1,
+                                    child: Center(
+                                        child: Container(
+                                          height: 100,
+                                          width: 250,
+                                          color: Colors.orange,
+                                        )
+                                    ),
+                                  ),
+
+                                  Expanded(
+                                      flex: 1,
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [  Text('SDMGA',
+                                        style: googlefonts().textRegular18_B_Style(
+                                          fontStyle: FontStyle.normal,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize:
+                                          Responsive.isMobile(context) ? width / 35 : width / 65,
+                                          color:
+                                          controller.isDarkMode.value ? Colors.white : Colors.black87,
+                                        ),
+                                      ),
+                                        SizedBox(height: 20.h,),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 10,right: 10,bottom: 10),
+                                          child:
+                                          CoustomeButton(
+                                            height: 30.h,
+                                            width: 60.w,
+                                            child: Text('View'),
+                                            onPressed: () {},
+                                          ),
+                                        )
+                                      ],))
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+
+
+                      ],
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
         ],
       ),
     ),
