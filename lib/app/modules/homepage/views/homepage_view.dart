@@ -49,7 +49,7 @@ Widget buildPortrait(context, controller) => Container(
           children: [
             CoustomAppbar(context, controller),
             Container(
-              height: 310.h,
+              height: 350.h,
               width: double.infinity,
               child: BodyOne(context, controller),
               color: Colors.red,
@@ -1899,8 +1899,8 @@ Widget MyWorksLandscap(context,controller) {
                                     flex:2,
                                     child: Center(
                                         child: Container(
-                                          height: 150,
-                                          width: 250,
+                                          height: 250.h,
+                                          width: 250.w,
                                           color: Colors.orange,
                                         )
                                     ),
