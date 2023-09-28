@@ -67,7 +67,7 @@ Widget buildPortrait(context, controller) => Container(
               height: 2.h,
             ),
             Container(
-              height: 310.h,
+              height: 350.h,
               width: double.infinity,
               child: BodyTwoText(context, controller),
               color: Colors.purple,
