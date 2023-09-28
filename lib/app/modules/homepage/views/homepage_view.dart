@@ -85,16 +85,16 @@ Widget buildPortrait(context, controller) => Container(
               height: 2.h,
             ),
             Container(
-                height: 400.h,
+                height: 530.h,
                 width: double.infinity,
                 color: Colors.green,
                 child: Column(
                   children: [
                     Text('Skills'),
                     SizedBox(
-                      height: 20.h,
+                      height: 10.h,
                     ),
-                    SkillsSection(context),
+                    SkillsSection(context,controller),
                   ],
                 ),
             ),
@@ -222,37 +222,42 @@ Widget buildLandscape(context, controller) => Container(
             ),
 
             // my skills //
-            Row(
+            Column(
               children: [
-                Expanded(
-                  flex: 1,
-                  child:  Container(
-                    height: 390.h,
-                    width: double.infinity,
-                    child: Column(
-                      children: [
-                        Text('Skills'),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        SkillsSection(context),
-                      ],
-                    ),
-                    color: Colors.cyanAccent,
-                  ),
-                ),
 
-                Expanded(
-                  flex: 1,
-                  child:Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      height: 390.h,
-                      width: double.infinity,
-                      child: BodyThreeImage(context),
-                      color: Colors.teal,
+                Row(
+                  children: [
+
+                    Expanded(
+                      flex: 1,
+                      child:  Container(
+                        height: 420.h,
+                        width: double.infinity,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20.h,
+                            ),
+                            SkillsSection(context,controller),
+                          ],
+                        ),
+                        color: Colors.cyanAccent,
+                      ),
                     ),
-                  ),)
+
+                    Expanded(
+                      flex: 1,
+                      child:Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          height:420.h,
+                          width: double.infinity,
+                          child: BodyThreeImage(context),
+                          color: Colors.teal,
+                        ),
+                      ),)
+                  ],
+                ),
               ],
             ),
 
@@ -736,14 +741,26 @@ Widget ContactMeImage(context) {
       width: Responsive.isMobile(context) ? width / 1.2 : width / 1.2);
 }
 
-Widget SkillsSection(context) {
+Widget SkillsSection(context,controller) {
+  double width = MediaQuery.sizeOf(context).width;
   return Column(
     children: <Widget>[
       Container(
-        height: 50.h,
+        height:90.h,
         width: double.infinity,
         child: Column(
           children: [
+
+            Text('Skills',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize:
+                Responsive.isMobile(context) ? width / 35 : width / 70,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),),
+            SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -985,6 +1002,7 @@ Widget MyEducation1(context,controller){
                 borderRadius: BorderRadius.all(
                   Radius.circular(90.r),
                 ),
+                image: DecorationImage(image: AssetImage('assets/edu/diit.png')),
                 boxShadow: [
                   BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
                 ]),
@@ -1274,6 +1292,9 @@ Widget MyEducationLOGO(context, controller) {
             borderRadius: BorderRadius.all(
               Radius.circular(90.r),
             ),
+            
+            
+
             boxShadow: [
               BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
             ]),
