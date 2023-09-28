@@ -754,9 +754,9 @@ Widget SkillsSection(context,controller) {
             Text('Skills',
               style: googlefonts().textRegular18_B_Style(
                 fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w700,
                 fontSize:
-                Responsive.isMobile(context) ? width / 35 : width / 70,
+                Responsive.isMobile(context) ? width / 20 : width / 70,
                 color:
                 controller.isDarkMode.value ? Colors.white : Colors.black87,
               ),),
