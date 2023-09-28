@@ -90,7 +90,7 @@ Widget buildPortrait(context, controller) => Container(
                 color: Colors.green,
                 child: Column(
                   children: [
-                    Text('Skills'),
+
                     SizedBox(
                       height: 10.h,
                     ),
