@@ -754,7 +754,7 @@ Widget SkillsSection(context,controller) {
             Text('Skills',
               style: googlefonts().textRegular18_B_Style(
                 fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
                 fontSize:
                 Responsive.isMobile(context) ? width / 20 : width / 70,
                 color:
@@ -1868,7 +1868,7 @@ Widget MyWorksLandscap(context,controller) {
               children: [
 
                 Padding(
-                  padding: const EdgeInsets.only(left: 5,right: 5),
+                  padding: const EdgeInsets.only(left: 5,right: 5,top: 25),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
