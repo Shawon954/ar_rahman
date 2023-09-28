@@ -85,15 +85,13 @@ Widget buildPortrait(context, controller) => Container(
               height: 2.h,
             ),
             Container(
-                height: 530.h,
+                height: 550.h,
                 width: double.infinity,
                 color: Colors.green,
                 child: Column(
                   children: [
 
-                    SizedBox(
-                      height: 10.h,
-                    ),
+
                     SkillsSection(context,controller),
                   ],
                 ),
@@ -746,7 +744,7 @@ Widget SkillsSection(context,controller) {
   return Column(
     children: <Widget>[
       Container(
-        height:90.h,
+        height:100.h,
         width: double.infinity,
         child: Column(
           children: [
@@ -775,7 +773,7 @@ Widget SkillsSection(context,controller) {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 10.h,
             ),
             LinearPercentIndicator(
               width: 160.w,
@@ -786,6 +784,7 @@ Widget SkillsSection(context,controller) {
           ],
         ),
       ),
+      SizedBox(height: 10.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -805,7 +804,7 @@ Widget SkillsSection(context,controller) {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 10.h,
             ),
             LinearPercentIndicator(
               width: 160.w,
@@ -835,7 +834,7 @@ Widget SkillsSection(context,controller) {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 10.h,
             ),
             LinearPercentIndicator(
               width: 160.w,
@@ -865,7 +864,7 @@ Widget SkillsSection(context,controller) {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 10.h,
             ),
             LinearPercentIndicator(
               width: 160.w,
@@ -895,7 +894,7 @@ Widget SkillsSection(context,controller) {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 10.h,
             ),
             LinearPercentIndicator(
               width: 160.w,
@@ -925,7 +924,7 @@ Widget SkillsSection(context,controller) {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 10.h,
             ),
             LinearPercentIndicator(
               width: 160.w,
@@ -955,7 +954,7 @@ Widget SkillsSection(context,controller) {
               ],
             ),
             SizedBox(
-              height: 8.h,
+              height: 10.h,
             ),
             LinearPercentIndicator(
               width: 160.w,
