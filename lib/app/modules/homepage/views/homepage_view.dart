@@ -841,7 +841,15 @@ Widget SkillsSection(context,controller) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text("Flutter "),
+                  child: Text("Flutter ",
+                    style: googlefonts().textRegular16_W6_Style(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      fontSize:
+                      Responsive.isMobile(context) ? width / 25 : width / 70,
+                      color:
+                      controller.isDarkMode.value ? Colors.white : Colors.black87,
+                    ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 90),
@@ -871,7 +879,15 @@ Widget SkillsSection(context,controller) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text("FireBase"),
+                  child: Text("FireBase",
+                    style: googlefonts().textRegular16_W6_Style(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      fontSize:
+                      Responsive.isMobile(context) ? width / 25 : width / 70,
+                      color:
+                      controller.isDarkMode.value ? Colors.white : Colors.black87,
+                    ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 90),
@@ -901,7 +917,15 @@ Widget SkillsSection(context,controller) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text("OOP"),
+                  child: Text("OOP",
+                    style: googlefonts().textRegular16_W6_Style(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      fontSize:
+                      Responsive.isMobile(context) ? width / 25 : width / 70,
+                      color:
+                      controller.isDarkMode.value ? Colors.white : Colors.black87,
+                    ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 90),
@@ -931,7 +955,15 @@ Widget SkillsSection(context,controller) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text("Rest API"),
+                  child: Text("Rest API",
+                    style: googlefonts().textRegular16_W6_Style(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      fontSize:
+                      Responsive.isMobile(context) ? width / 25 : width / 70,
+                      color:
+                      controller.isDarkMode.value ? Colors.white : Colors.black87,
+                    ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 90),
@@ -961,7 +993,15 @@ Widget SkillsSection(context,controller) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text("Figma UI/UX Design"),
+                  child: Text("Figma UI/UX Design",
+                    style: googlefonts().textRegular16_W6_Style(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      fontSize:
+                      Responsive.isMobile(context) ? width / 25 : width / 70,
+                      color:
+                      controller.isDarkMode.value ? Colors.white : Colors.black87,
+                    ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 90),
