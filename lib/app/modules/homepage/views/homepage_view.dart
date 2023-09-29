@@ -85,7 +85,7 @@ Widget buildPortrait(context, controller) => Container(
               height: 2.h,
             ),
             Container(
-                height: 550.h,
+                height: 620.h,
                 width: double.infinity,
                 color: Colors.green,
                 child: Column(
@@ -229,7 +229,7 @@ Widget buildLandscape(context, controller) => Container(
                     Expanded(
                       flex: 1,
                       child:  Container(
-                        height: 420.h,
+                        height: 450.h,
                         width: double.infinity,
                         child: Column(
                           children: [
@@ -248,7 +248,7 @@ Widget buildLandscape(context, controller) => Container(
                       child:Align(
                         alignment: Alignment.topRight,
                         child: Container(
-                          height:420.h,
+                          height:450.h,
                           width: double.infinity,
                           child: BodyThreeImage(context),
                           color: Colors.teal,
@@ -1001,10 +1001,14 @@ Widget MyEducation1(context,controller){
                 borderRadius: BorderRadius.all(
                   Radius.circular(90.r),
                 ),
-                image: DecorationImage(image: AssetImage('assets/edu/diit.png')),
+             
                 boxShadow: [
                   BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
                 ]),
+              child: CircleAvatar(
+                radius: 50,
+
+              ),
             ),
             SizedBox(width: 20.w,),
             Column(
@@ -1291,12 +1295,15 @@ Widget MyEducationLOGO(context, controller) {
             borderRadius: BorderRadius.all(
               Radius.circular(90.r),
             ),
-            
-            
+
+
 
             boxShadow: [
               BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
             ]),
+        child: CircleAvatar(
+          radius: 50,
+        ),
       ),
       SizedBox(height: 40.h,),
 
