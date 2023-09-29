@@ -80,6 +80,8 @@ flutter:
      - assets/fonts/
      - assets/svgimage/
      - assets/edu/
+     - assets/
+
 
 
   #   - images/a_dot_ham.jpeg
