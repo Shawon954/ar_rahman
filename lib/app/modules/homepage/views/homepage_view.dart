@@ -764,7 +764,15 @@ Widget SkillsSection(context,controller) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text("Project Management"),
+                  child: Text("Project Management",
+                    style: googlefonts().textRegular16_W6_Style(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      fontSize:
+                      Responsive.isMobile(context) ? width / 25 : width / 70,
+                      color:
+                      controller.isDarkMode.value ? Colors.white : Colors.black87,
+                    ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 90),
@@ -795,7 +803,15 @@ Widget SkillsSection(context,controller) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text("Dart'"),
+                  child: Text("Dart",
+                    style: googlefonts().textRegular16_W6_Style(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      fontSize:
+                      Responsive.isMobile(context) ? width / 25 : width / 70,
+                      color:
+                      controller.isDarkMode.value ? Colors.white : Colors.black87,
+                    ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 90),
