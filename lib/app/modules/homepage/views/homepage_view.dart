@@ -229,7 +229,7 @@ Widget buildLandscape(context, controller) => Container(
                     Expanded(
                       flex: 1,
                       child:  Container(
-                        height: 450.h,
+                        height: 550.h,
                         width: double.infinity,
                         child: Column(
                           children: [
@@ -248,7 +248,7 @@ Widget buildLandscape(context, controller) => Container(
                       child:Align(
                         alignment: Alignment.topRight,
                         child: Container(
-                          height:450.h,
+                          height:550.h,
                           width: double.infinity,
                           child: BodyThreeImage(context),
                           color: Colors.teal,
@@ -792,7 +792,7 @@ Widget SkillsSection(context,controller) {
           ],
         ),
       ),
-      SizedBox(height: 10.h,),
+      SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -830,7 +830,7 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ),
+      ), SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -868,7 +868,7 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ),
+      ), SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -906,7 +906,7 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ),
+      ), SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -944,7 +944,7 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ),
+      ), SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
