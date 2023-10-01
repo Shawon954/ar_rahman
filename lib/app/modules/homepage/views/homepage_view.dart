@@ -304,9 +304,9 @@ Widget buildLandscape(context, controller) => Container(
 
             MyEducation1(context,controller),
             SizedBox(height: 20.h,),
-            MyEducation2(context,controller),
-            SizedBox(height: 20.h,),
-            MyEducation3(context,controller),
+            // MyEducation2(context,controller),
+            // SizedBox(height: 20.h,),
+            // MyEducation3(context,controller),
             SizedBox(height: 20.h,),
             MyWorksLandscap(context, controller),
             SizedBox(height: 20.h,),
@@ -1058,14 +1058,11 @@ Widget MyEducation1(context,controller){
                 borderRadius: BorderRadius.all(
                   Radius.circular(90.r),
                 ),
-             
+             image:  DecorationImage(image: AssetImage("assets/edu/dash.png",),scale:2.5 ),
                 boxShadow: [
                   BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
                 ]),
-              child: CircleAvatar(
-                radius: 50,
-
-              ),
+             
             ),
             SizedBox(width: 20.w,),
             Column(
@@ -1136,192 +1133,192 @@ Widget MyEducation1(context,controller){
 
 }
 
-Widget MyEducation2(context,controller){
-  double height = MediaQuery.sizeOf(context).height;
-  double width = MediaQuery.sizeOf(context).width;
-  return Column(
-    children: [
-      SizedBox(height: 15.h,),
-
-      Padding(
-        padding: const EdgeInsets.only(left: 120,right: 120,top: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              height: 150.h,
-              width: 38.w,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(90.r),
-                ),
-                boxShadow: [
-                  BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
-                ]),
-            ),
-            SizedBox(width: 20.w,),
-            Column(
-              children: [
-                SizedBox(
-                  height: 20.h,
-                ),
-                Text(
-                  'Kasemabad Siddikia Kamil Madrasha',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w600,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 25 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  'Science',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w600,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 30 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  'GPA - 4.89',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w400,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 30 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  '2013-2015',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w400,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 35 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
-
-}
-
-Widget MyEducation3(context,controller){
-  double height = MediaQuery.sizeOf(context).height;
-  double width = MediaQuery.sizeOf(context).width;
-  return Column(
-
-    children: [
-      SizedBox(height: 15.h,),
-
-      Padding(
-        padding: const EdgeInsets.only(left: 120,right:120,top: 20,bottom: 25),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              height: 150.h,
-              width: 38.w,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(90.r),
-                ),
-                boxShadow: [
-                  BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
-                ]),
-            ),
-
-            Column(
-              children: [
-                SizedBox(
-                  height: 12.h,
-                ),
-                Text(
-                  'Paschim Saura Alim Madrasah',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w600,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 25 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  'Science',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w600,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 30 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  'GPA - 4.89',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w400,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 30 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  '2012-2013',
-                  style: googlefonts().textRegular18_B_Style(
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w400,
-                    fontSize:
-                    Responsive.isMobile(context) ? width / 35 : width / 70,
-                    color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
-
-}
+// Widget MyEducation2(context,controller){
+//   double height = MediaQuery.sizeOf(context).height;
+//   double width = MediaQuery.sizeOf(context).width;
+//   return Column(
+//     children: [
+//       SizedBox(height: 15.h,),
+//
+//       Padding(
+//         padding: const EdgeInsets.only(left: 120,right: 120,top: 20),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             Container(
+//               height: 150.h,
+//               width: 38.w,
+//             decoration: BoxDecoration(
+//                 color: Colors.white,
+//                 borderRadius: BorderRadius.all(
+//                   Radius.circular(90.r),
+//                 ),
+//                 boxShadow: [
+//                   BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+//                 ]),
+//             ),
+//             SizedBox(width: 20.w,),
+//             Column(
+//               children: [
+//                 SizedBox(
+//                   height: 20.h,
+//                 ),
+//                 Text(
+//                   'Kasemabad Siddikia Kamil Madrasha',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w600,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 25 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 2.h,
+//                 ),
+//                 Text(
+//                   'Science',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w600,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 30 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 2.h,
+//                 ),
+//                 Text(
+//                   'GPA - 4.89',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w400,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 30 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 2.h,
+//                 ),
+//                 Text(
+//                   '2013-2015',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w400,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 35 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//     ],
+//   );
+//
+// }
+//
+// Widget MyEducation3(context,controller){
+//   double height = MediaQuery.sizeOf(context).height;
+//   double width = MediaQuery.sizeOf(context).width;
+//   return Column(
+//
+//     children: [
+//       SizedBox(height: 15.h,),
+//
+//       Padding(
+//         padding: const EdgeInsets.only(left: 120,right:120,top: 20,bottom: 25),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             Container(
+//               height: 150.h,
+//               width: 38.w,
+//             decoration: BoxDecoration(
+//                 color: Colors.white,
+//                 borderRadius: BorderRadius.all(
+//                   Radius.circular(90.r),
+//                 ),
+//                 boxShadow: [
+//                   BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
+//                 ]),
+//             ),
+//
+//             Column(
+//               children: [
+//                 SizedBox(
+//                   height: 12.h,
+//                 ),
+//                 Text(
+//                   'Paschim Saura Alim Madrasah',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w600,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 25 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 2.h,
+//                 ),
+//                 Text(
+//                   'Science',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w600,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 30 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 2.h,
+//                 ),
+//                 Text(
+//                   'GPA - 4.89',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w400,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 30 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 2.h,
+//                 ),
+//                 Text(
+//                   '2012-2013',
+//                   style: googlefonts().textRegular18_B_Style(
+//                     fontStyle: FontStyle.normal,
+//                     fontWeight: FontWeight.w400,
+//                     fontSize:
+//                     Responsive.isMobile(context) ? width / 35 : width / 70,
+//                     color:
+//                     controller.isDarkMode.value ? Colors.white : Colors.black87,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//     ],
+//   );
+//
+// }
 
 Widget MyEducationLOGO(context, controller) {
   double height = MediaQuery.sizeOf(context).height;
