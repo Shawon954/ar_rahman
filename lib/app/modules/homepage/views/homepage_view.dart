@@ -678,24 +678,54 @@ Widget BodyTwoText(context, controller) {
           SizedBox(
             height: 20.h,
           ),
-          Row(
-            children: [
-              CircleAvatar(
-                radius: 16,
-              ),
-              SizedBox(
-                width: 6.w,
-              ),
-              CircleAvatar(
-                radius: 16,
-              ),
-              SizedBox(
-                width: 6.w,
-              ),
-              CircleAvatar(
-                radius: 16,
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left: 30),
+            child: Row(
+              children: [
+                GestureDetector(
+
+                  child: CircleAvatar(
+                    radius: 16,
+                    backgroundColor: Colors.white,
+                    child: Image.asset('assets/social/facebook.png'),
+                  ),
+                  onTap: (){},
+                ),
+                SizedBox(
+                  width: 6.w,
+                ),
+                GestureDetector(
+                  child: CircleAvatar(
+                    radius: 16,
+                    backgroundColor: Colors.white,
+                    child: Image.asset('assets/social/github.png'),
+                  ),
+                  onTap: (){},
+                ),
+                SizedBox(
+                  width: 6.w,
+                ),
+                GestureDetector(
+                  child: CircleAvatar(
+                    radius: 16,
+                    backgroundColor: Colors.white,
+                    child: Image.asset('assets/social/linkedin.png'),
+                  ),
+                  onTap: (){},
+                ),
+                SizedBox(
+                  width: 6.w,
+                ),
+                GestureDetector(
+                  child: CircleAvatar(
+                    radius: 16,
+                    backgroundColor: Colors.white,
+                    child: Image.asset('assets/social/email.png',scale: 2.9,),
+                  ),
+                  onTap: (){},
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 20.h,
