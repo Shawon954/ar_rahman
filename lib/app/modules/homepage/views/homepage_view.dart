@@ -1004,10 +1004,7 @@ Widget SkillsSection(context,controller) {
                       controller.isDarkMode.value ? Colors.white : Colors.black87,
                     ),),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 90),
-                  child: Text("85 %"),
-                ),
+
               ],
             ),
             SizedBox(
