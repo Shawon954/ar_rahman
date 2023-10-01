@@ -556,34 +556,47 @@ Widget BodyOne(context, controller) {
           padding: const EdgeInsets.only(left: 30),
           child: Row(
             children: [
-              CircleAvatar(
-                radius: 16,
-                backgroundColor: Colors.white,
-                child: Image.asset('assets/social/facebook.png'),
+              GestureDetector(
+
+                child: CircleAvatar(
+                  radius: 16,
+                  backgroundColor: Colors.white,
+                  child: Image.asset('assets/social/facebook.png'),
+                ),
+                onTap: (){},
               ),
               SizedBox(
                 width: 6.w,
               ),
-              CircleAvatar(
-                radius: 16,
-                backgroundColor: Colors.white,
-                child: Image.asset('assets/social/github.png'),
+              GestureDetector(
+                child: CircleAvatar(
+                  radius: 16,
+                  backgroundColor: Colors.white,
+                  child: Image.asset('assets/social/github.png'),
+                ),
+                onTap: (){},
               ),
               SizedBox(
                 width: 6.w,
               ),
-              CircleAvatar(
-                radius: 16,
-                backgroundColor: Colors.white,
-                child: Image.asset('assets/social/linkedin.png'),
+              GestureDetector(
+                child: CircleAvatar(
+                  radius: 16,
+                  backgroundColor: Colors.white,
+                  child: Image.asset('assets/social/linkedin.png'),
+                ),
+                onTap: (){},
               ),
               SizedBox(
                 width: 6.w,
               ),
-              CircleAvatar(
-                radius: 16,
-                backgroundColor: Colors.white,
-                child: Image.asset('assets/social/email.png',scale: 2.9,),
+              GestureDetector(
+                child: CircleAvatar(
+                  radius: 16,
+                  backgroundColor: Colors.white,
+                  child: Image.asset('assets/social/email.png',scale: 2.9,),
+                ),
+                onTap: (){},
               ),
             ],
           ),
