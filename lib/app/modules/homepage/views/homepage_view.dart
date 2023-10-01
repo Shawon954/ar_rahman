@@ -824,7 +824,8 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ), SizedBox(height: 15.h,),
+      ),
+      SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -859,7 +860,8 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ), SizedBox(height: 15.h,),
+      ),
+      SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -894,7 +896,8 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ), SizedBox(height: 15.h,),
+      ),
+      SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -929,7 +932,8 @@ Widget SkillsSection(context,controller) {
             ),
           ],
         ),
-      ), SizedBox(height: 15.h,),
+      ),
+      SizedBox(height: 15.h,),
       Container(
         height: 50.h,
         width: double.infinity,
@@ -1315,6 +1319,7 @@ Widget MyEducationLOGO(context, controller) {
             borderRadius: BorderRadius.all(
               Radius.circular(90.r),
             ),
+            image:  DecorationImage(image: AssetImage("assets/edu/dash.png",),scale:2.5 ),
             boxShadow: [
               BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
             ]),
@@ -1351,9 +1356,15 @@ Widget MyEducationLOGO(context, controller) {
             borderRadius: BorderRadius.all(
               Radius.circular(90.r),
             ),
+
+
+
             boxShadow: [
               BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
             ]),
+        child: CircleAvatar(
+          radius: 35,
+        ),
       ),
     ],
   );
@@ -1395,6 +1406,7 @@ Widget MYEducation(context, controller) {
                   borderRadius: BorderRadius.all(
                     Radius.circular(90.r),
                   ),
+                  image:  DecorationImage(image: AssetImage("assets/edu/dash.png",),scale:3.2 ),
                   boxShadow: [
                     BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
                   ]),
@@ -1547,6 +1559,7 @@ Widget MYEducation(context, controller) {
                   borderRadius: BorderRadius.all(
                     Radius.circular(90.r),
                   ),
+                  image:  DecorationImage(image: AssetImage("assets/edu/west_m_logo.jpg",),scale:2.5 ),
                   boxShadow: [
                     BoxShadow(spreadRadius: 6, color: Colors.black26, blurRadius: 10),
                   ]),
