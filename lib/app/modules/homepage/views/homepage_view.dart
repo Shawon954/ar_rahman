@@ -385,14 +385,13 @@ Widget CoustomAppbar(context, controller) {
             backgroundColor: Colors.transparent,
             elevation: 0.0,
             screenWidth: width,
-            title: Text(
-              "MD. ABDUR RAHMAN",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
+            image: Padding(
+              padding: const EdgeInsets.only(top: 28),
+              child: Image.asset('assets/my_signature/signa.png',scale: 2.6,
+              color:controller.isDarkMode.value ? Colors.white : Colors.black87 ,
               ),
             ),
+
             navBarItems: [
               NavBarItem(
                 hoverColor: controller.isDarkMode.value

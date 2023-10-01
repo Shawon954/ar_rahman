@@ -21,7 +21,7 @@ class AdaptiveNavBar extends AppBar {
     required this.screenWidth,
     required this.navBarItems,
     Key? key,
-    Widget? title,
+    Widget? image,
     Widget? leading,
     bool automaticallyImplyLeading = true,
     Widget? flexibleSpace,
@@ -52,7 +52,7 @@ class AdaptiveNavBar extends AppBar {
       child: canTitleGetTapped
           ? InkWell(
         onTap: onTitleTapped,
-        child: title ??
+        child: image ??
              Text(
               "MB",
               style: TextStyle(
@@ -62,7 +62,7 @@ class AdaptiveNavBar extends AppBar {
               ),
             ),
       )
-          : title ??
+          : image ??
            Text(
             "MB",
             style: TextStyle(
