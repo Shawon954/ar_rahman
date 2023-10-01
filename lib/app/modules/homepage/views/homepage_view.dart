@@ -774,10 +774,7 @@ Widget SkillsSection(context,controller) {
                       controller.isDarkMode.value ? Colors.white : Colors.black87,
                     ),),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 90),
-                  child: Text("75 %"),
-                ),
+
               ],
             ),
             SizedBox(
@@ -813,10 +810,7 @@ Widget SkillsSection(context,controller) {
                       controller.isDarkMode.value ? Colors.white : Colors.black87,
                     ),),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 90),
-                  child: Text("80 %"),
-                ),
+
               ],
             ),
             SizedBox(
@@ -851,10 +845,7 @@ Widget SkillsSection(context,controller) {
                       controller.isDarkMode.value ? Colors.white : Colors.black87,
                     ),),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 90),
-                  child: Text("90 %"),
-                ),
+
               ],
             ),
             SizedBox(
@@ -889,10 +880,7 @@ Widget SkillsSection(context,controller) {
                       controller.isDarkMode.value ? Colors.white : Colors.black87,
                     ),),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 90),
-                  child: Text("80 %"),
-                ),
+
               ],
             ),
             SizedBox(
@@ -927,10 +915,7 @@ Widget SkillsSection(context,controller) {
                       controller.isDarkMode.value ? Colors.white : Colors.black87,
                     ),),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 90),
-                  child: Text("70 %"),
-                ),
+
               ],
             ),
             SizedBox(
@@ -965,10 +950,7 @@ Widget SkillsSection(context,controller) {
                       controller.isDarkMode.value ? Colors.white : Colors.black87,
                     ),),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 90),
-                  child: Text("90 %"),
-                ),
+
               ],
             ),
             SizedBox(
