@@ -558,18 +558,32 @@ Widget BodyOne(context, controller) {
             children: [
               CircleAvatar(
                 radius: 16,
+                backgroundColor: Colors.white,
+                child: Image.asset('assets/social/facebook.png'),
               ),
               SizedBox(
                 width: 6.w,
               ),
               CircleAvatar(
                 radius: 16,
+                backgroundColor: Colors.white,
+                child: Image.asset('assets/social/github.png'),
               ),
               SizedBox(
                 width: 6.w,
               ),
               CircleAvatar(
                 radius: 16,
+                backgroundColor: Colors.white,
+                child: Image.asset('assets/social/linkedin.png'),
+              ),
+              SizedBox(
+                width: 6.w,
+              ),
+              CircleAvatar(
+                radius: 16,
+                backgroundColor: Colors.white,
+                child: Image.asset('assets/social/email.png',scale: 2.9,),
               ),
             ],
           ),
