@@ -14,10 +14,10 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../../coustom_widget/button/button.dart';
 import '../../../coustom_widget/coustom_appbar/coustom_app_bar.dart';
 import '../../../coustom_widget/coustom_appbar/navbar.dart';
+
 import '../controllers/homepage_controller.dart';
 
-class HomepageView extends GetView<HomepageController>
-    with WidgetsBindingObserver {
+class HomepageView extends GetView<HomepageController> with WidgetsBindingObserver {
   final HomepageController _homepageController = Get.put(HomepageController());
 
   @override
@@ -374,6 +374,10 @@ Widget buildLandscape(context, controller) => Container(
       ),
     );
 
+
+
+
+
 Widget CoustomAppbar(context, controller) {
   final width = MediaQuery.sizeOf(context).width;
   return Row(
@@ -471,7 +475,7 @@ Widget CoustomAppbar(context, controller) {
                     fontWeight: FontWeight.w500),
                 text: "Contact",
                 onTap: () {
-                  Navigator.pushNamed(context, "routeName");
+
                 },
               ),
             ],
@@ -616,7 +620,9 @@ Widget BodyOne(context, controller) {
               ),
               CoustomeButton(
                 child: Text('My Resume'),
-                onPressed: () {},
+                onPressed: (){
+
+                },
               ),
             ],
           ),
@@ -2751,19 +2757,7 @@ Widget ContactMe(context, controller) {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: Text(
-              'Contact Me',
-              style: googlefonts().textRegular18_B_Style(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w600,
-                fontSize:
-                    Responsive.isMobile(context) ? width / 30 : width / 70,
-                color:
-                    controller.isDarkMode.value ? Colors.white : Colors.black87,
-              ),
-            ),
-          ),
+
           SizedBox(
             height: 25.h,
           ),
@@ -2954,3 +2948,5 @@ Widget DevelopBy(context, controller) {
     ),
   );
 }
+
+

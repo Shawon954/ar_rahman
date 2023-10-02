@@ -45,6 +45,7 @@ dependencies:
   lottie: ^2.6.0
 
   percent_indicator: ^4.2.3
+  syncfusion_flutter_pdfviewer: ^23.1.38
 
 
 
@@ -82,6 +83,7 @@ flutter:
      - assets/edu/
      - assets/
      - assets/social/
+     - assets/my_cv/
 
 
   #   - images/a_dot_ham.jpeg
