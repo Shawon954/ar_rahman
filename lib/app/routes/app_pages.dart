@@ -1,3 +1,4 @@
+
 import 'package:get/get.dart';
 
 import '../modules/homepage/bindings/homepage_binding.dart';
@@ -16,5 +17,6 @@ class AppPages {
       page: () =>  HomepageView(),
       binding: HomepageBinding(),
     ),
+
   ];
 }
