@@ -2757,7 +2757,18 @@ Widget ContactMe(context, controller) {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
+          Center(
+            child: Text('Contact',
+              style: googlefonts().textRegular18_B_Style(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w600,
+                fontSize:
+                Responsive.isMobile(context) ? width / 25 : width / 65,
+                color:
+                controller.isDarkMode.value ? Colors.white : Colors.black87,
+              ),
+            ),
+          ),
           SizedBox(
             height: 25.h,
           ),
