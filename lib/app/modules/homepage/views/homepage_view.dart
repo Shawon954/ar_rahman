@@ -412,7 +412,7 @@ Widget CoustomAppbar(context, controller) {
                     fontWeight: FontWeight.w500),
                 text: "Home",
                 onTap: () {
-                           BodyOne(context, controller);
+
                 },
               ),
               NavBarItem(
@@ -427,7 +427,9 @@ Widget CoustomAppbar(context, controller) {
                         : Colors.black87,
                     fontWeight: FontWeight.w500),
                 text: "Skills",
-                onTap: () =>SkillsSection(context, controller),
+                onTap: () {
+
+                }
               ),
               NavBarItem(
                 hoverColor: controller.isDarkMode.value
