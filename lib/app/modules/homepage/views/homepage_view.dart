@@ -20,6 +20,8 @@ import '../controllers/homepage_controller.dart';
 class HomepageView extends GetView<HomepageController> with WidgetsBindingObserver {
   final HomepageController _homepageController = Get.put(HomepageController());
 
+
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -410,7 +412,7 @@ Widget CoustomAppbar(context, controller) {
                     fontWeight: FontWeight.w500),
                 text: "Home",
                 onTap: () {
-                  Navigator.pushNamed(context, "routeName");
+                           BodyOne(context, controller);
                 },
               ),
               NavBarItem(
@@ -425,10 +427,7 @@ Widget CoustomAppbar(context, controller) {
                         : Colors.black87,
                     fontWeight: FontWeight.w500),
                 text: "Skills",
-                onTap: () {
-                  controller.isDarkMode();
-                  Navigator.pushNamed(context, "routeName");
-                },
+                onTap: () =>SkillsSection(context, controller),
               ),
               NavBarItem(
                 hoverColor: controller.isDarkMode.value
